@@ -1,0 +1,63 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\includegraphics[width=4.91in]{oom_pic} \caption{Figure of designed Ordinal Pattern Analysis for our simulation student. +s represent hypothesized squares for the given pattern and Os represent non-hypothesized squares.}\label{fig:oom-pic}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{alt_nhst_V2.kv.1.10_files/figure-latex/effects-graph-sig-1.pdf}
+\caption{\label{fig:effects-graph-sig}Percent of significant estimates at
+\(p\) \textless{} .05 (solid) and \(p\) \textless{} .005 (dashed) for
+each analysis given effect size and sample size.}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{alt_nhst_V2.kv.1.10_files/figure-latex/effects-graph-nonsig-1.pdf}
+\caption{\label{fig:effects-graph-nonsig}Percent of non-significant effects
+for each analysis given effect size and sample size.}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{alt_nhst_V2.kv.1.10_files/figure-latex/agree-graph-omnibus-1.pdf}
+\caption{\label{fig:agree-graph-omnibus}Percent of agreement across each
+analysis given effect size and sample size for omnnibus tests.}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{alt_nhst_V2.kv.1.10_files/figure-latex/agree-graph-post-1.pdf}
+\caption{\label{fig:agree-graph-post}Percent of agreement across each
+analysis given effect size and sample size \(post hoc\) tests with \(p\)
+\textless{} .05 (solid) and \(p\) \textless{} .005 (dashed).}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{alt_nhst_V2.kv.1.10_files/figure-latex/pcc-bf-fig-1.pdf}
+\caption{\label{fig:pcc-bf-fig}PCC and c-values plotted against \(p\) and BF
+values for negligible and medium effect size conditions. Xs indicate
+simulations with \(c\)-values \textless{} .05,which were binned as
+significant if they were found in conjunction with PCC values over .50.
+Point size and color indicates sample size wherein larger samples are
+lighter colors.}
+\end{figure*}
+\efloatseparator
+ 
