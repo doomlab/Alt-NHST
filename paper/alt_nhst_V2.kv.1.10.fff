@@ -1,13 +1,6 @@
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
 
-\includegraphics[width=4.91in]{oom_pic} \caption{Figure of designed Ordinal Pattern Analysis for our simulation student. +s represent hypothesized squares for the given pattern and Os represent non-hypothesized squares.}\label{fig:oom-pic}
-\end{figure*}
-\efloatseparator
- 
-\begin{figure*}[hbt]
-\ifnextchar[{\eatarg}{}
-
 \centering
 \includegraphics{alt_nhst_V2.kv.1.10_files/figure-latex/effects-graph-sig-1.pdf}
 \caption{\label{fig:effects-graph-sig}Percent of significant estimates at
@@ -57,7 +50,8 @@ values for negligible and medium effect size conditions. Xs indicate
 simulations with \(c\)-values \textless{} .05,which were binned as
 significant if they were found in conjunction with PCC values over .50.
 Point size and color indicates sample size wherein larger samples are
-lighter colors.}
+lighter colors. Please note that the key for the entire set of graphics
+is in the bottom right hand corner.}
 \end{figure*}
 \efloatseparator
  

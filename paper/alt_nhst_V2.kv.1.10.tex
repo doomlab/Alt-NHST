@@ -157,20 +157,21 @@ the validity and reproducibility of the social sciences. While many
 individuals suggest we should focus on altering the \emph{p}-value at
 which we deem an effect significant, we believe this suggestion is
 short-sighted. Alternative procedures (i.e., Bayesian analyses and
-Observation Oriented Modeling) can be more powerful and meaningful to
-our discipline. However, these methodologies are less frequently
+Observation Oriented Modeling; OOM) can be more powerful and meaningful
+to our discipline. However, these methodologies are less frequently
 utilized and are rarely discussed in combination with NHST. Herein, we
-compare the possible interpretations of three analyses (ANOVA, Bayes
-Factor, and an Ordinal Pattern Analysis) in various data environments
-using a simulation study. The simulation generated 20000 unique datasets
-which varied sample size (\emph{N}s of 10, 30, 100, 500, 1000), and
-effect sizes (\emph{d}s of 0.10, 0.20, 0.50, 0.80). Through this
-simulation, we find that changing the threshold at which \emph{p}-values
-are considered significant has little to no effect on conclusions.
-Further, we find that evaluating multiple estimates as evidence of an
-effect can allow for a more robust and nuanced report of findings. These
-findings suggest the need to redefine evidentiary value and reporting
-practices.}
+discuss the historical roots, procedures, and assumptions of three
+methodologies (NHST, Bayesian Model comparison, and OOM), then compare
+the possible interpretations of three analyses (ANOVA, Bayes Factor, and
+an Ordinal Pattern Analysis) in various data environments using a
+simulation study. The simulation generated 20,000 unique datasets which
+varied sample size (\emph{N}s of 10, 30, 100, 500, 1,000), and effect
+sizes (\emph{d}s of 0.10, 0.20, 0.50, 0.80). Through this simulation, we
+find that changing the threshold at which \emph{p}-values are considered
+significant has little to no effect on conclusions. Further, we find
+that evaluating multiple estimates as evidence of an effect can allow
+for a more robust and nuanced report of findings. These findings suggest
+the need to redefine evidentiary value and reporting practices.}
   \keywords{null hypothesis testing, p-values, Bayes Factors, Observation Oriented
 Modeling, evidence \\
 
@@ -323,15 +324,14 @@ the procedure in practice:
   H_0: \mu_1 = \mu_2 = \mu_3 \\
   H_A: \mu_1 \neq \mu_2 \neq \mu_3
 \end{aligned}
-\]
+\] 2) Select an \(\alpha\) level that is appropriate given the context
+of your research, your analysis plan, and your research question, and do
+not blindly adopt an omnibus critical \emph{p}-value.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
-\setcounter{enumi}{1}
-\item
-  Select an \(\alpha\) level that is appropriate given the context of
-  your research, your analysis plan, and your research question, and do
-  not blindly adopt an omnibus critical \emph{p}-value.
+\setcounter{enumi}{2}
+\tightlist
 \item
   Compute your given analysis and identify the corresponding
   \emph{p}-value. If your \emph{p}-value is less than the chosen
@@ -342,14 +342,14 @@ the procedure in practice:
   supported.
 \end{enumerate}
 
-While the NHST procedure itself gives us the testable models, the
-specific analysis used to test these models here---the repeated measures
-ANOVA with 3 levels---requires some additional assumptions that must be
-met before an analysis is begun (Tabachnick \& Fidell, 2012). Data need
-to have no missing values and no outlying or influential observations.
-Data must have a normal sampling distribution, be linearly related, and
-have independent errors. Depending on the statistical test, data must
-also be checked for equal variances, sphericity, and additivity. These
+While the NHST procedure itself gives us testable models, the specific
+analysis used to test these models here---the repeated measures ANOVA
+with 3 levels---requires some additional assumptions that must be met
+before an analysis is begun (Tabachnick \& Fidell, 2012). Data need to
+have no missing values and no outlying or influential observations. Data
+must have a normal sampling distribution, be linearly related, and have
+independent errors. Depending on the statistical test, data must also be
+checked for equal variances, sphericity, and additivity. These
 assumptions can be checked and, if necessary, corrected for; however,
 violations of these assumptions can lead to inaccurate decisions and
 attenuated power.
@@ -462,10 +462,7 @@ The procedure behind Bayes Factor (BF) comparisons requires two steps.
 
 Based on the flexibility of the analysis, the only assumption that needs
 to be made is that data exists such that two competing, plausible models
-with different constraints may be specified. While not an assumption of
-the method, we did additionally needed to ensure no missing data
-occurred in our dataset as this was a requirement of the package
-utilized in the simulations.
+with different constraints may be specified.
 
 Bayesian inference improves upon the traditional frequentist point of
 view by allowing not only a clear interpretation of the evidence
@@ -579,10 +576,10 @@ B & 4 & 5 & 2\\
 In OOM, \emph{p}-values are no longer utilized (Grice, 2011). As a
 secondary form of reference value, a chance value (\emph{c}-value) is
 obtained, which is a type of randomization test in which the researcher
-determines the number of randomized trials for the test (e.g.~1000 or
-5000 randomized versions of actual observations). This procedure is akin
-to permutation tests, where the original data is shuffled a number of
-times to create comparable data sets. These randomized data sets are
+determines the number of randomized trials for the test (e.g.~1,000 or
+5,000 randomized versions of actual observations). This procedure is
+akin to permutation tests, where the original data is shuffled a number
+of times to create comparable data sets. These randomized data sets are
 then compared to the designated pattern. If the randomized data sets fit
 the pattern as well as or better than the actual data does, the
 \emph{c}-value will be high (close to 1). Low \emph{c}-values (close to
@@ -602,23 +599,13 @@ The OPA is analogous to repeated measures ANOVA and contains two steps.
 \tightlist
 \item
   Designate the expected ranked pattern: each variable as being higher,
-  lower, or equal to the other variables. See Figure \ref{fig:oom-pic}
-  for an example of a defined pattern.
+  lower, or equal to the other variables. For instance, for our analyses
+  we defined the following pattern of individual responses:
 \end{enumerate}
-
-Add something else here that says that we are not talking about testing
-one hyp vs.~another, were interested in seeing that this pattern matches
-to the best of our ability, i.e.~enough people have this pattern that we
-can assume this is true. Not like NHST or Bayes where we compare
-hypotheses or bayes where we compare model fits.
 
 \[
   X_{i_1} < X_{i_2} < X_{i_3}   
 \]
-
-\begin{figure}
-\includegraphics[width=4.91in]{oom_pic} \caption{Figure of designed Ordinal Pattern Analysis for our simulation student. +s represent hypothesized squares for the given pattern and Os represent non-hypothesized squares.}\label{fig:oom-pic}
-\end{figure}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -761,17 +748,17 @@ Analysis}\label{oom-ordinal-pattern-analysis}
 An \emph{R} script of the Ordinal Pattern Analysis from Grice et al.
 (2015)'s OOM program was provided from Sauer and Luebke (2016). We set
 the expected ranked pattern as level one less than level two less than
-level three (see Figure @ref:(fig:oom-pic)). Once this pattern is
-defined, we then analyzed the data to see if each individual's set of
-observations matched this expected ordinal pattern. \emph{PCC} values
-were generated, and \emph{c}-values were computed by randomizing the
-data 1,000 times. Solely for purposes of comparison, we used the
-following significance coding schema: significant studies had a high
-\emph{PCC} value (.50 \textless{} \emph{PCC} \textless{} 1.00) and a low
-\emph{c}-value (\emph{c} \textless{} .05), marginal studies had a high
-\emph{PCC} value and a moderate \emph{c}-value (.05 \textless{} \emph{c}
-\textless{} .10), and non-significant studies had low \emph{PCC} values
-(\emph{PCC} \textless{} .50), regardless of their \emph{c}-values.
+level three. Once this pattern is defined, we then analyzed the data to
+see if each individual's set of observations matched this expected
+ordinal pattern. PCC values were generated, and \emph{c}-values were
+computed by randomizing the data 1,000 times. Solely for purposes of
+comparison, we used the following significance coding schema:
+significant studies had a high PCC value (.50 \textless{} PCC
+\textless{} 1.00) and a low \emph{c}-value (\emph{c} \textless{} .05),
+marginal studies had a high PCC value and a moderate \emph{c}-value (.05
+\textless{} \emph{c} \textless{} .10), and non-significant studies had
+low PCC values (PCC \textless{} .50), regardless of their
+\emph{c}-values.
 
 \section{Results}\label{results}
 
@@ -789,29 +776,33 @@ present only the significant and non-significant results. All analyses
 and findings can be found online at \url{https://osf.io/u9hf4/}.
 
 Significant critical omnibus estimates are presented in Figure
-\ref{fig:effects-graph-sig}. For negligible effects at \(p\) \textless{}
-.05 (solid lines), we found that NSHT analyses showed a predictable Type
-I error bias, in that they detect significant estimates with extremely
-small \emph{d} values as sample size increases. Binned BF values showed
-a similar pattern, but were more conservative with less percent
-significant estimates. OOM analyses were the most conservative,
-essentially never detecting an estimate in the negligible effect
-simulations. Small effect sizes showed the same pattern for NHST, BF,
-and OOM results, with the proportion of significant estimates increasing
-more rapidly and asymptoting at a smaller sample size than negligible
-effects. At medium effect sizes, NHST analyses nearly always detected
-estimates, while BF and OOM analyses would have been considered
-\enquote{significant} around 75\% of the time. Interestingly, with large
-effect sizes, OOM analyses mirror NHST by always detecting estimates,
-and BF analyses were generally more conservative except at the largest
-sample size. Figure \ref{fig:effects-graph-sig}'s dashed lines indicate
-the results if values were binned at \emph{p} \textless{} .005, and the
-differences between these results was very subtle. Lowering \(\alpha\)
-reduced the number of significant estimates at small \emph{n} values for
-all four effect sizes, with more pronounced differences at negligible
-and small effect sizes. However, the graphs converged to the same
-conclusion that large enough sample sizes can produce significant
-results at negligible and small effect sizes.
+\ref{fig:effects-graph-sig}. This, as well as all figures discussed in
+this manuscript may be viewed as interactive graphics on our webpage at
+\url{http://96.242.30.151:3838/altnhst/}. All of these graphics are
+interactive and can be manipulated for more precise viewing.\\
+For negligible effects at \(p\) \textless{} .05 (solid lines), we found
+that NSHT analyses showed a predictable Type I error bias, in that they
+detected significant estimates with extremely small \emph{d} values as
+sample size increased. Binned BF values showed a similar pattern, but
+were more conservative with less percent significant estimates. OOM
+analyses were the most conservative, essentially never detecting an
+estimate in the negligible effect simulations. Small effect sizes showed
+the same pattern for NHST, BF, and OOM results, with the proportion of
+significant estimates increasing more rapidly and asymptoting at a
+smaller sample size than negligible effects. At medium effect sizes,
+NHST analyses nearly always detected significant estimates, while BF and
+OOM analyses would have been considered \enquote{significant} around
+75\% of the time. Interestingly, with large effect sizes, OOM analyses
+mirrored NHST by always detecting estimates, and BF analyses were
+generally more conservative except at the largest sample size. Figure
+\ref{fig:effects-graph-sig}'s dashed lines indicate the results if
+values were binned at \emph{p} \textless{} .005, and the differences
+between these results were very subtle. Lowering \(\alpha\) reduced the
+number of significant estimates at small \emph{n} values for all four
+effect sizes, with more pronounced differences at negligible and small
+effect sizes. However, the graphs converged to the same conclusion that
+large enough sample sizes could produce significant results at
+negligible and small effect sizes.
 
 Figure \ref{fig:effects-graph-nonsig} portrays the results for
 non-significant binned simulations, which were the same for both
@@ -856,8 +847,8 @@ Factor analyses, as OOM does not have a \emph{post hoc} test (i.e., the
 test is a pattern analysis that presupposes the expected direction of
 \emph{post hoc} tests).
 
-When effect size was negligible and for small effects, agreement was
-best across small samples and decreases across sample size, as NHST was
+When effect sizes were negligible and for small effects, agreement was
+best across small samples and decreased across sample size, as NHST was
 overly biased to report significant estimates and OOM and BF were less
 likely to do so. For medium and large effect sizes, 50-75\% agreement
 was found, usually regardless of sample size. Additionally, we found
@@ -897,9 +888,9 @@ analysis given effect size and sample size \(post hoc\) tests with \(p\)
 
 As the relationship between BF and \emph{p}-values is already well
 documented, we will not discuss them here beyond stating that we found
-the expected pattern shown in previous work (citation), and that
-individuals who wish to view this comparison, as well as all the other
-comparisons discussed here should visit our interactive Shiny
+the expected pattern shown in previous work (Rouder et al., 2012), and
+that individuals who wish to view this comparison, as well as all the
+other comparisons discussed here should visit our interactive Shiny
 application at \url{https://osf.io/u9hf4/}. Of interest was the
 comparison of OOM indices to traditional NHST and Bayesian indices.
 First, in Figure \ref{fig:pcc-bf-fig}, PCC values are plotted against
@@ -923,16 +914,17 @@ values for negligible and medium effect size conditions. Xs indicate
 simulations with \(c\)-values \textless{} .05,which were binned as
 significant if they were found in conjunction with PCC values over .50.
 Point size and color indicates sample size wherein larger samples are
-lighter colors.}
+lighter colors. Please note that the key for the entire set of graphics
+is in the bottom right hand corner.}
 \end{figure}
 
 In Figure \ref{fig:pcc-bf-fig}, the left hand column portrays the
 relationship between log BF values and PCC values in negligible and
 medium effect sizes. With negligible effect sizes, we found large
 variability in PCC values across a small span of BF values while sample
-sizes remain low, but as N increases, we saw that the range of PCC
+sizes remained low, but as N increased, we saw that the range of PCC
 values narrowed considerably with increasing BF values. Therefore, as
-sample size increases, the PCC values constricted, while BF values
+sample size increased, the PCC values constricted, while BF values
 expanded. A similar pattern appeared when viewing the medium sample size
 graph, as again PCC values became less variable with increased sample
 size, and BF tended to increase both in variability and in value as the
@@ -941,8 +933,8 @@ sample size grew. Here, we can see a benefit of PCC, along with
 instead of the increased variability found in BF.
 
 It is also important to note that within the negligible effects graph,
-while many of these PCC values reach high values, that these values do
-not denote patterns that would necessarily be seen as unique.
+while many of these PCC values reached high values, that these values
+did not denote patterns that would necessarily be seen as unique.
 \(c\)-values were a secondary measure of evaluation that eliminated a
 number of these matches from being considered meaningful. A large
 majority of points with larger sample sizes on the figure included low
@@ -951,7 +943,7 @@ than a meaningful percent used for cutoff criterion. This two-step
 process helped to weed out effects that were negligible, especially at
 larger sample sizes.
 
-Additionally, we can compare \(p\)-values and PCC values, which are
+Additionally, we compared \(p\)-values and PCC values, which are
 illustrated on the right hand side of Figure \ref{fig:pcc-bf-fig}.
 Again, PCC values showed far more variability with small sample sizes,
 and the \(p\)-values associated with these smaller sample sizes were
@@ -970,7 +962,25 @@ present a more stable picture of effect sizes. While multiple criterion
 may not completely reduce false positives in the literature, the
 relationship between these values illustrates that multiple indices can
 provided a clearer picture of the evidentiary value available in a
-study.
+study. \# Limitations
+
+Within any study a number of limitations exist. The largest limitation
+of our study is that we chose to focus on a simple three level repeated
+measures ANOVA design. The benefit to this focus is the simplicity of
+understanding the relationship between these values, while also using a
+well understood NHST procedure. However, is possible that these same
+relationships may or may not exist in alternative design contexts.
+Additionally, our choices for classification of \enquote{significant}
+effects for \emph{p}-values, Bayesian factors, PCC, and \emph{c}-values
+was based on what we believe a reasonable researcher may designate;
+however, these classifications may vary in the real world. We provide
+open access to our simulations and code so that an interested party can
+tinker with these choices. We believe the global conclusions would
+likely be similiar across changes, however, the specific percentages and
+patterns would likely differ. Finally, due to the specification of our
+simulation we did not violate any statistical assumptions. It is
+possible---and highly likely---that violation of these assumptions may
+cause changes in the relationships we see here.
 
 \section{Discussion}\label{discussion}
 
@@ -993,28 +1003,35 @@ have \enquote{no ontological basis} (Rosnow \& Rosenthal, 1989, p.
 1277). Instead, we need to embrace the multitude of perspectives
 available to us and to begin to use a combination of approaches to
 qualify the strength of evidence. By comparing multiple methodologies,
-we can see a more nuanced version of our data. Regardless if analyses
-agree or disagree on the presence of an effect, a researcher can
-investigate the size of the effect and discuss conclusions accordingly.
-Each methodology behaves slightly differently in given data
-environments, which might begin to highlight meaningful differences when
-discussed together.
+we can see a more nuanced version of our data. Additionally, while all
+of these methods have limitations, when taken together these methods can
+begin to overcome these limitations. For instance, given a large sample
+size, we would expect that BF values to be very large and p-values to be
+very small---both indicating that an effect exists. However, if we also
+have a PCC value of .4, we may see that it is possible that this effect
+is very small, and possibly negligible. This may help to curb our
+enthusiasm over small or negligible effects that may possibly not
+replicate. Regardless if analyses agree or disagree on the presence of
+an effect, a researcher can investigate the size of the effect and
+discuss conclusions accordingly. Each methodology behaves slightly
+differently in given data environments, which might begin to highlight
+meaningful differences when discussed together.
 
 Some may contest that all of these analyses are capable of being hacked,
 like \emph{p}-values, through researcher degrees of freedom, choice of
 priors, or pattern choice, among other actions (Simmons et al., 2011).
 Transparency throughout the research process is key to eliminating these
 issues, as \(\alpha\) changes may only encourage bad research practices
-with the current incentive structure on publishing. With the Internet,
-we can share research across the globe, but research often still occurs
-behind closed doors. The Open Science Framework grants insight into
-research processes, allowing researchers to share their methodologies,
-code, design, and other important components of their projects. In
-addition to posting materials for projects, pre-registration of
-hypotheses and methodology will be an important facet in scientific
-accountability. Further, with increased transparency editors and other
-researchers can weigh the evidence presented according to their own
-beliefs.
+with the current incentive structure on publishing. Although we have the
+capability to share research across the world, research often still
+occurs behind closed doors. The Open Science Framework grants insight
+into research processes, allowing researchers to share their
+methodologies, code, design, and other important components of their
+projects. In addition to posting materials for projects,
+pre-registration of hypotheses and methodology will be an important
+facet in scientific accountability. Further, with increased transparency
+editors and other researchers can weigh the evidence presented according
+to their own beliefs.
 
 Our key suggestion in this project is the redefinition of evidentiary
 value. The current focus on \emph{p}-values has shown to be problematic,
@@ -1054,26 +1071,7 @@ of learning these analyses. We believe that through the expansion of our
 analytical knowledge and application of these new methodologies, we can
 begin to attenuate some of the strain currently placed on psychological
 science and to increase the strength of evidence in our discipline.
-
-\section{Limitations}\label{limitations}
-
-Within any study a number of limitations exist. The largest limitation
-of our study is that we chose to focus on a simple three level repeated
-measures ANOVA design. The benefit to this focus is the simplicity of
-understanding the relationship between these values, while also using a
-well understood NHST procedure. However, is possible that these same
-relationships may or may not exist in alternative design contexts.
-Additionally, our choices for classification of \enquote{significant}
-effects for \emph{p}-values, Bayesian factors, PCC, and \emph{c}-values
-was based on what we believe a reasonable researcher may designate;
-however, these classifications may vary in the real world. We provide
-open access to our simulations and code so that an interested party can
-tinker with these choices. We believe the global conclusions would
-likely be similiar across changes, however, the specific percentages and
-patterns would likely differ. Finally, due to the specification of our
-simulation we did not violate any statistical assumptions. It is
-possible---and highly likely---that violation of these assumptions may
-cause changes in the relationships we see here. \newpage
+\newpage
 
 \section{References}\label{references}
 

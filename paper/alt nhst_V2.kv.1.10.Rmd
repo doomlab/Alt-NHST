@@ -77,7 +77,6 @@ $$
   H_A: \mu_1 \neq \mu_2 \neq \mu_3
 \end{aligned}
 $$
-
 2) Select an $\alpha$ level that is appropriate given the context of your research, your analysis plan, and your research question, and do not blindly adopt an omnibus critical *p*-value.
 
   3) Compute your given analysis and identify the corresponding *p*-value. If your *p*-value is less than the chosen $\alpha$, reject the null hypothesis and state that there appear to be differences between your means; however, if your *p*-value is greater than or equal to the value selected, do not reject the null hypothesis, and state that a difference between the means could not be supported.
@@ -672,7 +671,7 @@ We compared a null model with one grand mean for all three levels to an effects 
 
 ### OOM: Ordinal Pattern Analysis
 
-An *R* script of the Ordinal Pattern Analysis from @Grice2015's OOM program was provided from @Sauer2016. We set the expected ranked pattern as level one less than level two less than level three (see Figure \@ref:(fig:oom-pic)). Once this pattern is defined, we then analyzed the data to see if each individual's set of observations matched this expected ordinal pattern. PCC values were generated, and *c*-values were computed by randomizing the data 1,000 times. Solely for purposes of comparison, we used the following significance coding schema: significant studies had a high PCC value (.50 < PCC < 1.00) and a low *c*-value (*c* < .05), marginal studies had a high PCC value and a moderate *c*-value (.05 < *c* < .10), and non-significant studies had low PCC values (PCC < .50), regardless of their *c*-values.
+An *R* script of the Ordinal Pattern Analysis from @Grice2015's OOM program was provided from @Sauer2016. We set the expected ranked pattern as level one less than level two less than level three. Once this pattern is defined, we then analyzed the data to see if each individual's set of observations matched this expected ordinal pattern. PCC values were generated, and *c*-values were computed by randomizing the data 1,000 times. Solely for purposes of comparison, we used the following significance coding schema: significant studies had a high PCC value (.50 < PCC < 1.00) and a low *c*-value (*c* < .05), marginal studies had a high PCC value and a moderate *c*-value (.05 < *c* < .10), and non-significant studies had low PCC values (PCC < .50), regardless of their *c*-values.
 
 # Results
 ```{r percent-sig-05, eval=FALSE, include=FALSE}
