@@ -69,7 +69,7 @@ From this discussion, Egon Pearson and Jerzy Neyman created Neyman-Pearson decis
 
 Neither Fisher's hypothesis testing, nor Neyman-Pearson decision theory quite match the NSHT procedure as it is taught and applied today. Psychologists have largely adopted an amalgamation of the two approaches. Here, we attempt to outline what we believe is the most appropriate way to carry out the traditional NHST procedure, although we note that this set of steps is not necessarily how researchers carry out the procedure in practice:
 
-  1) Create two hypotheses, one to be "nullified" and one "alternative" hypothesis. These can be operationalized in our example data as follows:
+  1) Create two hypotheses, one to be "nullified" and one "alternative" hypothesis. Within this repeated measures framework, most researchers would define a null hypothesis (H_0) that means of all three time points are equal. The alternative hypothesis (H_A) would then be that the means of all three time points are not equal. These can be operationalized in our example data as follows:
 
 $$
 \begin{aligned}
@@ -97,7 +97,7 @@ The Bayesian framework can be viewed as a continuum, with objective Bayesian ana
 
 The procedure behind BF comparisons requires two steps. 
 
-  1) One must design two models for the data. For our purposes, the first of these models will be the null model, which states that there are no differences between means. The second model for these analyses is the effects model, which states that each mean is allowed to be different from the grand mean. In designing these models, one must choose the prior distributions that are believed to describe the data. Reasonable expectancies of where the data lie should be incorporated in this decision based on previous research into the studied phenomena [@Rouder2012]. These can be operationalized as follows: 
+  1) One must design two models for the data. For our purposes, the first of these models will be the null model, which states that there are no differences between means ($\mu$; i.e. all of our observed values, regardless of which time point they were assessed at, arise from a normal distribution with some mean and variance). The second model for these analyses is the effects model, which states that each mean ($\mu$) is allowed to be different from the grand mean by some amount ($\alpha$; i.e. we now have observations being drawn from 3 potential normal distributions, all of which may have a different mean value, but the same variance). These can be operationalized as follows:
 
 $$
 \begin{aligned}
@@ -105,6 +105,7 @@ $$
   H_A: X_{ij} \sim N(\mu + \alpha_i, \sigma^2)
 \end{aligned}
 $$
+  In designing these models, one must choose the prior distributions that are believed to describe the data. Reasonable expectancies of where the data lie should be incorporated in this decision based on previous research into the studied phenomena [@Rouder2012]. 
   
   2) Analyze the data given the selected priors and models. Consider the BF and use the $BF_{10}$ as evidence of how one should update their beliefs about the models.
 
@@ -140,7 +141,7 @@ In OOM, *p*-values are no longer utilized [@Grice2011]. As a secondary form of r
 
 The OPA is analogous to repeated measures ANOVA and contains two steps.
 
-  1) Designate the expected ranked pattern: each variable as being higher, lower, or equal to the other variables. For instance, for our analyses we defined the following pattern of individual responses:
+  1) Designate the expected ranked pattern: each variable as being higher, lower, or equal to the other variables. For instance, for our analyses we defined the following pattern of individual responses, whereby the first time point should be less than the second time point which should be less than the third time point. This can be operationalized as follows:
 
 $$
   X_{i_1} < X_{i_2} < X_{i_3}   
