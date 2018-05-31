@@ -29,7 +29,7 @@ author_note: >
   KDV and EMB decided on the study design. MTB helped in initial data analysis. JES and EMB programmed the R code for simulation, analysis, and graphics. KDV wrote the first draft of the manuscript, which EMB put into R markdown. All authors critiqued and edited the manuscript, and all authors approved the submitted version of the manuscript. 
 
 abstract: >
-  Null hypothesis significance testing is frequently cited as a threat to the validity and reproducibility of the social sciences. While many individuals suggest we should focus on altering the *p*-value at which we deem an effect significant, we believe this suggestion is short-sighted. Alternative procedures (i.e., Bayesian analyses and Observation Oriented Modeling; OOM) can be more powerful and meaningful to our discipline. However, these methodologies are less frequently utilized and are rarely discussed in combination with NHST. Herein, we discuss the historical roots, procedures, and assumptions of three methodologies (NHST, Bayesian Model comparison, and OOM), then compare the possible interpretations of three analyses (ANOVA, Bayes Factor, and an Ordinal Pattern Analysis) in various data environments using a simulation study. The simulation generated 20,000 unique datasets which varied sample size (*N*s of 10, 30, 100, 500, 1,000), and effect sizes (*d*s of 0.10, 0.20, 0.50, 0.80). Through this simulation, we find that changing the threshold at which *p*-values are considered significant has little to no effect on conclusions. Further, we find that evaluating multiple estimates as evidence of an effect can allow for a more robust and nuanced report of findings. These findings suggest the need to redefine evidentiary value and reporting practices.
+  Null hypothesis significance testing is frequently cited as a threat to the validity and reproducibility of the social sciences. While many individuals suggest we should focus on altering the *p*-value at which we deem an effect significant, we believe this suggestion is short-sighted. Alternative procedures (i.e., Bayesian analyses and Observation Oriented Modeling; OOM) can be more powerful and meaningful to our discipline. However, these methodologies are less frequently utilized and are rarely discussed in combination with NHST. Herein, we discuss the historical roots, procedures, and assumptions of three methodologies (NHST, Bayesian Model comparison, and OOM), then compare the possible interpretations of three analyses (ANOVA, Bayes Factor, and an Ordinal Pattern Analysis) in various data environments using a simulation study. Our frequentist simulation approach generated 20,000 unique datasets which varied sample size (*N*s of 10, 30, 100, 500, 1,000), and effect sizes (*d*s of 0.10, 0.20, 0.50, 0.80). Through this simulation, we find that changing the threshold at which *p*-values are considered significant has little to no effect on conclusions. Further, we find that evaluating multiple estimates as evidence of an effect can allow for a more robust and nuanced report of findings. These findings suggest the need to redefine evidentiary value and reporting practices.
 
   
 keywords          : "null hypothesis testing, p-values, Bayes Factors, Observation Oriented Modeling, evidence"
@@ -54,7 +54,7 @@ library(numform)
 ```
 Recent events in psychological science have prompted concerns within the discipline regarding research practices and ultimately the validity and reproducibility of published reports [@Etz2016; @Lindsay2015; @OpenScienceCollaboration2015; @VanElk2015]. One often discussed matter is over-reliance, abuse, and potential hacking of *p*-values produced by frequentist null hypothesis significance testing (NHST), as well as misinterpretations of NHST results [@Gigerenzer2004; @Ioannidis2005; @Simmons2011]. We agree with these concerns and believe that many before us have voiced sound, generally accepted opinions on potential remedies, such as an increased focus on effect sizes [@Cumming2008; @Lakens2013; @Maxwell2015; @Nosek2012]. However, other suggestions have been met with less enthusiasm, including a recent article by @Benjamin2017 advocating that researchers should begin thinking only of *p*-values less than .005 as "statistically significant", thus changing $\alpha$ levels to control Type I error rates. Additionally, @Pericchi2016 promote the use of fluctuating $\alpha$ levels as a function of sample size to assist with these errors. We argue it is not the *p*-value that needs to be rethought when seeking evidence, but rather what that *p*-value can tell you in relation to other indicators. While NHST and *p*-values may have merit, researchers have a wealth of other statistical tools available to them. We believe that improvements may be made to the sciences as a whole when individuals become aware of the tools available to them and how these methods may be used in combination to strengthen understanding and conclusions. These sentiments have been shared by the American Statistical Association who recently held a conference focusing on going beyond NHST, expanding their previous stance on *p*-values [@Wasserstein2016]. 
 
-Therefore, we undertook this project to begin to let researchers see the similarities and differences within each methodological design, and with how resultant statistics are interpreted. Herein, we have chosen three methodologies to focus on: NHST, Bayes Factor comparisons, and Observation Oriented Modeling. The three approaches will be compared via this simulated data using a 3 timepoint repeated measures design with a Likert-type scale as the outcome variable. The aims of this study will be to discuss the conclusions that these three methods would make given the same data, and to compare how often these methodologies agree with one another within different data environments (i.e. given different sample sizes and effect sizes). We hope that by discussing these methodologies in terms of a simple statistical analysis researchers will be able to easily compare and contrast methodologies. For this discussion, it is important to understand their historical background, procedural steps, and limitations, which are outlined below. After this discussion, we describe a simulation study comparing methodologies and $\alpha$ criteria, and end with potential implications for researchers.
+Therefore, we undertook this project to begin to let researchers see the similarities and differences within each methodological design, and with how resultant statistics are interpreted. Herein, we have chosen three methodologies to focus on: NHST, Bayes Factor comparisons, and Observation Oriented Modeling. The three approaches will be compared via this simulated data using a 3 timepoint repeated measures design with a Likert-type scale as the outcome variable. The aims of this study will be to discuss the conclusions that these three methods would make given the same data, and to compare how often these methodologies agree with one another within different data environments (i.e. given different sample sizes and effect sizes). We hope that by discussing these methodologies in terms of a simple statistical analysis researchers will be able to easily compare and contrast methodologies. For this discussion, it is important to understand their historical background, procedural steps, and limitations, which are outlined below. After this discussion, we describe a frequentist-driven simulation study comparing methodologies and $\alpha$ criteria, and end with potential implications for researchers.
 
 
 # Null Hypothesis Significance Testing
@@ -81,9 +81,9 @@ $$
 
   3) Compute your given analysis and identify the corresponding *p*-value. If your *p*-value is less than the chosen $\alpha$, reject the null hypothesis and state that there appear to be differences between some of your population means; however, if your *p*-value is greater than or equal to the value selected, do not reject the null hypothesis, and state that a difference between the population means could not be supported.
   
-While the NHST procedure itself gives us testable models, the specific analysis used to test these models here, the repeated measures ANOVA with 3 levels, requires some additional assumptions that must be met before an analysis is begun [@Tabachnick2012]. Data need to have no missing values and no outlying or influential observations. Data must have a normal sampling distribution, be linearly related, and have independent errors. Depending on the statistical test, data must also be checked for equal variances, sphericity, and additivity. These assumptions can be checked and, if necessary, corrected for; however, violations of these assumptions can lead to inaccurate decisions and attenuated power. 
+While the NHST procedure itself gives us testable models, the specific analysis used to test these models here, the repeated measures ANOVA with 3 levels, requires some additional assumptions that must be met before an analysis is begun [@Tabachnick2012]. Data need to have no outlying or influential observations. Data must have a normal sampling distribution, be linearly related, and have independent errors. Depending on the statistical test, data must also be checked for equal variances, sphericity, and additivity. These assumptions can be checked and, if necessary, corrected for; however, violations of these assumptions can lead to inaccurate decisions and attenuated power. Further, with many analysis programs, data is required to have no missing values.
 
-While this approach is widely used, there are many limitations associated with it. First, this method can be sensitive to violations of the stated assumptions, and especially, if the sample size is not large enough to create a normal sampling distribution [@Tabachnick2012]. Even if assumptions are met, or nonparametric tests are implemented, this methodology does not allow a researcher to state anything about the absence of an effect (i.e., no true differences). Through traditional NHST, one can only discuss evidence regarding the alternative hypothesis; one can never support the null hypothesis through this procedure. Given the recent findings regarding reproducibility, showing support for the absence of an effect can be even more crucial than showing support for the presence of an effect [@Bakker2012; @Lakens2017a]. 
+While this approach is widely used, there are many limitations associated with it. First, this method can be sensitive to violations of the stated assumptions, and especially, if the sample size is not large enough to create a normal sampling distribution [@Tabachnick2012]. Even if assumptions are met, or nonparametric tests are implemented (e.g. for situations where a normal distribution assumption cannot be met), this methodology does not allow a researcher to state anything about the absence of an effect (i.e., no true differences). Through traditional NHST, one can only discuss evidence regarding the alternative hypothesis; one can never support the null hypothesis through this procedure. Given the recent findings regarding reproducibility, showing support for the absence of an effect can be even more crucial than showing support for the presence of an effect [@Bakker2012; @Lakens2017a]. 
 
 # Bayes Factors
 
@@ -641,7 +641,7 @@ for (i in 1:length(sdplaceholder)) {
     proc.time() - ptm
     
 ```
-In this study, we generated 20,000 datasets by manipulating sample size and effect size for a repeated measures design with three levels. A repeated measures design was chosen as it is widely used across many disciplines of psychology. These datasets were created using the *mvtnorm* package in *R* [@Genz2017], and all code for simulations can be found at https://osf.io/u9hf4/. Interested readers can easily adapt the *R* code to incorporate different research designs. Likert data, ranging from 1 to 7, was created by rounding *mvtnorm* estimates to whole numbers and truncating any data points out side of the appropriate range (i.e. values < 1 were rounded to 1, and values > 7 were rounded to 7). We specifically chose Likert-type data as this data type is one of the most common data types utilized by most social scientists. Additionally we add to the literature as other simulations have chosen to use completely continuous data (i.e., simulated numbers are often precise to 10+ decimals, which is unlikely for traditional sampling). PEOPLE HAVE CONCERNS THAT TRUNCATING DATA IS GOING TO RESULT IN TOO MANY 1/7 VALUES, INSERT SOMETHING HERE THAT ASSURES PEOPLE OUR DISTRIBUTIONS WERE FINE AND SUGGEST LOOKING AT DATA ON OSF. The population means for each level were set to 2.5, 3.0, and 3.5, and effect sizes were manipulated by adjusting the standard deviation to create negligible effects (*SD* = 3.39, *d* = 0.10), small effects (*SD* = 3.00, *d* = 0.20), medium effects (*SD* = 0.50, *d* = 0.50), and large effects (*SD* = 0.10, *d* = 0.80) using @Cohen1992a's traditional guidelines for *d* interpretation. The smallest effect size was set such that Likert style data could still be retained with the smallest possible effect size. Sample size was manipulated at 10, 30, 100, 500, and 1,000 data points. All combinations of the five sample sizes and four effect sizes were created, and each dataset was simulated 1,000 times, totaling 20,000 datasets. 
+In this study, we generated 20,000 datasets by manipulating sample size and effect size for a repeated measures design with three levels. A repeated measures design was chosen as it is widely used across many disciplines of psychology. These datasets were created using the *mvtnorm* package in *R* [@Genz2017], and all code for simulations can be found at https://osf.io/u9hf4/. Interested readers can easily adapt the *R* code to incorporate different research designs. Likert data, ranging from 1 to 7, was created by rounding *mvtnorm* estimates to whole numbers and truncating any data points out side of the appropriate range (i.e. values < 1 were rounded to 1, and values > 7 were rounded to 7). We specifically chose Likert-type data as this data type is one of the most common data types utilized by most social scientists. Additionally we add to the literature as other simulations have chosen to use completely continuous data (i.e., simulated numbers are often precise to 10+ decimals, which is unlikely for traditional sampling). PEOPLE HAVE CONCERNS THAT TRUNCATING DATA IS GOING TO RESULT IN TOO MANY 1/7 VALUES, INSERT SOMETHING HERE THAT ASSURES PEOPLE OUR DISTRIBUTIONS WERE FINE AND SUGGEST LOOKING AT DATA ON OSF. The population means for each level were set to 2.5, 3.0, and 3.5, and pairwise effect sizes (e.g., the comparison between time 1 v. time 2 and time 2 v. time 3) were manipulated by adjusting the standard deviation to create negligible effects (*SD* = 3.39, *d* = 0.10), small effects (*SD* = 3.00, *d* = 0.20), medium effects (*SD* = 0.50, *d* = 0.50), and large effects (*SD* = 0.10, *d* = 0.80) using @Cohen1992a's traditional guidelines for *d* interpretation. The smallest effect size was set such that Likert style data could still be retained with the smallest possible effect size. Sample size was manipulated at 10, 30, 100, 500, and 1,000 data points. All combinations of the five sample sizes and four effect sizes were created, and each dataset was simulated 1,000 times, totaling 20,000 datasets. 
   
 The advantage of using *mvtnorm* and set *SDs* for each group was the ability to approximate the assumptions of normality by randomly generating from a multivariate normal distribution, and homogeneity by setting equal *SDs* for each group. In a repeated measures design, the assumption of sphericity was met by setting the correlations between levels in *mvtnorm* to zero. By maintaining the lowest level of relationship between levels, we additionally controlled for power and examined situations of significance given the lowest power scenario. During the data simulation, the standard deviation of the difference scores was examined to maintain differences greater than zero, especially for low *N* simulations. 
 
@@ -3065,7 +3065,7 @@ p1 = ggplot(sig_data_large) +
                 linetype = Analysis, 
                 colour = Analysis),
             size=0.75) + 
-  labs(title="Large Effects") +
+  labs(title="Large Effects (d=0.80)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Significant") +
   xlab("log(N)") + 
@@ -3087,7 +3087,7 @@ p2 = ggplot(sig_data_medium) +
                 linetype = Analysis, 
                 colour = Analysis),
             size=0.75) + 
-  labs(title="Medium Effects") +
+  labs(title="Medium Effects (d=0.50)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Significant") + 
   xlab("log(N)") + 
@@ -3109,7 +3109,7 @@ p3 = ggplot(sig_data_small) +
                 linetype = Analysis, 
                 colour = Analysis),
             size=0.75) + 
-  labs(title="Small Effects") +
+  labs(title="Small Effects (d=0.20)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Significant") + 
   xlab("log(N)") + 
@@ -3131,7 +3131,7 @@ p4 = ggplot(sig_data_none) +
                 linetype = Analysis, 
                 colour = Analysis),
             size=0.75) + 
-  labs(title="Negligible Effects") +
+  labs(title="Negligible Effects (d=0.10)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Significant") + 
   xlab("log(N)") + 
@@ -3169,7 +3169,7 @@ a1 = ggplot(non_data_large) +
                 linetype = Analysis, 
                 colour = Analysis),
             size=0.75) + 
-  labs(title="Large Effects") +
+  labs(title="Large Effects (d=0.80)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Non-Significant") + 
   xlab("log(N)") + 
@@ -3191,7 +3191,7 @@ a2 = ggplot(non_data_medium) +
                 linetype = Analysis, 
                 colour = Analysis),
             size=0.75) + 
-  labs(title="Medium Effects") +
+  labs(title="Medium Effects (d=0.50)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Perfect Non-Significant") + 
   xlab("log(N)") + 
@@ -3213,7 +3213,7 @@ a3 = ggplot(non_data_small) +
                 linetype = Analysis, 
                 colour = Analysis),
             size=0.75) + 
-  labs(title="Small Effects") +
+  labs(title="Small Effects (d=0.20)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Non-Significant") +
   xlab("log(N)") + 
@@ -3235,7 +3235,7 @@ a4 = ggplot(non_data_none) +
                 linetype = Analysis, 
                 colour = Analysis),
             size=0.75) + 
-  labs(title="Negligible Effects") +
+  labs(title="Negligible Effects (d=0.10)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Non-Significant") + 
   xlab("log(N)") + 
@@ -5521,7 +5521,7 @@ w1 = ggplot(agree_large) +
                 linetype = comparison, 
                 colour = comparison),
             size=0.75) + 
-  labs(title="Large Effects") +
+  labs(title="Large Effects (d=0.80)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Agreement") + 
   xlab("log(N)") + 
@@ -5549,7 +5549,7 @@ w2 = ggplot(agree_medium) +
                 linetype = comparison, 
                 colour = comparison),
             size=0.75) + 
-  labs(title="Medium Effects") +
+  labs(title="Medium Effects (d=0.50)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Agreement") + 
   xlab("log(N)") + 
@@ -5577,7 +5577,7 @@ w3 = ggplot(agree_small) +
                 linetype = comparison, 
                 colour = comparison),
             size=0.75) + 
-  labs(title="Small Effects") +
+  labs(title="Small Effects (d=0.20)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Agreement") + 
   xlab("log(N)") + 
@@ -5605,7 +5605,7 @@ w4 = ggplot(agree_none) +
                 linetype = comparison, 
                 colour = comparison),
             size=0.75) + 
-  labs(title="Negligible Effects") +
+  labs(title="Negligible Effects (d=0.10)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Agreement") + 
   xlab("log(N)") + 
@@ -5661,7 +5661,7 @@ w11 = ggplot(agree_large) +
                 linetype = comparison, 
                 colour = comparison),
             size=0.75) + 
-  labs(title="Large Effects") +
+  labs(title="Large Effects (d=0.80)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Agreement") + 
   xlab("log(N)") +
@@ -5686,7 +5686,7 @@ w21 = ggplot(agree_medium) +
                 linetype = comparison, 
                 colour = comparison),
             size=0.75) + 
-  labs(title="Medium Effects") +
+  labs(title="Medium Effects (d=0.50)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Agreement") +
   xlab("log(N)") +
@@ -5711,7 +5711,7 @@ w31 = ggplot(agree_small) +
                 linetype = comparison, 
                 colour = comparison),
             size=0.75) + 
-  labs(title="Small Effects") +
+  labs(title="Small Effects (d=0.20)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Agreement") + 
   xlab("log(N)") +
@@ -5736,7 +5736,7 @@ w41 = ggplot(agree_none) +
                 linetype = comparison, 
                 colour = comparison),
             size=0.75) + 
-  labs(title="Negligible Effects") +
+  labs(title="Negligible Effects (d=0.10)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Agreement") + 
   xlab("log(N)") +
@@ -5793,7 +5793,7 @@ pccbfnone = ggplot(comparenone, aes(oompcc, overallBF)) +
                               labels = c(">.05", "<=.05"),
                               values = c(16,4)) +
         scale_color_grey() +
-        labs(title="Negligible Effects") +
+        labs(title="Negligible Effects (d=0.10)") +
         scale_x_continuous(labels = numform::ff_num(zero = 0))
 
 pccbfmed = ggplot(comparemed, aes(oompcc, overallBF)) + 
@@ -5805,7 +5805,7 @@ pccbfmed = ggplot(comparemed, aes(oompcc, overallBF)) +
                               labels = c(">.05", "<=.05"),
                               values = c(16,4)) +
         scale_color_grey() +
-        labs(title="Medium Effects") +
+        labs(title="Medium Effects (d=0.20)") +
         scale_x_continuous(labels = numform::ff_num(zero = 0))
 
 pccpnone = ggplot(comparenone, aes(oompcc, omniP)) + 
@@ -5817,7 +5817,7 @@ pccpnone = ggplot(comparenone, aes(oompcc, omniP)) +
                               labels = c(">.05", "<=.05"),
                               values = c(16,4)) +
         scale_color_grey() +
-        labs(title="Negligible Effects") +
+        labs(title="Negligible Effects (d=0.10)") +
         scale_y_continuous(labels = numform::ff_num(zero = 0)) +
         scale_x_continuous(labels = numform::ff_num(zero = 0))
 
@@ -5830,7 +5830,7 @@ pccpmed = ggplot(comparemed, aes(oompcc, omniP)) +
                               labels = c(">.05", "<=.05"),
                               values = c(16,4)) +
         scale_color_grey() +
-        labs(title="Medium Effects") +
+        labs(title="Medium Effects (d=0.20)") +
         scale_y_continuous(labels = numform::ff_num(zero = 0)) +
         scale_x_continuous(labels = numform::ff_num(zero = 0))
 
