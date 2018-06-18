@@ -24,6 +24,15 @@ for each analysis given effect size and sample size.}
 \ifnextchar[{\eatarg}{}
 
 \centering
+\includegraphics{alt_nhst_FINAL_files/figure-latex/effects-pcc-p-1.pdf}
+\caption{\label{fig:effects-pcc-p}WHAT DO YOU WANT THIS TO SAY}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
 \includegraphics{alt_nhst_FINAL_files/figure-latex/agree-graph-omnibus-1.pdf}
 \caption{\label{fig:agree-graph-omnibus}Percent of agreement across all
 analyses given effect size and sample size for omnnibus tests.}

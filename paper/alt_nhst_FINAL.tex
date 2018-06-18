@@ -377,7 +377,7 @@ associated with it. First, this method can be sensitive to violations of
 the stated assumptions, and especially, if the sample size is not large
 enough to create a normal sampling distribution (Tabachnick \& Fidell,
 2012). Even if assumptions are met, or nonparametric tests are
-implemented (e.g.~for situations where a normal distribution assumption
+implemented (e.g., for situations where a normal distribution assumption
 cannot be met), this methodology does not allow a researcher to state
 anything about the absence of an effect (i.e., no true differences).
 Through traditional NHST, one can only discuss evidence regarding the
@@ -653,22 +653,23 @@ rounding \emph{mvtnorm} estimates to whole numbers and truncating any
 data points out side of the appropriate range (i.e.~values \textless{} 1
 were rounded to 1, and values \textgreater{} 7 were rounded to 7). We
 specifically chose Likert-type data as this data type is one of the most
-common data types utilized by most social scientists. Additionally we
+common data types utilized by most social scientists. Additionally, we
 add to the literature as other simulations have chosen to use completely
 continuous data (i.e., simulated numbers are often precise to 10+
-decimals, which is unlikely for traditional sampling). PEOPLE HAVE
-CONCERNS THAT TRUNCATING DATA IS GOING TO RESULT IN TOO MANY 1/7 VALUES,
-INSERT SOMETHING HERE THAT ASSURES PEOPLE OUR DISTRIBUTIONS WERE FINE
-AND SUGGEST LOOKING AT DATA ON OSF. The population means for each level
-were set to 2.5, 3.0, and 3.5, and pairwise effect sizes (e.g., the
-comparison between time 1 v. time 2 and time 2 v. time 3) were
-manipulated by adjusting the standard deviation to create negligible
-effects (\emph{SD} = 3.39, \emph{d} = 0.10), small effects (\emph{SD} =
-3.00, \emph{d} = 0.20), medium effects (\emph{SD} = 0.50, \emph{d} =
-0.50), and large effects (\emph{SD} = 0.10, \emph{d} = 0.80) using Cohen
-(1992)'s traditional guidelines for \emph{d} interpretation. The
-smallest effect size was set such that Likert style data could still be
-retained with the smallest possible effect size. Sample size was
+decimals, which is unlikely for traditional sampling). The simulated
+data did increase in skew with this procedure from approximately no skew
+(i.e., \textless{}0.01) to approximately 0.40 for the smallest and no
+effect conditions; however, these values closely resembled a normal
+distribution with the use of \emph{mvtnorm}. The population means for
+each level were set to 2.5, 3.0, and 3.5, and pairwise effect sizes
+(e.g., the comparison between time 1 v. time 2 and time 2 v. time 3)
+were manipulated by adjusting the standard deviation to create
+negligible effects (\emph{SD} = 3.39, \emph{d} = 0.10), small effects
+(\emph{SD} = 3.00, \emph{d} = 0.20), medium effects (\emph{SD} = 0.50,
+\emph{d} = 0.50), and large effects (\emph{SD} = 0.10, \emph{d} = 0.80)
+using Cohen (1992)'s traditional guidelines for \emph{d} interpretation.
+The smallest effect size was set such that Likert style data could still
+be retained with the smallest possible effect size. Sample size was
 manipulated at 10, 30, 100, 500, and 1,000 data points. All combinations
 of the five sample sizes and four effect sizes were created, and each
 dataset was simulated 1,000 times, totaling 20,000 datasets.
@@ -861,6 +862,12 @@ size.}
 \includegraphics{alt_nhst_FINAL_files/figure-latex/effects-graph-nonsig-1.pdf}
 \caption{\label{fig:effects-graph-nonsig}Percent of non-significant effects
 for each analysis given effect size and sample size.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{alt_nhst_FINAL_files/figure-latex/effects-pcc-p-1.pdf}
+\caption{\label{fig:effects-pcc-p}WHAT DO YOU WANT THIS TO SAY}
 \end{figure}
 
 \subsection{Percent Agreement}\label{percent-agreement}

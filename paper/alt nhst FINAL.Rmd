@@ -3262,6 +3262,59 @@ arow <- plot_grid( a4 + theme(legend.position="none"),
 arow
 ```
 
+```{r effects-pcc-p, echo = FALSE, fig.cap="WHAT DO YOU WANT THIS TO SAY", fig.height=8, fig.width=8}
+overalldata = read.csv("overall_sims.csv")
+
+none = subset(overalldata, stdev == 11.5)
+small = subset(overalldata, stdev == 3)
+med = subset(overalldata, stdev == .5)
+large = subset(overalldata, stdev == .1)
+
+nonepcc = ggplot(none, aes(oompcc, effect1v2, color = N)) +
+  cleanup + 
+  geom_point() +
+  ylab("Effect Size d Value") + 
+  xlab("OOM PCC Value") + 
+  labs(title="Negligible Effects (d=0.10)") +
+  scale_color_gradient(low = "grey80", high = "black")
+
+smallpcc = ggplot(small, aes(oompcc, effect1v2, color = N)) +
+  cleanup + 
+  geom_point() +
+  ylab("Effect Size d Value") + 
+  xlab("OOM PCC Value") + 
+  labs(title="Small Effects (d=0.20)") +
+  scale_color_gradient(low = "grey80", high = "black")
+
+medpcc = ggplot(med, aes(oompcc, effect1v2, color = N)) +
+  cleanup + 
+  geom_point() +
+  ylab("Effect Size d Value") + 
+  xlab("OOM PCC Value") + 
+  labs(title="Medium Effects (d=0.50)") +
+  scale_color_gradient(low = "grey80", high = "black")
+
+largepcc = ggplot(large, aes(oompcc, effect1v2, color = N)) +
+  cleanup + 
+  geom_point() +
+  ylab("Effect Size d Value") + 
+  xlab("OOM PCC Value") + 
+  labs(title="Large Effects (d=0.80)") +
+  scale_color_gradient(low = "grey80", high = "black")
+
+####put the graphs together####
+legend = get_legend(nonepcc)
+pccgraph <- plot_grid( nonepcc + theme(legend.position="none"),
+                   smallpcc + theme(legend.position="none"),
+                   medpcc + theme(legend.position="none"),
+                   largepcc + theme(legend.position=c(.8, .85)),
+                   hjust = -1,
+                   nrow = 2
+)
+pccgraph
+
+```
+
 ## Percent Agreement
 
 A goal of this project was to expand the toolbox of options for researchers to determine what evidence supports their hypotheses by examining multiple methodologies. We calculated the percent of time that all analyses agreed across overall and *post hoc* comparison estimates. Figure \@ref(fig:agree-graph-omnibus) illustrates the pattern of 100% agreement on effects for critical omnibus tests only at each sample size and effect size.  Figure \@ref(fig:agree-graph-post) portrays the results for *post hoc* tests, which only uses NHST and Bayes Factor analyses, as OOM does not have a *post hoc* test (i.e., the test is a pattern analysis that presupposes the expected direction of *post hoc* tests).
