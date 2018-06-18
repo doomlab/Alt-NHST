@@ -3,9 +3,10 @@
 
 \centering
 \includegraphics{alt_nhst_FINAL_files/figure-latex/effects-graph-sig-1.pdf}
-\caption{\label{fig:effects-graph-sig}Percent of significant estimates at
-\(p\) \textless{} .05 (solid) and \(p\) \textless{} .005 (dashed) for
-each analysis given effect size and sample size.}
+\caption{\label{fig:effects-graph-sig}For NHST analyses only, percent of
+significant estimates at \(p\) \textless{} .05 (solid) and \(p\)
+\textless{} .005 (dashed) for each analysis given effect size and sample
+size.}
 \end{figure*}
 \efloatseparator
  
@@ -24,8 +25,8 @@ for each analysis given effect size and sample size.}
 
 \centering
 \includegraphics{alt_nhst_FINAL_files/figure-latex/agree-graph-omnibus-1.pdf}
-\caption{\label{fig:agree-graph-omnibus}Percent of agreement across each
-analysis given effect size and sample size for omnnibus tests.}
+\caption{\label{fig:agree-graph-omnibus}Percent of agreement across all
+analyses given effect size and sample size for omnnibus tests.}
 \end{figure*}
 \efloatseparator
  
@@ -36,7 +37,8 @@ analysis given effect size and sample size for omnnibus tests.}
 \includegraphics{alt_nhst_FINAL_files/figure-latex/agree-graph-post-1.pdf}
 \caption{\label{fig:agree-graph-post}Percent of agreement across each
 analysis given effect size and sample size \(post hoc\) tests with \(p\)
-\textless{} .05 (solid) and \(p\) \textless{} .005 (dashed).}
+\textless{} .05 (solid) and \(p\) \textless{} .005 (dashed). Note that
+this graph only compares the NHST and BF conclusions.}
 \end{figure*}
 \efloatseparator
  
