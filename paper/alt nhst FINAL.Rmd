@@ -49,10 +49,11 @@ csl               : apa6.csl
 replace_ampersands: yes
 ---
 
-```{r include = FALSE}
+```{r libraries, include = FALSE}
 library("papaja")
 #devtools::install_github("trinker/numform")
 library(numform)
+knitr::opts_chunk$set(cache = TRUE)
 ```
 Recent events in psychological science have prompted concerns within the discipline regarding research practices and ultimately the validity and reproducibility of published reports [@Etz2016; @Lindsay2015; @OpenScienceCollaboration2015; @VanElk2015]. One often discussed matter is over-reliance, abuse, and potential hacking of *p*-values produced by frequentist null hypothesis significance testing (NHST), as well as misinterpretations of NHST results [@Gigerenzer2004; @Ioannidis2005; @Simmons2011]. We agree with these concerns and believe that many before us have voiced sound, generally accepted opinions on potential remedies, such as an increased focus on effect sizes [@Cumming2008; @Lakens2013; @Maxwell2015; @Nosek2012]. However, other suggestions have been met with less enthusiasm, including a recent article by @Benjamin2017 advocating that researchers should begin thinking only of *p*-values less than .005 as "statistically significant", thus changing $\alpha$ levels to control Type I error rates. Additionally, @Pericchi2016 promote the use of fluctuating $\alpha$ levels as a function of sample size to assist with these errors. We argue it is not the threshold, or critical *p*-, that needs to be rethought when seeking evidence, but rather if a *p*-value should be utilized at all, and, if so, what that *p*-value can tell you in relation to other indicators. While NHST and *p*-values may have merit, researchers have a wealth of other statistical tools available to them. We believe that improvements may be made to the sciences as a whole when individuals become aware of the tools available to them and how these methods may be used—either alone or in combination—to strengthen understanding and conclusions. These sentiments have been shared by the American Statistical Association who recently held a conference focusing on going beyond NHST, expanding their previous stance *p*-values [@Wasserstein2016]. 
 
@@ -3264,43 +3265,62 @@ arow
 
 ```{r effects-pcc-p, echo = FALSE, fig.cap="WHAT DO YOU WANT THIS TO SAY", fig.height=8, fig.width=8}
 overalldata = read.csv("overall_sims.csv")
+overalldata$N = factor(overalldata$N)
+
+overalldata$star = as.factor(as.numeric(overalldata$oomchance <=.05))
 
 none = subset(overalldata, stdev == 11.5)
 small = subset(overalldata, stdev == 3)
 med = subset(overalldata, stdev == .5)
 large = subset(overalldata, stdev == .1)
 
-nonepcc = ggplot(none, aes(oompcc, effect1v2, color = N)) +
-  cleanup + 
-  geom_point() +
-  ylab("Effect Size d Value") + 
-  xlab("OOM PCC Value") + 
-  labs(title="Negligible Effects (d=0.10)") +
-  scale_color_gradient(low = "grey80", high = "black")
+nonepcc = ggplot(none, aes(oompcc, effect1v2)) + 
+         cleanup +
+         geom_point(data = none, aes(shape = star, size = N, color = N)) +
+         xlab("OOM PCC Value") + 
+         ylab("Effect Size d Value") +
+         scale_shape_manual(name = "c-Value",
+                              labels = c(">.05", "<=.05"),
+                              values = c(16,4)) +
+        scale_color_grey() +
+        labs(title="Negligible Effects (d=0.10)") +
+        scale_x_continuous(labels = numform::ff_num(zero = 0))
 
-smallpcc = ggplot(small, aes(oompcc, effect1v2, color = N)) +
-  cleanup + 
-  geom_point() +
-  ylab("Effect Size d Value") + 
-  xlab("OOM PCC Value") + 
-  labs(title="Small Effects (d=0.20)") +
-  scale_color_gradient(low = "grey80", high = "black")
-
-medpcc = ggplot(med, aes(oompcc, effect1v2, color = N)) +
-  cleanup + 
-  geom_point() +
-  ylab("Effect Size d Value") + 
-  xlab("OOM PCC Value") + 
-  labs(title="Medium Effects (d=0.50)") +
-  scale_color_gradient(low = "grey80", high = "black")
-
-largepcc = ggplot(large, aes(oompcc, effect1v2, color = N)) +
-  cleanup + 
-  geom_point() +
-  ylab("Effect Size d Value") + 
-  xlab("OOM PCC Value") + 
-  labs(title="Large Effects (d=0.80)") +
-  scale_color_gradient(low = "grey80", high = "black")
+smallpcc = ggplot(small, aes(oompcc, effect1v2)) + 
+         cleanup +
+         geom_point(data = small, aes(shape = star, size = N, color = N)) +
+         xlab("OOM PCC Value") + 
+         ylab("Effect Size d Value") +
+         scale_shape_manual(name = "c-Value",
+                              labels = c(">.05", "<=.05"),
+                              values = c(16,4)) +
+        scale_color_grey() +
+        labs(title="Small Effects (d=0.20)") +
+        scale_x_continuous(labels = numform::ff_num(zero = 0))
+  
+medpcc = ggplot(med, aes(oompcc, effect1v2)) + 
+         cleanup +
+         geom_point(data = med, aes(shape = star, size = N, color = N)) +
+         xlab("OOM PCC Value") + 
+         ylab("Effect Size d Value") +
+         scale_shape_manual(name = "c-Value",
+                              labels = c(">.05", "<=.05"),
+                              values = c(16,4)) +
+        scale_color_grey() +
+        labs(title="Medium Effects (d=0.50)") +
+        scale_x_continuous(labels = numform::ff_num(zero = 0))
+  
+largepcc = ggplot(large, aes(oompcc, effect1v2)) + 
+         cleanup +
+         geom_point(data = large, aes(shape = star, size = N, color = N)) +
+         xlab("OOM PCC Value") + 
+         ylab("Effect Size d Value") +
+         scale_shape_manual(name = "c-Value",
+                              labels = c(">.05", "<=.05"),
+                              values = c(16,4)) +
+        scale_color_grey() +
+        labs(title="Large Effects (d=0.80)") +
+        scale_x_continuous(labels = numform::ff_num(zero = 0))
 
 ####put the graphs together####
 legend = get_legend(nonepcc)
