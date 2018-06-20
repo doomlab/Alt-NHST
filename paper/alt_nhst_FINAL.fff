@@ -24,8 +24,14 @@ for each analysis given effect size and sample size.}
 \ifnextchar[{\eatarg}{}
 
 \centering
-\includegraphics{alt_nhst_FINAL_files/figure-latex/effects-pcc-p-1.pdf}
-\caption{\label{fig:effects-pcc-p}WHAT DO YOU WANT THIS TO SAY}
+\includegraphics{alt_nhst_FINAL_files/figure-latex/effects-pcc-d-1.pdf}
+\caption{\label{fig:effects-pcc-d}PCC and c-values plotted against observed
+effect size (\emph{d}-values) given effect size and sample size
+conditions. Xs indicate simulations with c-values \textless{} .05,which
+were binned as significant if they were found in conjunction with PCC
+values over .50. Point size and color indicates sample size wherein
+larger samples are lighter colors. Please note that the key for the
+entire set of graphics is in the bottom right hand corner.}
 \end{figure*}
 \efloatseparator
  
