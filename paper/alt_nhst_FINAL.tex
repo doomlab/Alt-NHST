@@ -240,16 +240,16 @@ beyond NHST, expanding their previous stance \emph{p}-values
 
 Therefore, we undertook this project to show researchers how two
 alternative paradigms compare to NHST in terms of their methodological
-design, statistical interpretations, and (WHAT WORD SHOULD GO HERE?)
-robustness. Herein, we will discuss the following methodologies: NHST,
-Bayes Factor comparisons, and Observation Oriented Modeling. The three
-approaches will be compared via this simulated data using a 3 timepoint
-repeated measures design with a Likert-type scale as the outcome
-variable. One goal of this study is to introduce social scientists to
-Observation Oriented Modeling (OOM), as it is a relatively new paradigm
-that is readily interpretable and, as we will show, useful in these
-contexts. Additionally, we aim to discuss the conclusions these three
-methods would make given the same data, and to compare how often these
+design, statistical interpretations, and comparative robustness. Herein,
+we will discuss the following methodologies: NHST, Bayes Factor
+comparisons, and Observation Oriented Modeling. The three approaches
+will be compared via this simulated data using a 3 timepoint repeated
+measures design with a Likert-type scale as the outcome variable. One
+goal of this study is to introduce social scientists to Observation
+Oriented Modeling (OOM), as it is a relatively new paradigm that is
+readily interpretable and, as we will show, useful in these contexts.
+Additionally, we aim to discuss the conclusions these three methods
+would make given the same data, and to compare how often these
 methodologies agree within different data environments (i.e.~given
 varying sample sizes and effect sizes). We hope that by discussing these
 methodologies in terms of a simple statistical analysis researchers will
@@ -343,7 +343,9 @@ procedure in practice:
 \] 2) Select an \(\alpha\) level that is appropriate given the context
 of your research, your analysis plan, and your research question, and do
 not blindly adopt an omnibus critical \emph{p}-value (Lakens et al.,
-2018).
+2018; Lehmann, 2011).Again, we reiterate that although this is not
+necessarily how all researchers approach these tests, this is the most
+apt way to do so.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -369,7 +371,7 @@ Depending on the statistical test, data must also be checked for equal
 variances, sphericity, and additivity. These assumptions can be checked
 and, if necessary, corrected for; however, violations of these
 assumptions can lead to inaccurate decisions and attenuated power.
-Further, with many analysis programs, data is required to have no
+Further, with many analysis programs, data are required to have no
 missing values.
 
 While this approach is widely used, there are many limitations
@@ -424,7 +426,7 @@ where our analysis may be perceived to fall on the line. Objective
 Bayesian analysis is closest to frequentist theory, as the aim is to
 minimize the influence of priors through the use of non-informative
 priors (such as Jefferys priors that are designed to be invariant under
-reparameterization Datta \& Ghosh, 1996); thus, the data is allowed to
+reparameterization Datta \& Ghosh, 1996); thus, the data are allowed to
 maximally effect the posterior distribution. Further, objective Bayesian
 methods are influenced by the same quality criteria that frequentist
 methods used, including Type I error rate and power (Sellke, Bayarri, \&
@@ -451,6 +453,7 @@ The procedure behind BF comparisons requires two steps.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
+\tightlist
 \item
   One must design two models for the data. For our purposes, the first
   of these models will be the null model, which states that there are no
@@ -460,19 +463,26 @@ The procedure behind BF comparisons requires two steps.
   \(\mu\) and variance \(\sigma^2\)). The second model for these
   analyses is the effects model, which states that each mean (\(\mu\))
   is allowed to be different from the grand mean by some amount
-  (\(\alpha\); as we now have observations being drawn from three
+  (\(\delta\); as we now have observations being drawn from three
   potential normal distributions, all of which may have a different mean
   value, but the same variance). These can be operationalized as
-  follows: CHANGE EFFECT (ALPHA) TO A DIFFERENT LETTER SO AS NOT TO
-  CONFUSE WITH CUTOFF? \[
-  \begin{aligned}
-    H_0: X_{ij} \sim N(\mu, \sigma^2) \\
-    H_A: X_{ij} \sim N(\mu + \alpha_i, \sigma^2)
-  \end{aligned}
-  \] In designing these models, one must choose the prior distributions
-  that are believed to describe the data. Reasonable expectancies of
-  where the data lie should be incorporated in this decision based on
-  previous research into the studied phenomena (Rouder et al., 2012).
+  follows:
+\end{enumerate}
+
+\[
+\begin{aligned}
+  H_0: X_{ij} \sim N(\mu, \sigma^2) \\
+  H_A: X_{ij} \sim N(\mu + \delta_i, \sigma^2)
+\end{aligned}
+\] In designing these models, one must choose the prior distributions
+that are believed to describe the data. Reasonable expectancies of where
+the data lie should be incorporated in this decision based on previous
+research into the studied phenomena (Rouder et al., 2012).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
 \item
   Analyze the data given the selected priors and models. Consider the BF
   and use the \(BF_{10}\) as evidence of how one should update their
@@ -553,7 +563,7 @@ in a three-level Ordinal Pattern Analysis (OPA), a person would be
 tallied as a \enquote{complete match} if the ordinal pattern of his/her
 data matched the expected ordinal pattern across all three levels.
 Imagine we have set a pattern that designates Time 1 \textless{} Time 2
-\textless{} Time 3. For example, imagime we have data for two
+\textless{} Time 3. For example, imagine we have data for two
 hypothetical individuals. Person A has values of 3, 4, and 5 at
 timepoints 1, 2, and 3, respectively, while person B has values of 4, 5,
 and 2. We can see that Person A matched the pattern completely, and
@@ -757,7 +767,7 @@ understanding the odds of model ratios, not necessarily the presence or
 absence of an effect. However, given that we wanted to compare the
 conclusions one would reach given this data in a Bayesian paradigm to
 that of a frequentist paradigm, these bins are used as a convenient
-comparison to the freuqntist procedures using set criteria for
+comparison to the frequentist procedures using set criteria for
 interpretation (Morey, 2015). Should any reader become curious how a
 different set of binning values affect our analyses, all code and data
 are at their disposal at \url{https://osf.io/u9hf4/}.
@@ -796,7 +806,7 @@ Analyses Performed section above. Next, we calculated the percentage of
 these analyses that would be classified into each of these categories,
 separated about by statistical analysis, sample size, and effect size.
 These estimates were binned across both the overall and follow up
-\emph{post hoc} tests, and the combined data is presented for this
+\emph{post hoc} tests, and the combined data are presented for this
 analysis. Since all three categories of binning total to 100\%, we
 present only the significant and non-significant results. All analyses
 and findings can be found online at \url{https://osf.io/u9hf4/}.
@@ -848,6 +858,37 @@ medium effect sizes, approximately a quarter of estimates were
 non-significant, illustrating the conservative nature of OOM
 interpretations.
 
+Figure \ref{fig:effects-pcc-d} depicts the relationship between an
+effect size (the difference between time 1 and time 2) and the
+corresponding PCC values (the percent of respondents that exhibit the
+defined response pattern). As these metrics represent quite different
+concepts---one measuring the magnitude of the difference between two
+data points while the other disregards magnitude and represents the
+proportion of the sample following the given ordinal pattern across all
+three time points---it is interesting how well they track together. We
+can see that as the true effect size increases, estimates for the effect
+size are less likely to fall in the negative range and more likely to
+grow in size. Additionally, it is apparent that as sample size
+increases, estimates for both \emph{d} and PCC become more precise.
+Therefore, we believe that PCC offers researchers the ability not only
+to confirm that their effect size is reasonable, but also to better
+understand the pattern their data are following, especially if an
+observed effect size contradicts previous literature. For example, let
+us assume there is previous literature that states that a small positive
+effect exists, such that responses should increase from time 1 to time
+2. Under conditions of a true small effect (\emph{d}=0.20) and sample
+size of 30, our graph shows us that it is possible to obtain a positive
+medium effect size (\emph{d}=0.50; indicating the time 1 is more extreme
+than time 2). Upon finding these contradicting results, the researcher
+could further seek to understand the pattern their data are following by
+computing the PCC value for the experiment. This would revealing a PCC
+value above .5, indicating that although the average magnitude of change
+suggests that time 1 is larger than time 2, in fact, in over half of
+respondents, not only are values for time 1 smaller than time 2, but
+values for time 2 are also smaller than values for time 3. This gives
+the researcher a richer piece of information, which can help to describe
+their results in a more nuanced fashion.
+
 \begin{figure}
 \centering
 \includegraphics{alt_nhst_FINAL_files/figure-latex/effects-graph-sig-1.pdf}
@@ -866,8 +907,14 @@ for each analysis given effect size and sample size.}
 
 \begin{figure}
 \centering
-\includegraphics{alt_nhst_FINAL_files/figure-latex/effects-pcc-p-1.pdf}
-\caption{\label{fig:effects-pcc-p}WHAT DO YOU WANT THIS TO SAY}
+\includegraphics{alt_nhst_FINAL_files/figure-latex/effects-pcc-d-1.pdf}
+\caption{\label{fig:effects-pcc-d}PCC and c-values plotted against observed
+effect size (\emph{d}-values) given effect size and sample size
+conditions. Xs indicate simulations with c-values \textless{} .05,which
+were binned as significant if they were found in conjunction with PCC
+values over .50. Point size and color indicates sample size wherein
+larger samples are lighter colors. Please note that the key for the
+entire set of graphics is in the bottom right hand corner.}
 \end{figure}
 
 \subsection{Percent Agreement}\label{percent-agreement}
@@ -1054,28 +1101,30 @@ have \enquote{no ontological basis} (Rosnow \& Rosenthal, 1989, p.
 
 Instead, we need to embrace the multitude of perspectives available to
 us and to begin to employ these diverse approaches. While NHST can still
-serve us well when properly utilized, it is important for researchers
+serve us well when properly utilized, it is important for researchers to
 understand that different methods seek to answer different questions,
 and that we need to ensure that we are using the right method to answer
 a given question. When evaluating evidence in order to answer these
 questions we must be wary of looking for significant differences and
-focus instead to find meaningful differences. By combining these
+focus instead on finding meaningful differences. By combining these
 approaches we may be better able to qualify the strength of our evidence
 and discuss a more nuanced version of our data. Additionally, while all
-of these methods have drawbacks, when taken combined these methods can
-begin to overcome many of these limitations. For instance, given a large
-sample size, we would expect BF values to be very large and
+of these methods have drawbacks, when used in combination these methods
+can begin to overcome many of these limitations. For instance, given a
+large sample size, we would expect BF values to be very large and
 \emph{p}-values to be very small, both indicating that the null
 model/hypothesis should not be supported. However, if we also have a PCC
 value of .30, we may decide that it is possible that this effect is very
-small and possibly negligible. This multifaceted approach may help to
+small and possibly negligible. This multifaceted approach can help to
 curb our enthusiasm over small or negligible \enquote{significant}
 effects that may not be practically meaningful and possibly may not
 replicate. Regardless if analyses agree or disagree on the presence of
-an effect, a researcher can investigate the size of the effect and
-discuss conclusions accordingly. Each methodology behaves slightly
-differently in given data environments, which might begin to highlight
-meaningful differences when discussed together.
+an effect, a researcher can investigate the direction and size of the
+effect, the proportion of data that agrees or disagrees with the
+direction of the effect, and discuss conclusions accordingly. Each
+methodology behaves slightly differently in given data environments,
+which might begin to highlight meaningful differences when discussed
+together.
 
 Some may contest that all of these analyses are capable of being hacked,
 like \emph{p}-values, through researcher degrees of freedom, choice of
