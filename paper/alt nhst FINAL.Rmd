@@ -55,9 +55,9 @@ library("papaja")
 library(numform)
 #knitr::opts_chunk$set(cache = TRUE)
 ```
-Recent events in psychological science have prompted concerns within the discipline regarding research practices and ultimately the validity and reproducibility of published reports [@Etz2016; @Lindsay2015; @OpenScienceCollaboration2015; @VanElk2015]. One often discussed matter is over-reliance, abuse, and potential hacking of *p*-values produced by frequentist null hypothesis significance testing (NHST), as well as misinterpretations of NHST results [@Gigerenzer2004; @Ioannidis2005; @Simmons2011]. We agree with these concerns and believe that many before us have voiced sound, generally accepted opinions on potential remedies, such as an increased focus on effect sizes [@Cumming2008; @Lakens2013; @Maxwell2015; @Nosek2012]. However, other suggestions have been met with less enthusiasm, including a recent article by @Benjamin2017 advocating that researchers should begin thinking only of *p*-values less than .005 as "statistically significant", thus changing $\alpha$ levels to control Type I error rates. Additionally, @Pericchi2016 promote the use of fluctuating $\alpha$ levels as a function of sample size to assist with these errors. We argue it is not the threshold, or critical *p*-, that needs to be rethought when seeking evidence, but rather if a *p*-value should be utilized at all, and, if so, what that *p*-value can tell you in relation to other indicators. While NHST and *p*-values may have merit, researchers have a wealth of other statistical tools available to them. We believe that improvements may be made to the sciences as a whole when individuals become aware of the tools available to them and how these methods may be used—either alone or in combination—to strengthen understanding and conclusions. These sentiments have been shared by the American Statistical Association who recently held a conference focusing on going beyond NHST, expanding their previous stance *p*-values [@Wasserstein2016]. 
+Recent events in psychological science have prompted concerns within the discipline regarding research practices and ultimately the validity and reproducibility of published reports [@Etz2016; @Lindsay2015; @OpenScienceCollaboration2015; @VanElk2015]. One often discussed matter is over-reliance, abuse, and potential hacking of *p*-values produced by frequentist null hypothesis significance testing (NHST), as well as misinterpretations of NHST results [@Gigerenzer2004; @Ioannidis2005; @Simmons2011]. We agree with these concerns and believe that many before us have voiced sound, generally accepted opinions on potential remedies, such as an increased focus on effect sizes [@Cumming2008; @Lakens2013; @Maxwell2015; @Nosek2012]. However, other suggestions have been met with less enthusiasm, including a recent article by @Benjamin2017 advocating that researchers should begin thinking only of *p*-values less than .005 as "statistically significant", thus changing $\alpha$ levels to control Type I error rates. Additionally, @Pericchi2016 promote the use of fluctuating $\alpha$ levels as a function of sample size to assist with these errors. We argue it is not the threshold, or critical *p*, that needs to be rethought when seeking evidence, but rather if a *p*-value should be utilized at all, and, if so, what that *p*-value can tell you in relation to other indicators. While NHST and *p*-values may have merit, researchers have a wealth of other statistical tools available to them. We believe that improvements may be made to the sciences as a whole when individuals become aware of the tools available to them and how these methods may be used, either alone or in combination, to strengthen understanding and conclusions. These sentiments have been shared by the American Statistical Association who recently held a conference focusing on going beyond NHST, expanding their previous stance *p*-values [@Wasserstein2016]. 
 
-Therefore, we undertook this project to show researchers how two alternative paradigms compare to NHST in terms of their methodological design, statistical interpretations, and comparative robustness. Herein, we will discuss the following methodologies: NHST, Bayes Factor comparisons, and Observation Oriented Modeling. The three approaches will be compared via this simulated data using a 3 timepoint repeated measures design with a Likert-type scale as the outcome variable. One goal of this study is to introduce social scientists to Observation Oriented Modeling (OOM), as it is a relatively new paradigm that is readily interpretable and, as we will show, useful in these contexts. Additionally, we aim to discuss the conclusions these three methods would make given the same data, and to compare how often these methodologies agree within different data environments (i.e., given varying sample sizes and effect sizes). We hope that by discussing these methodologies in terms of a simple statistical analysis researchers will be able to easily compare and contrast methodologies. For this discussion, it is important to understand their historical background, procedural steps, and limitations, which are outlined below. After this discussion, we describe a simulation study comparing methodologies and $\alpha$ criteria, and end with potential implications for researchers.
+Therefore, we undertook this project to show researchers how two alternative paradigms compare to NHST in terms of their methodological design, statistical interpretations, and comparative robustness. Herein, we will discuss the following methodologies: NHST, Bayes Factor comparisons, and Observation Oriented Modeling. The three approaches will be compared via this simulated data using a three timepoint repeated measures design with a Likert-type scale as the outcome variable. One goal of this study is to introduce social scientists to Observation Oriented Modeling (OOM), as it is a relatively new paradigm that is readily interpretable and, as we will show, useful in these contexts. Additionally, we aim to discuss the conclusions these three methods would make given the same data, and to compare how often these methodologies agree within different data environments (i.e., given varying sample sizes and effect sizes). We hope that by discussing these methodologies in terms of a simple statistical analysis researchers will be able to easily compare and contrast methodologies. For this discussion, it is important to understand their historical background, procedural steps, and limitations, which are outlined below. After this discussion, we describe a simulation study comparing methodologies and $\alpha$ criteria, and end with potential implications for researchers.
 
 
 # Null Hypothesis Significance Testing
@@ -66,13 +66,13 @@ Therefore, we undertook this project to show researchers how two alternative par
 
 Many attribute the frequentist NHST procedure to Ronald A. Fisher [@Fisher1932]. However, Fisher's ideas are a far cry from the NHST procedure implemented today. Fisher believed in creating one "null" hypothesis, which he described as a hypothesis to be "nullified", or shown incorrect, not as a zero-difference hypothesis [@Lehmann2011]. He also believed that the use of any omnibus level of significance showed a "lack of statistical thinking" [@Gigerenzer2004a]. He instead believed we should report the exact significance value of a test and let others make their own decision about the claims, which is more in line with the typical reporting recommendations provided by the American Psychological Association [@AmericanPsychologicalAssociation2010]. Fisher spoke of this work to William Gosset, the man who created the Student's *t*-test and contributed work on the correlation coefficient [@Lehmann2011]. Gosset in turn discussed the idea of an alternative hypothesis, a piece not included in Fisher's procedure, with decision theorist Egon Pearson.
 
-From this discussion, Egon Pearson and Jerzy Neyman created Neyman-Pearson decision theory. This theory consists of two hypotheses (i.e., null and alternative) and a binary decision criteria [i.e., significant or not, @Lehmann1993]. However, this procedure created the possibility of researcher decision errors [@Dienes2008]. A researcher may falsely reject the null hypothesis (Type I error, $\alpha$) or falsely fail to reject the null (Type II error, $\beta$). $\alpha$ levels set the binary decision criteria, which are used as the critical *p*-value for hypothesis testing (i.e., *p* < .05), and are thus seen as evidence to reject the null hypothesis. $\beta$ and power are inherently linked (Power = 1-$\beta$), so as the likelihood of finding a true effect increases beta decreases [@Maxwell2004]. Although $\alpha$ values can be chosen to be quite small, and methods (such as decreasing error variance or using a 1-tailed test as opposed to a 2-tailed test) can decrease $\beta$ values as well, a researcher can never know if they have made the correct decision, or a decision error. Thus, Neyman and Pearson clearly state that a hypothesis should not be blindly supported based solely on the estimates of one statistical test, and that replication and reproduction of results are imperative. The recent work of the @OpenScienceCollaboration2015 has also highlighted the need for replication studies and interpretation of results in an appropriate context. Additionally, Neyman and Pearson emphasized that use of set $\alpha$s and $\beta$s is illogical and sought instead for researchers to adjust their analysis to the needs of the particular task at hand [@Gigerenzer2004].
+From this discussion, Egon Pearson and Jerzy Neyman created Neyman-Pearson decision theory. This theory consists of two hypotheses (i.e., null and alternative) and a binary decision criteria [i.e., significant or not, @Lehmann1993]. However, this procedure created the possibility of researcher decision errors [@Dienes2008]. A researcher may falsely reject the null hypothesis (Type I error, $\alpha$) or falsely fail to reject the null (Type II error, $\beta$). $\alpha$ levels set the binary decision criteria, which are used as the critical *p*-value for hypothesis testing (i.e., *p* < .05), and are thus seen as evidence to reject the null hypothesis. $\beta$ and power are inherently linked (Power = 1-$\beta$), so as the likelihood of finding a true effect increases beta decreases [@Maxwell2004]. Although $\alpha$ values can be chosen to be quite small, and methods (such as decreasing error variance or using a one-tailed test in contrast to a two-tailed test) can decrease $\beta$ values as well, a researcher can never know if they have made the correct decision, or a decision error. Thus, Neyman and Pearson clearly state that a hypothesis should not be blindly supported based solely on the estimates of one statistical test, and that replication and reproduction of results are imperative. The recent work of the @OpenScienceCollaboration2015 has also highlighted the need for replication studies and interpretation of results in an appropriate context. Additionally, Neyman and Pearson emphasized that use of set $\alpha$s and $\beta$s is illogical and sought instead for researchers to adjust their analysis to the needs of the particular task at hand [@Gigerenzer2004].
 
 ## Typical NHST Procedure
 
 Neither Fisher's hypothesis testing, nor Neyman-Pearson decision theory quite match the NSHT procedure as it is taught and applied today. Psychologists have largely adopted an amalgamation of the two approaches. Here, we attempt to outline what we believe is the most appropriate way to carry out the traditional NHST procedure in the context of a repeated measures ANOVA with three levels, although we note that this set of steps is not necessarily how researchers carry out the procedure in practice:
 
-  1) Create two hypotheses, one to be "nullified" and one "alternative" hypothesis. Within this repeated measures framework, most researchers would define a null hypothesis ($H_0$) that indicates of all three time point population means are equal. The alternative hypothesis ($H_A$) would then be that not all of the population means are equal. These can be operationalized in our example data as follows (note that for $H_A$ we use a common short hand to denote the model):
+  1) Create two hypotheses, one to be "nullified" and one "alternative" hypothesis. Within this repeated measures framework, most researchers would define a null hypothesis ($H_0$) that indicates of all three time point population means are equal. The alternative hypothesis ($H_A$) would then be that not all of the population means are equal. These can be operationalized in our example data as follows (note that for $H_A$, we use a common short hand to denote the model wherein any difference is hypothesized across the possible combinations of [in]equality):
 
 $$
 \begin{aligned}
@@ -81,11 +81,11 @@ $$
 \end{aligned}
 $$
   
-  2) Select an $\alpha$ level that is appropriate given the context of your research, your analysis plan, and your research question, and do not blindly adopt an omnibus critical *p*-value [@Lehmann2011; @Lakens2017]. Again, we reiterate that although this is not necessarily how all researchers approach these tests, this is the most apt way to do so. 
+  2) Select an $\alpha$ level that is appropriate given the context of your research, your analysis plan, and your research question, and do not blindly adopt an omnibus critical *p*-value [@Lehmann2011; @Lakens2017]. Again, we reiterate that $\alpha$ justification and selection is not necessarily how all researchers approach these tests. 
 
   3) Compute your given analysis and identify the corresponding *p*-value. If your *p*-value is less than the chosen $\alpha$, reject the null hypothesis and state that there appear to be differences between some of your population means; however, if your *p*-value is greater than or equal to the value selected, do not reject the null hypothesis, and state that a difference between the population means could not be supported.
   
-While the NHST procedure itself gives us testable models, the specific analysis used to test these models here, the repeated measures ANOVA with 3 levels, requires some additional assumptions that must be met before an analysis is begun [@Tabachnick2012]. Data need to have no outlying or influential observations. Data must have a normal sampling distribution, be linearly related, and have independent errors. Depending on the statistical test, data must also be checked for equal variances, sphericity, and additivity. These assumptions can be checked and, if necessary, corrected for; however, violations of these assumptions can lead to inaccurate decisions and attenuated power. Further, with many analysis programs, data are required to have no missing values.
+While the NHST procedure itself gives us testable models, the specific analysis used to test these models here, the repeated measures ANOVA with three levels, requires some additional assumptions that must be met before an analysis is begun [@Tabachnick2012]. Data need to have no outlying or influential observations. Data must have a normal sampling distribution, be linearly related, and have independent errors. Depending on the statistical test, data must also be checked for equal variances, sphericity, and additivity. These assumptions can be checked and, if necessary, corrected for; however, violations of these assumptions can lead to inaccurate decisions and attenuated power. Further, with many analysis programs, data are required to have no missing values.
 
 While this approach is widely used, there are many limitations associated with it. First, this method can be sensitive to violations of the stated assumptions, and especially, if the sample size is not large enough to create a normal sampling distribution [@Tabachnick2012]. Even if assumptions are met, or nonparametric tests are implemented (e.g., for situations where a normal distribution assumption cannot be met), this methodology does not allow a researcher to state anything about the absence of an effect (i.e., no true differences). Through traditional NHST, one can only discuss evidence regarding the alternative hypothesis; one can never support the null hypothesis through this procedure. Given the recent findings regarding reproducibility, showing support for the absence of an effect can be even more crucial than showing support for the presence of an effect [@Bakker2012; @Lakens2017a]. 
 
@@ -109,7 +109,7 @@ $$
   H_A: X_{ij} \sim N(\mu + \delta_i, \sigma^2)
 \end{aligned}
 $$
-  In designing these models, one must choose the prior distributions that are believed to describe the data. Reasonable expectancies of where the data lie should be incorporated in this decision based on previous research into the studied phenomena [@Rouder2012]. 
+    In designing these models, one must choose the prior distributions that are believed to describe the data. Reasonable expectancies of where the data lie should be incorporated in this decision based on previous research into the studied phenomena [@Rouder2012]. 
   
   2) Analyze the data given the selected priors and models. Consider the BF and use the $BF_{10}$ as evidence of how one should update their beliefs about the models.
 
@@ -132,7 +132,7 @@ In OOM, traditional *p*-values are no longer utilized [@Grice2011]. As a seconda
 
 ## Typical Procedure
 
-The OPA is analogous to repeated measures ANOVA and contains two steps.
+OPA is analogous to repeated measures ANOVA and contains two steps.
 
   1) Designate the expected ranked pattern: each variable as being higher, lower, or equal to the other variables. For instance, for our analyses we defined the following pattern of individual responses $X_i$, whereby the first time point should be less than the second time point which should be less than the third time point. This pattern can be operationalized as follows:
 
@@ -140,7 +140,7 @@ $$
   X_{i_1} < X_{i_2} < X_{i_3}   
 $$
 
-  2) Analyze the data using the OPA. Consider the PCC (the percentage of individuals matching the ordinal hypothesis) and *c*-values in light of the data and use your best judgment as to whether or not the data conform to the expected pattern. This analysis only requires the assumption that the data exists such that a pattern may be designed.
+  2) Analyze the data using OPA. Consider the PCC (the percentage of individuals matching the ordinal hypothesis) and *c*-values in light of the data and use your best judgment as to whether or not the data conform to the expected pattern. This analysis only requires the assumption that the data exists such that a pattern may be designed.
 
 As with all of these methodologies, limitations do exist. This approach is largely concerned with patterns of responses, not with magnitudes of differences, which may be an integral piece of information to some researchers. Unlike all approaches mentioned before, we do not discuss the probability of some data given our hypothesis here, and instead focus on the observed responses of the individual and how it may or may not behave as expected. Finally, similar to the Bayesian analysis, long-run error rates are not discussed in this methodology.
 
@@ -657,17 +657,17 @@ Means, mean differences between levels, and the confidence intervals for each me
 
 ### Parametric NHST - Repeated Measures ANOVA
 
-Repeated measures ANOVA using the *ezANOVA()* function in the *ez* library was utilized with type three sum of squares [@Lawrence2017]. This style of ANOVA is used to compare the same individuals across multiple or all conditions in an experiment. The null hypothesis states that there are no significant differences between population means, and the research hypothesis posts that there are differences between some population means, but does not specify which population means may differ, just that one or more will differ as the alternative. This test uses the *F* distribution focusing on *p* values. 
+Repeated measures ANOVA using the *ezANOVA()* function in the *ez* library was utilized with type three sum of squares [@Lawrence2017]. This style of ANOVA is used to compare the same individuals across multiple or all conditions in an experiment. The null hypothesis states that there are no significant differences between population means, and the research hypothesis posits that there are differences between some population means, but does not specify which population means may differ, just that one or more will differ as the alternative. This test uses the *F* distribution focusing on *p* values. 
 
 To determine where differences may exist, *post hoc* dependent *t*-tests are normally analyzed in the event of a significant *F*-ratio. We did not run all pairwise comparisons, instead focusing on the linear trend simulated by comparing level one to two and level two to three. This set of comparisons also controlled the effect size between comparisons, as comparing level one to three would have doubled the effect size. However, we assumed that typical researchers might compare all three pairwise combinations in practice and used a Bonferroni correction across all three possible pairwise combinations to calculate *p* values for *post hoc* tests. Therefore, while we only discuss the two comparisons, we utilized the more stringent cutoff of the Bonferroni correction as we believe this procedure would be how the majority of researchers would handle the data. Interested readers can find all three comparison values in the complete dataset online. Following traditional usage, a *p*-value of less than .05 was binned as significant, whereas *p*-values ranging from .10 to .05 were binned as marginally significant. Any *p*-values larger than .10 were binned as non-significant. A second set of *p*-value comparisons was calculated given @Benjamin2017's suggestion to change $\alpha$ criterion to less than .005. Any *p*-value less than .005 was binned as significant, while data ranging from .005 to .10 was marginal or suggestive, and *p* > .10 was non-significant.
 
 ### Bayesian Analysis: Bayes Factor
 
-We compared a null model with one grand mean for all three levels to an effects model wherein means were allowed to differ using the *BayesFactor* package [@Morey2015b]. The default in this package is a Jeffreys prior with a fixed rscale (0.5) and random rscale (1.0). BF were calculated, and follow up *t*-test BFs were computed for the same two comparisons as in the previous models using default priors from the *BayesFactor* package (e.g., Jeffreys prior for population variance, Cauchy prior for standardized effect size). To compare Bayesian results to other statistical methods, we used recommendations from @Kass1995a to bin results into weak evidence (BFs < 3), positive evidence (e.g., akin to marginal *p*-values, BFs = 3-20), and strong evidence (BFs > 20). We must stress here that BF interpretation should focus on understanding the odds of model ratios, not necessarily the presence or absence of an effect. However, given that we wanted to compare the conclusions one would reach given this data in a Bayesian paradigm to that of a frequentist paradigm, these bins are used as a convenient comparison to the frequentist  procedures using set criteria for interpretation [@Morey2015c]. Should any reader become curious how a different set of binning values affect our analyses, all code and data are at their disposal at https://osf.io/u9hf4/. 
+We compared a null model with one grand mean for all three levels to an effects model wherein means were allowed to differ using the *BayesFactor* package [@Morey2015b]. The default in this package is a Jeffreys prior with a fixed rscale (0.5) and random rscale (1.0). BF were calculated, and follow up *t*-test BFs were computed for the same two comparisons as in the previous models using default priors from the *BayesFactor* package (e.g., Jeffreys prior for population variance, Cauchy prior for standardized effect size). To compare Bayesian results to other statistical methods, we used recommendations from @Kass1995a to bin results into weak evidence (BFs < 3), positive evidence (e.g., akin to marginal *p*-values, BFs = 3-20), and strong evidence (BFs > 20). We must stress here that BF interpretation should focus on understanding the odds of model ratios, not necessarily the presence or absence of an effect. However, given that we wanted to compare the conclusions one would reach given this data in a Bayesian paradigm to that of a frequentist paradigm, these bins are used as a convenient comparison to the frequentist  procedures using set criteria for interpretation [@Morey2015c]. Should any reader become curious how a different set of binning values affect our analyses, all code and data are at their disposal at https://osf.io/u9hf4/, and this manuscript was written with the *papaja* package allowing one to view the code inline with this text [@Aust2017]. 
 
 ### OOM: Ordinal Pattern Analysis
 
-An *R* script of the Ordinal Pattern Analysis from @Grice2015's OOM program was provided from @Sauer2016. We set the expected ranked pattern as level one less than level two less than level three. Once this pattern was defined, we then analyzed the data to see if each individual's set of observations matched this expected ordinal pattern. PCC values were generated, and *c*-values were computed by randomizing the data 1,000 times. Solely for purposes of comparison, we used the following significance coding schema: significant studies had a high PCC value (.50 < PCC < 1.00) and a low *c*-value (*c* < .05), marginal studies had a high PCC value and a moderate *c*-value (.05 < *c* < .10), and non-significant studies had low PCC values (PCC < .50), regardless of their *c*-values. Again, we must stress that this paradigm eschews binning estimates and that our use of bins was a) discussed and decided upon before data analysis, and b) created only for the purposes of comparing this new methodologies possible conclusions to that of a frequentist framework. We welcome interested readers to explore the data more, defining their own bins and viewing the affects, by viewing and editing our code at https://osf.io/u9hf4/.
+An *R* script of the Ordinal Pattern Analysis from @Grice2015's OOM program was provided from @Sauer2016. We set the expected ranked pattern as level one less than level two less than level three. Once this pattern was defined, we then analyzed the data to see if each individual's set of observations matched this expected ordinal pattern. PCC values were generated, and *c*-values were computed by randomizing the data 1,000 times. Solely for purposes of comparison, we used the following significance coding schema: significant studies had a high PCC value (.50 < PCC < 1.00) and a low *c*-value (*c* < .05), marginal studies had a high PCC value and a moderate *c*-value (.05 < *c* < .10), and non-significant studies had low PCC values (PCC < .50), regardless of their *c*-values. Again, we must stress that this paradigm eschews binning estimates and that our use of bins was a) discussed and decided upon before data analysis, and b) created only for the purposes of comparing this new methodologies possible conclusions to that of a frequentist framework. We welcome interested readers to explore the data more, defining their own bins and viewing the affects, by viewing and editing our code online.
 
 # Results
 ```{r percent-sig-05, eval=FALSE, include=FALSE}
@@ -3004,18 +3004,13 @@ write.csv(percentnonsig, file = "PercentNonSig.csv")
 
 ## Percent of Estimates
 
-For all simulations, we first binned the estimates into significant, marginal, and non-significant effect categories as described in the Analyses Performed section above. Next, we calculated the percentage of these analyses that would be classified into each of these categories, separated about by statistical analysis, sample size, and effect size. These estimates were binned across both the overall and follow up *post hoc* tests, and the combined data are presented for this analysis. Since all three categories of binning total to 100%, we present only the significant and non-significant results. All analyses and findings can be found online at https://osf.io/u9hf4/. Significant critical omnibus estimates are presented in Figure \@ref(fig:effects-graph-sig). All figures discussed in this manuscript may be viewed as interactive graphics on our OSF page through a provided Shiny app. In Figures with sample size on the axes, we log transformed *N* to allow for visual distinction between sample sizes, as smaller *N* values were compressed when using the *N* = 10 to 1000 on the axis. Both *N* and log(*N*) can be found in the Shiny app, along with the ability to zoom in to specific ranges of sample size.
+For all simulations, we first binned the estimates into significant, marginal, and non-significant effect categories as described in the Analyses Performed section above. Next, we calculated the percentage of these analyses that would be classified into each of these categories, separated about by statistical analysis, sample size, and effect size. These estimates were binned across both the overall and follow up *post hoc* tests, and the combined data are presented for this analysis. Since all three categories of binning total to 100%, we present only the significant and non-significant results. Significant critical omnibus estimates are presented in Figure \@ref(fig:effects-graph-sig). All figures discussed in this manuscript may be viewed as interactive graphics on our OSF page through a provided Shiny app. In Figures with sample size on the axes, we log transformed *N* to allow for visual distinction between sample sizes, as smaller *N* values were compressed when using the *N* = 10 to 1000 on the axis. Both *N* and log(*N*) can be found in the Shiny app, along with the ability to zoom in to specific ranges of sample size.
 
 For negligible effects at $p$ < .05 (solid lines), we found that NSHT analyses showed a predictable Type I error bias, in that they detected significant estimates with extremely small *d* values as sample size increased. Binned BF values showed a similar pattern, but were more conservative with less percent significant estimates. OOM analyses were the most conservative, essentially never detecting an estimate in the negligible effect simulations. Small effect sizes showed the same pattern for NHST, BF, and OOM results, with the proportion of significant estimates increasing more rapidly and asymptoting at a smaller sample size than negligible effects. At medium effect sizes, NHST analyses nearly always detected significant estimates, while BF and OOM analyses would have been considered significant around 75% of the time. Interestingly, with large effect sizes, OOM analyses mirrored NHST by always detecting estimates, and BF analyses were generally more conservative except at the largest sample size. Figure \@ref(fig:effects-graph-sig)'s dashed lines indicate the results if values were binned at *p* < .005, and the differences between these results were very subtle. Lowering $\alpha$ reduced the number of significant estimates at small *N* values for all four effect sizes, with more pronounced differences at negligible and small effect sizes. However, the graphs converged to the same conclusion that large enough sample sizes could produce significant results at negligible and small effect sizes. 
 
 Figure \@ref(fig:effects-graph-nonsig) portrays the results for non-significant binned simulations, which were the same for both $\alpha$ criterion. Across all effect sizes, BF and NHST showed similar results, where non-significant estimates were detected at lower sample sizes for negligible and small effect size simulations. At medium and large effect sizes, almost all estimates would have been considered significant, therefore, detection rates for non-significant estimates were around zero. OOM displayed a conservative set of findings, showing nearly 100% non-significant estimates at negligible and small effect sizes (mirroring results from Figure \@ref(fig:effects-graph-sig)). At medium effect sizes, approximately a quarter of estimates were non-significant, illustrating the conservative nature of OOM interpretations. 
 
-Figure \@ref(fig:effects-pcc-d) depicts the relationship between the effect size of time 1 minus time 2 and the corresponding PCC values. These metrics appear to represent different concepts where effect size measures the magnitude of the difference between two data points while PCC disregards magnitude and represents the proportion of the sample following the given ordinal pattern across all three time points. Given these differences, it is interesting how well converge together. 
-
-We can see that as the simulated effect size increases across plot panels, estimates for the effect size are less likely to fall in the negative range and more likely to grow in size. 
-
-Additionally, it is apparent that as sample size increases, estimates for both *d* and PCC become more precise. Therefore, we believe that PCC offers researchers the ability not only to confirm that their effect size is reasonable, but also to better understand the pattern their data are following, especially if an observed effect size contradicts previous literature. For example, let us assume there is previous literature that states that a small positive effect exists, such that responses should increase from time 1 to time 2. Under conditions of a true small effect (*d*=0.20) and sample size of 30, our graph shows us that it is possible to obtain a positive medium effect size (*d*=0.50; indicating the time 1 is more extreme than time 2). Upon finding these contradicting results, the researcher could further seek to understand the pattern their data are following by computing the PCC value for the experiment. This would revealing a PCC value above .5, indicating that although the average magnitude of change suggests that time 1 is larger than time 2, in fact, in over half of respondents, not only are values for time 1 smaller than time 2, but values for time 2 are also smaller than values for time 3. This gives the researcher a richer piece of information, which can help to describe their results in a more nuanced fashion.  
-
+Figure \@ref(fig:effects-pcc-d) depicts the relationship between the effect size of time 1 minus time 2 and the corresponding PCC values. These metrics appear to represent different concepts where effect size measures the magnitude of the difference between two data points while PCC disregards magnitude and represents the proportion of the sample following the given ordinal pattern across all three time points. Given these differences, it is interesting how well these two measures converge together. As sample size increases, estimates for both *d* and PCC become more precise (i.e., smaller range, closer to the simulated effect size). We believe that PCC offers researchers the ability not only to confirm that their effect size is reasonable, but also to better understand the pattern their data are following, especially if an observed effect size contradicts previous literature. For example, let us assume there is previous literature that states that a small positive effect exists, such that responses should increase from time 1 to time 2. Under conditions of a true small effect (*d*= - 0.20) and sample size of 30, our graph shows us that it is possible to obtain a positive medium effect size (*d* = 0.50; indicating the time 1 is more extreme than time 2). Upon finding these contradicting results, the researcher could further seek to understand the pattern their data are following by computing the PCC value for the experiment. The PCC value for this example would be above .50, indicating that, in over half of respondents the values for time 1 are less than time 2 (in turn less than time 3, as it measures the entire pattern), even though magnitude of change suggests that time 1 is larger than time 2. This gives the researcher a richer piece of information, which can help to describe their results in a more nuanced fashion.  
 
 ```{r effects-graph-sig, echo=FALSE, fig.cap="For NHST analyses only, percent of significant estimates at $p$ < .05 (solid) and $p$ < .005 (dashed) for each analysis given effect size and sample size.", fig.height=8, fig.width=8}
 
@@ -3076,7 +3071,7 @@ p1 = ggplot(sig_data_large) +
                 linetype = Analysis, 
                 colour = Analysis),
             size=0.75) + 
-  labs(title="Large Effects (d=0.80)") +
+  labs(title="Large Effects (d = -0.80)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Significant") +
   xlab("log(N)") + 
@@ -3098,7 +3093,7 @@ p2 = ggplot(sig_data_medium) +
                 linetype = Analysis, 
                 colour = Analysis),
             size=0.75) + 
-  labs(title="Medium Effects (d=0.50)") +
+  labs(title="Medium Effects (d = -0.50)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Significant") + 
   xlab("log(N)") + 
@@ -3120,7 +3115,7 @@ p3 = ggplot(sig_data_small) +
                 linetype = Analysis, 
                 colour = Analysis),
             size=0.75) + 
-  labs(title="Small Effects (d=0.20)") +
+  labs(title="Small Effects (d = -0.20)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Significant") + 
   xlab("log(N)") + 
@@ -3293,7 +3288,7 @@ nonepcc = ggplot(none, aes(oompcc, effect1v2)) +
                               labels = c(">.05", "<=.05"),
                               values = c(16,4)) +
         scale_color_grey() +
-        labs(title="Negligible Effects (d=0.10)") +
+        labs(title="Negligible Effects (d = -0.10)") +
         scale_x_continuous(labels = numform::ff_num(zero = 0))
 
 smallpcc = ggplot(small, aes(oompcc, effect1v2)) + 
@@ -3305,7 +3300,7 @@ smallpcc = ggplot(small, aes(oompcc, effect1v2)) +
                               labels = c(">.05", "<=.05"),
                               values = c(16,4)) +
         scale_color_grey() +
-        labs(title="Small Effects (d=0.20)") +
+        labs(title="Small Effects (d = -0.20)") +
         scale_x_continuous(labels = numform::ff_num(zero = 0))
   
 medpcc = ggplot(med, aes(oompcc, effect1v2)) + 
@@ -3317,7 +3312,7 @@ medpcc = ggplot(med, aes(oompcc, effect1v2)) +
                               labels = c(">.05", "<=.05"),
                               values = c(16,4)) +
         scale_color_grey() +
-        labs(title="Medium Effects (d=0.50)") +
+        labs(title="Medium Effects (d = -0.50)") +
         scale_x_continuous(labels = numform::ff_num(zero = 0))
   
 largepcc = ggplot(large, aes(oompcc, effect1v2)) + 
@@ -5634,7 +5629,7 @@ w2 = ggplot(agree_medium) +
                 linetype = comparison, 
                 colour = comparison),
             size=0.75) + 
-  labs(title="Medium Effects (d=0.50)") +
+  labs(title="Medium Effects (d = -0.50)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Agreement") + 
   xlab("log(N)") + 
@@ -5662,7 +5657,7 @@ w3 = ggplot(agree_small) +
                 linetype = comparison, 
                 colour = comparison),
             size=0.75) + 
-  labs(title="Small Effects (d=0.20)") +
+  labs(title="Small Effects (d = -0.20)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Agreement") + 
   xlab("log(N)") + 
@@ -5690,7 +5685,7 @@ w4 = ggplot(agree_none) +
                 linetype = comparison, 
                 colour = comparison),
             size=0.75) + 
-  labs(title="Negligible Effects (d=0.10)") +
+  labs(title="Negligible Effects (d = -0.10)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Agreement") + 
   xlab("log(N)") + 
@@ -5746,7 +5741,7 @@ w11 = ggplot(agree_large) +
                 linetype = comparison, 
                 colour = comparison),
             size=0.75) + 
-  labs(title="Large Effects (d=0.80)") +
+  labs(title="Large Effects (d = -0.80)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Agreement") + 
   xlab("log(N)") +
@@ -5771,7 +5766,7 @@ w21 = ggplot(agree_medium) +
                 linetype = comparison, 
                 colour = comparison),
             size=0.75) + 
-  labs(title="Medium Effects (d=0.50)") +
+  labs(title="Medium Effects (d = -0.50)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Agreement") +
   xlab("log(N)") +
@@ -5796,7 +5791,7 @@ w31 = ggplot(agree_small) +
                 linetype = comparison, 
                 colour = comparison),
             size=0.75) + 
-  labs(title="Small Effects (d=0.20)") +
+  labs(title="Small Effects (d = -0.20)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Agreement") + 
   xlab("log(N)") +
@@ -5821,7 +5816,7 @@ w41 = ggplot(agree_none) +
                 linetype = comparison, 
                 colour = comparison),
             size=0.75) + 
-  labs(title="Negligible Effects (d=0.10)") +
+  labs(title="Negligible Effects (d = -0.10)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Agreement") + 
   xlab("log(N)") +
@@ -5878,7 +5873,7 @@ pccbfnone = ggplot(comparenone, aes(oompcc, overallBF)) +
                               labels = c(">.05", "<=.05"),
                               values = c(16,4)) +
         scale_color_grey() +
-        labs(title="Negligible Effects (d=0.10)") +
+        labs(title="Negligible Effects (d = -0.10)") +
         scale_x_continuous(labels = numform::ff_num(zero = 0))
 
 pccbfmed = ggplot(comparemed, aes(oompcc, overallBF)) + 
@@ -5890,7 +5885,7 @@ pccbfmed = ggplot(comparemed, aes(oompcc, overallBF)) +
                               labels = c(">.05", "<=.05"),
                               values = c(16,4)) +
         scale_color_grey() +
-        labs(title="Medium Effects (d=0.50)") +
+        labs(title="Medium Effects (d = -0.50)") +
         scale_x_continuous(labels = numform::ff_num(zero = 0))
 
 pccpnone = ggplot(comparenone, aes(oompcc, omniP)) + 
@@ -5902,7 +5897,7 @@ pccpnone = ggplot(comparenone, aes(oompcc, omniP)) +
                               labels = c(">.05", "<=.05"),
                               values = c(16,4)) +
         scale_color_grey() +
-        labs(title="Negligible Effects (d=0.10)") +
+        labs(title="Negligible Effects (d = -0.10)") +
         scale_y_continuous(labels = numform::ff_num(zero = 0)) +
         scale_x_continuous(labels = numform::ff_num(zero = 0))
 
@@ -5915,7 +5910,7 @@ pccpmed = ggplot(comparemed, aes(oompcc, omniP)) +
                               labels = c(">.05", "<=.05"),
                               values = c(16,4)) +
         scale_color_grey() +
-        labs(title="Medium Effects (d=0.50)") +
+        labs(title="Medium Effects (d = -0.50)") +
         scale_y_continuous(labels = numform::ff_num(zero = 0)) +
         scale_x_continuous(labels = numform::ff_num(zero = 0))
 
@@ -5935,7 +5930,7 @@ pccgraph
   
   Additionally, we compared $p$-values and PCC values, which are illustrated on the right hand side of Figure \@ref(fig:pcc-bf-fig). Again, PCC values showed far more variability with small sample sizes, and the $p$-values associated with these smaller sample sizes were also quite variable. Importantly, even when an effect was negligible, PCC values become less variable with increasing sample size. PCC values also indicated that there was little evidence of the hypothesized pattern by shifting toward zero. $p$-values decreased in variability at high sample sizes and shifted toward minuscule values, thus, pointing toward rejecting the null hypothesis. With medium effect sizes, both $p$-values and PCC values were variable at small sample sizes. At larger sample sizes, $p$-values decreased towards floor effects (i.e., closer to zero), while PCC values simply narrowed in range shifting slight above .50. The benefit of multiple criteria evaluation here was clear, as $p$-values increasingly indicated significance as sample size increased, PCC values were not effected in this way and thus presented a more stable picture of the presence of an effect. While multiple criteria may not completely reduce the interpretation of false positives in the literature, the relationship between these values illustrated that multiple indices can provided a clearer picture of the evidentiary value available in a study. 
 
-# Limitations
+## Limitations
 
 Within any study a number of limitations exist. The largest limitation of our study is that we chose to focus on a simple three level repeated measures ANOVA design. The benefit to this focus is the simplicity of understanding the relationship between analyses, while also using a well understood NHST procedure. However, is possible that these same relationships may or may not exist in alternative design contexts. Additionally, our choices for classification of significant effects for *p*-values, BF, PCC, and *c*-values was based on what we believe a reasonable researcher may designate; however, these classifications may vary in the real world. We provide open access to our simulations and code so that an interested party can tinker with these choices. We believe the global conclusions would likely be similar across changes, however, the specific percentages and patterns would likely differ. Finally, due to the specification of our simulation we did not violate any statistical assumptions. It is possible that the violation of these assumptions may cause changes in the relationships we see here.
 
