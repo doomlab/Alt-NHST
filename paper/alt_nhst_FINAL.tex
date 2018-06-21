@@ -209,7 +209,7 @@ Modeling, evidence \\
 Recent events in psychological science have prompted concerns within the
 discipline regarding research practices and ultimately the validity and
 reproducibility of published reports (Etz \& Vandekerckhove, 2016;
-Lindsay, 2015; Open Science Collaboration, 2015; Van Elk et al., 2015).
+Lindsay, 2015; Open Science Collaboration, 2015; van Elk et al., 2015).
 One often discussed matter is over-reliance, abuse, and potential
 hacking of \emph{p}-values produced by frequentist null hypothesis
 significance testing (NHST), as well as misinterpretations of NHST
@@ -250,7 +250,7 @@ Oriented Modeling (OOM), as it is a relatively new paradigm that is
 readily interpretable and, as we will show, useful in these contexts.
 Additionally, we aim to discuss the conclusions these three methods
 would make given the same data, and to compare how often these
-methodologies agree within different data environments (i.e.~given
+methodologies agree within different data environments (i.e., given
 varying sample sizes and effect sizes). We hope that by discussing these
 methodologies in terms of a simple statistical analysis researchers will
 be able to easily compare and contrast methodologies. For this
@@ -340,17 +340,18 @@ procedure in practice:
   H_0: \mu_1 = \mu_2 = \mu_3 \\
   H_A: \mu_1 \neq \mu_2 \neq \mu_3
 \end{aligned}
-\] 2) Select an \(\alpha\) level that is appropriate given the context
-of your research, your analysis plan, and your research question, and do
-not blindly adopt an omnibus critical \emph{p}-value (Lakens et al.,
-2018; Lehmann, 2011).Again, we reiterate that although this is not
-necessarily how all researchers approach these tests, this is the most
-apt way to do so.
+\]
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
-\setcounter{enumi}{2}
-\tightlist
+\setcounter{enumi}{1}
+\item
+  Select an \(\alpha\) level that is appropriate given the context of
+  your research, your analysis plan, and your research question, and do
+  not blindly adopt an omnibus critical \emph{p}-value (Lakens et al.,
+  2018; Lehmann, 2011). Again, we reiterate that although this is not
+  necessarily how all researchers approach these tests, this is the most
+  apt way to do so.
 \item
   Compute your given analysis and identify the corresponding
   \emph{p}-value. If your \emph{p}-value is less than the chosen
@@ -387,7 +388,7 @@ alternative hypothesis; one can never support the null hypothesis
 through this procedure. Given the recent findings regarding
 reproducibility, showing support for the absence of an effect can be
 even more crucial than showing support for the presence of an effect
-(Bakker, Van Dijk, \& Wicherts, 2012; Lakens, 2017).
+(Bakker, van Dijk, \& Wicherts, 2012; Lakens, 2017).
 
 \section{Bayes Factors}\label{bayes-factors}
 
@@ -447,7 +448,9 @@ likelihood of the alternative model to the null is report, usually
 \(BF_{10}\). For instance, \(BF_{10}\) = 20 would indicate that the
 effects model is favored 20 to 1 over the null model. Conversely, if the
 \(BF_{10}\) were 0.10, the null model is favored 10 to 1 over the
-effects model. \#\# Typical Procedure
+effects model.
+
+\subsection{Typical Procedure}\label{typical-procedure}
 
 The procedure behind BF comparisons requires two steps.
 
@@ -457,7 +460,7 @@ The procedure behind BF comparisons requires two steps.
 \item
   One must design two models for the data. For our purposes, the first
   of these models will be the null model, which states that there are no
-  differences between means (\(\mu\); i.e.~all of our observed values
+  differences between means (\(\mu\); i.e., all of our observed values
   \(X_{i}\), regardless of which time point they were assessed at
   \(X_{ij}\), arise from a normal distribution \emph{N} with some mean
   \(\mu\) and variance \(\sigma^2\)). The second model for these
@@ -606,7 +609,7 @@ low \emph{c}-values, like low \emph{p}-values, are desirable,
 considered a secondary form of confirmation for the researcher that
 their results are distinct.
 
-\subsection{Typical Procedure}\label{typical-procedure}
+\subsection{Typical Procedure}\label{typical-procedure-1}
 
 The OPA is analogous to repeated measures ANOVA and contains two steps.
 
@@ -660,8 +663,8 @@ simulations can be found at \url{https://osf.io/u9hf4/}. Interested
 readers can easily adapt the \emph{R} code to incorporate different
 research designs. Likert data, ranging from 1 to 7, was created by
 rounding \emph{mvtnorm} estimates to whole numbers and truncating any
-data points out side of the appropriate range (i.e.~values \textless{} 1
-were rounded to 1, and values \textgreater{} 7 were rounded to 7). We
+data points out side of the appropriate range (i.e., values \textless{}
+1 were rounded to 1, and values \textgreater{} 7 were rounded to 7). We
 specifically chose Likert-type data as this data type is one of the most
 common data types utilized by most social scientists. Additionally, we
 add to the literature as other simulations have chosen to use completely
@@ -759,8 +762,8 @@ for the same two comparisons as in the previous models using default
 priors from the \emph{BayesFactor} package (e.g., Jeffreys prior for
 population variance, Cauchy prior for standardized effect size). To
 compare Bayesian results to other statistical methods, we used
-recommendations from ({\textbf{???}}) to bin results into weak evidence
-(BFs \textless{} 3), positive evidence (e.g., akin to marginal
+recommendations from Kass and Raftery (1995) to bin results into weak
+evidence (BFs \textless{} 3), positive evidence (e.g., akin to marginal
 \emph{p}-values, BFs = 3-20), and strong evidence (BFs \textgreater{}
 20). We must stress here that BF interpretation should focus on
 understanding the odds of model ratios, not necessarily the presence or
@@ -1039,19 +1042,16 @@ pattern by shifting toward zero. \(p\)-values decreased in variability
 at high sample sizes and shifted toward minuscule values, thus, pointing
 toward rejecting the null hypothesis. With medium effect sizes, both
 \(p\)-values and PCC values were variable at small sample sizes. At
-larger sample sizes, \(p\)-values decreased towards floor effects
-(i.e.~closer to zero), while PCC values simply narrowed in range
-shifting slight above .50. The benefit of multiple criteria evaluation
-here was clear, as \(p\)-values increasingly indicated significance as
-sample size increased, PCC values were not effected in this way and thus
+larger sample sizes, \(p\)-values decreased towards floor effects (i.e.,
+closer to zero), while PCC values simply narrowed in range shifting
+slight above .50. The benefit of multiple criteria evaluation here was
+clear, as \(p\)-values increasingly indicated significance as sample
+size increased, PCC values were not effected in this way and thus
 presented a more stable picture of the presence of an effect. While
 multiple criteria may not completely reduce the interpretation of false
 positives in the literature, the relationship between these values
 illustrated that multiple indices can provided a clearer picture of the
-evidentiary value available in a study. CLARIFY HERE THAT WE'RE NOT
-SAYING TO USE ALL THESE AT THE SAME TIME, BUT THAT RESEARCHERS SHOULD
-CONSIDER THAT THEY HAVE MULTIPLE OPTIONS AND KNOW THE BENEFITS,
-DRAWBACKS, AND HOW EACH COMPARE.
+evidentiary value available in a study.
 
 \section{Limitations}\label{limitations}
 
@@ -1060,19 +1060,18 @@ of our study is that we chose to focus on a simple three level repeated
 measures ANOVA design. The benefit to this focus is the simplicity of
 understanding the relationship between analyses, while also using a well
 understood NHST procedure. However, is possible that these same
-relationships (CLARIFY THAT THE RELATIONSHIPS WE ARE TALKING ABOUT ARE
-HOW THESE 3 METHODS ARE SIMILAR/DIFFERENT/AGREE/DISAGREE) may or may not
-exist in alternative design contexts. Additionally, our choices for
-classification of significant effects for \emph{p}-values, BF, PCC, and
-\emph{c}-values was based on what we believe a reasonable researcher may
-designate; however, these classifications may vary in the real world. We
-provide open access to our simulations and code so that an interested
-party can tinker with these choices. We believe the global conclusions
-would likely be similar across changes, however, the specific
-percentages and patterns would likely differ. Finally, due to the
-specification of our simulation we did not violate any statistical
-assumptions. It is possible that the violation of these assumptions may
-cause changes in the relationships we see here.
+relationships may or may not exist in alternative design contexts.
+Additionally, our choices for classification of significant effects for
+\emph{p}-values, BF, PCC, and \emph{c}-values was based on what we
+believe a reasonable researcher may designate; however, these
+classifications may vary in the real world. We provide open access to
+our simulations and code so that an interested party can tinker with
+these choices. We believe the global conclusions would likely be similar
+across changes, however, the specific percentages and patterns would
+likely differ. Finally, due to the specification of our simulation we
+did not violate any statistical assumptions. It is possible that the
+violation of these assumptions may cause changes in the relationships we
+see here.
 
 \section{Discussion}\label{discussion}
 
@@ -1158,8 +1157,7 @@ researchers to focus on experimental design and hypotheses
 should describe multiple indicators of evidence, such as effect sizes,
 confidence intervals, power analyses, Bayes Factors, and other
 descriptive statistics (Finkel, Eastwick, \& Reis, 2015; Nosek \&
-Lakens, 2014; van 't Veer, Giner-Sorolla, Van't Veer, \& Giner-Sorolla,
-2016).
+Lakens, 2014; van't Veer \& Giner-Sorolla, 2016).
 
 A misunderstanding of statistical power still plagues psychological
 sciences (Bakker, Hartgerink, Wicherts, \& van der Maas, 2016), and the
@@ -1191,9 +1189,8 @@ science and to increase the strength of evidence in our discipline.
 \hypertarget{refs}{}
 \hypertarget{ref-AmericanPsychologicalAssociation2010}{}
 American Psychological Association. (2010). \emph{Publication manual of
-the American Psychological Association} (6th ed., p. 272). American
-Psychological Association. Retrieved from
-\url{http://www.apastyle.org/products/4200067.aspx}
+the American Psychological Association} (6th ed.). American
+Psychological Association.
 
 \hypertarget{ref-Bakker2016}{}
 Bakker, M., Hartgerink, C. H. J., Wicherts, J. M., \& van der Maas, H.
@@ -1202,7 +1199,7 @@ research. \emph{Psychological Science}, \emph{27}(8), 1069--1077.
 doi:\href{https://doi.org/10.1177/0956797616647519}{10.1177/0956797616647519}
 
 \hypertarget{ref-Bakker2012}{}
-Bakker, M., Van Dijk, A., \& Wicherts, J. M. (2012). The rules of the
+Bakker, M., van Dijk, A., \& Wicherts, J. M. (2012). The rules of the
 game called psychological science. \emph{Perspectives on Psychological
 Science}, \emph{7}(6), 543--554.
 doi:\href{https://doi.org/10.1177/1745691612459060}{10.1177/1745691612459060}
@@ -1240,8 +1237,8 @@ Science}, \emph{25}(1), 7--29.
 doi:\href{https://doi.org/10.1177/0956797613504966}{10.1177/0956797613504966}
 
 \hypertarget{ref-Datta1996}{}
-Datta, G., \& Ghosh, M. (1996). On the Invariance of Noninformative
-Priors. \emph{The Annals of Statistics}, \emph{24}(1), 141--159.
+Datta, G., \& Ghosh, M. (1996). On the invariance of noninformative
+priors. \emph{The Annals of Statistics}, \emph{24}(1), 141--159.
 doi:\href{https://doi.org/10.1214/aos/1033066203}{10.1214/aos/1033066203}
 
 \hypertarget{ref-DeLaplace1774}{}
@@ -1302,7 +1299,7 @@ Inc.
 doi:\href{https://doi.org/10.4135/9781412986311.n21}{10.4135/9781412986311.n21}
 
 \hypertarget{ref-Grice2011}{}
-Grice, J. W. (2011). \emph{Observation Oriented Modeling : analysis of
+Grice, J. W. (2011). \emph{Observation Oriented Modeling: Analysis of
 cause in the behavioral sciences} (p. 242). Elsevier/Academic Press.
 
 \hypertarget{ref-Grice2014}{}
@@ -1335,6 +1332,11 @@ doi:\href{https://doi.org/10.1371/journal.pmed.0020124}{10.1371/journal.pmed.002
 
 \hypertarget{ref-JASPTeam2017}{}
 JASP Team. (2017). JASP. Retrieved from \url{https://jasp-stats.org/}
+
+\hypertarget{ref-Kass1995a}{}
+Kass, R. E., \& Raftery, A. E. (1995). Bayes Factors. \emph{Journal of
+the American Statistical Association}, \emph{90}(430), 773--795.
+doi:\href{https://doi.org/10.2307/2291091}{10.2307/2291091}
 
 \hypertarget{ref-Klugkist2007}{}
 Klugkist, I., \& Hoijtink, H. (2007). The Bayes factor for inequality
@@ -1479,17 +1481,16 @@ of observation oriented modelling to judgements of associative memory.
 doi:\href{https://doi.org/10.1080/20445911.2013.775120}{10.1080/20445911.2013.775120}
 
 \hypertarget{ref-VanElk2015}{}
-Van Elk, M., Matzke, D., Gronau, Q. F., Guan, M., Vandekerckhove, J., \&
+van Elk, M., Matzke, D., Gronau, Q. F., Guan, M., Vandekerckhove, J., \&
 Wagenmakers, E.-J. (2015). Meta-analyses are no substitute for
 registered replications: A skeptical perspective on religious priming.
 \emph{Frontiers in Psychology}, \emph{6}, 1365.
 doi:\href{https://doi.org/10.3389/fpsyg.2015.01365}{10.3389/fpsyg.2015.01365}
 
 \hypertarget{ref-VantVeer2016}{}
-van 't Veer, A. E., Giner-Sorolla, R., Van't Veer, A. E., \&
-Giner-Sorolla, R. (2016). Pre-registration in social psychology---A
-discussion and suggested template. \emph{Journal of Experimental Social
-Psychology}, \emph{67}, 2--12.
+van't Veer, A. E., \& Giner-Sorolla, R. (2016). Pre-registration in
+social psychology---A discussion and suggested template. \emph{Journal
+of Experimental Social Psychology}, \emph{67}, 2--12.
 doi:\href{https://doi.org/10.1016/j.jesp.2016.03.004}{10.1016/j.jesp.2016.03.004}
 
 \hypertarget{ref-Wagenmakers2007}{}
