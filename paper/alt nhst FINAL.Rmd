@@ -5601,7 +5601,7 @@ w1 = ggplot(agree_large) +
                 linetype = comparison, 
                 colour = comparison),
             size=0.75) + 
-  labs(title="Large Effects (d=0.80)") +
+  labs(title="Large Effects (d=-0.80)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Agreement") + 
   xlab("log(N)") + 
