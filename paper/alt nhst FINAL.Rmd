@@ -3137,7 +3137,7 @@ p4 = ggplot(sig_data_none) +
                 linetype = Analysis, 
                 colour = Analysis),
             size=0.75) + 
-  labs(title="Negligible Effects (d=0.10)") +
+  labs(title="Negligible Effects (d = -0.10)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Significant") + 
   xlab("log(N)") + 
@@ -3175,7 +3175,7 @@ a1 = ggplot(non_data_large) +
                 linetype = Analysis, 
                 colour = Analysis),
             size=0.75) + 
-  labs(title="Large Effects (d=0.80)") +
+  labs(title="Large Effects (d = -0.80)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Non-Significant") + 
   xlab("log(N)") + 
@@ -3197,7 +3197,7 @@ a2 = ggplot(non_data_medium) +
                 linetype = Analysis, 
                 colour = Analysis),
             size=0.75) + 
-  labs(title="Medium Effects (d=0.50)") +
+  labs(title="Medium Effects (d = -0.50)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Perfect Non-Significant") + 
   xlab("log(N)") + 
@@ -3219,7 +3219,7 @@ a3 = ggplot(non_data_small) +
                 linetype = Analysis, 
                 colour = Analysis),
             size=0.75) + 
-  labs(title="Small Effects (d=0.20)") +
+  labs(title="Small Effects (d = -0.20)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Non-Significant") +
   xlab("log(N)") + 
@@ -3241,7 +3241,7 @@ a4 = ggplot(non_data_none) +
                 linetype = Analysis, 
                 colour = Analysis),
             size=0.75) + 
-  labs(title="Negligible Effects (d=0.10)") +
+  labs(title="Negligible Effects (d = -0.10)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Non-Significant") + 
   xlab("log(N)") + 
@@ -3324,7 +3324,7 @@ largepcc = ggplot(large, aes(oompcc, effect1v2)) +
                               labels = c(">.05", "<=.05"),
                               values = c(16,4)) +
         scale_color_grey() +
-        labs(title="Large Effects (d=0.80)") +
+        labs(title="Large Effects (d = -0.80)") +
         scale_x_continuous(labels = numform::ff_num(zero = 0)) + 
         coord_cartesian(xlim = c(.4,1))
 
@@ -5601,7 +5601,7 @@ w1 = ggplot(agree_large) +
                 linetype = comparison, 
                 colour = comparison),
             size=0.75) + 
-  labs(title="Large Effects (d=-0.80)") +
+  labs(title="Large Effects (d = -0.80)") +
   coord_cartesian(ylim = c(0,101)) + 
   ylab("Percent Agreement") + 
   xlab("log(N)") + 
