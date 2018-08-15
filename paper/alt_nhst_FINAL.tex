@@ -1,4 +1,4 @@
-\documentclass[english,man]{apa6}
+\documentclass[english,mask,man]{apa6}
 
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
@@ -124,7 +124,7 @@
   \shorttitle{Multiple Methods}
 
 
-  \author{Kathrene D. Valentine\textsuperscript{1}, Erin M. Buchanan\textsuperscript{2}, John E. Scofield\textsuperscript{1}, \& Marshall T. Beauchamp\textsuperscript{3}}
+  \author{K. D. Valentine\textsuperscript{1}, Erin M. Buchanan\textsuperscript{2}, John E. Scofield\textsuperscript{1}, \& Marshall T. Beauchamp\textsuperscript{3}}
 
   % \def\affdep{{"", "", "", ""}}%
   % \def\affcity{{"", "", "", ""}}%
@@ -136,44 +136,29 @@
           \textsuperscript{3} University of Missouri - Kansas City  }
 
   \authornote{
-    Kathrene D. Valentine and John E. Scofield are Ph.D.~candidates at the
-    University of Missouri. Marshall T. Beauchamp is a Ph.D.~candidate at
-    the University of Missouri - Kansas City. Erin M. Buchanan is an
-    Associate Professor of Quantitative Psychology at Missouri State
-    University. KDV and EMB decided on the study design. MTB helped in
-    initial data analysis. JES and EMB programmed the R code for simulation,
-    analysis, and graphics. KDV wrote the first draft of the manuscript,
-    which EMB put into R markdown. All authors critiqued and edited the
-    manuscript, and all authors approved the submitted version of the
-    manuscript.
-    
-    Correspondence concerning this article should be addressed to Kathrene
-    D. Valentine, 210 McAlester Ave, Columbia, MO 65211. E-mail:
-    \href{mailto:Katy.valentine3@gmail.com}{\nolinkurl{Katy.valentine3@gmail.com}}
+    Correspondence concerning this article should be addressed to K. D.
+    Valentine, 210 McAlester Ave, Columbia, MO 65211. E-mail:
+    \href{mailto:Katy.valentine3@gmail.com}{\nolinkurl{Katy.valentine3@gmail.com}}.
+    On behalf of all authors, the corresponding author states that there is
+    no conflict of interest.
   }
 
 
-  \abstract{Null hypothesis significance testing is frequently cited as a threat to
-the validity and reproducibility of the social sciences. While many
-individuals suggest we should focus on altering the \emph{p}-value at
-which we deem an effect significant, we believe this suggestion is
-short-sighted. Alternative procedures (i.e., Bayesian analyses and
-Observation Oriented Modeling; OOM) can be more powerful and meaningful
-to our discipline. However, these methodologies are less frequently
-utilized and are rarely discussed in combination with NHST. Herein, we
-discuss the historical roots, procedures, and assumptions of three
-methodologies (NHST, Bayesian Model comparison, and OOM), then compare
-the possible interpretations of three analyses (ANOVA, Bayes Factor, and
-an Ordinal Pattern Analysis) in various data environments using a
-simulation study. Our frequentist simulation approach generated 20,000
-unique datasets which varied sample size (\emph{N}s of 10, 30, 100, 500,
-1,000), and effect sizes (\emph{d}s of 0.10, 0.20, 0.50, 0.80). Through
-this simulation, we find that changing the threshold at which
-\emph{p}-values are considered significant has little to no effect on
-conclusions. Further, we find that evaluating multiple estimates as
-evidence of an effect can allow for a more robust and nuanced report of
-findings. These findings suggest the need to redefine evidentiary value
-and reporting practices.}
+  \abstract{Null hypothesis significance testing (NSHT) is cited as a threat to
+validity and reproducibility. While many individuals suggest we focus on
+altering the \emph{p}-value at which we deem an effect significant, we
+believe this suggestion is short-sighted. Alternative procedures (i.e.,
+Bayesian analyses and Observation Oriented Modeling; OOM) can be more
+powerful and meaningful to our discipline. However, these methodologies
+are less frequently utilized and are rarely discussed in combination
+with NHST. Herein, we discuss three methodologies (NHST, Bayesian Model
+comparison, and OOM), then compare the possible interpretations of three
+analyses (ANOVA, Bayes Factor, and an Ordinal Pattern Analysis) in
+various data environments using a frequentist simulation study. We find
+that changing significance thresholds has little effect on conclusions.
+We find that evaluating multiple estimates as evidence of an effect
+allows for more robust and nuanced reports of findings. These findings
+suggest the need to redefine evidentiary value and reporting practices.}
   \keywords{null hypothesis testing, p-values, Bayes Factors, Observation Oriented
 Modeling, evidence \\
 
@@ -660,33 +645,35 @@ and effect size for a repeated measures design with three levels. A
 repeated measures design was chosen as it is widely used across many
 disciplines of psychology. These datasets were created using the
 \emph{mvtnorm} package in \emph{R} (Genz et al., 2017), and all code for
-simulations can be found at \url{https://osf.io/u9hf4/}. Interested
-readers can easily adapt the \emph{R} code to incorporate different
-research designs. Likert data, ranging from 1 to 7, was created by
-rounding \emph{mvtnorm} estimates to whole numbers and truncating any
-data points out side of the appropriate range (i.e., values \textless{}
-1 were rounded to 1, and values \textgreater{} 7 were rounded to 7). We
-specifically chose Likert-type data as this data type is one of the most
-common data types utilized by most social scientists. Additionally, we
-add to the literature as other simulations have chosen to use completely
-continuous data (i.e., simulated numbers are often precise to 10+
-decimals, which is unlikely for traditional sampling). The simulated
-data did increase in skew with this procedure from approximately no skew
-(i.e., \textless{}0.01) to approximately 0.40 for the smallest and no
-effect conditions; however, these values closely resembled a normal
-distribution with the use of \emph{mvtnorm}. The population means for
-each level were set to 2.5, 3.0, and 3.5, and pairwise effect sizes
-(e.g., the comparison between time 1 v. time 2 and time 2 v. time 3)
-were manipulated by adjusting the standard deviation to create
-negligible effects (\emph{SD} = 3.39, \emph{d} = 0.10), small effects
-(\emph{SD} = 3.00, \emph{d} = 0.20), medium effects (\emph{SD} = 0.50,
-\emph{d} = 0.50), and large effects (\emph{SD} = 0.10, \emph{d} = 0.80)
-using Cohen (1992)'s traditional guidelines for \emph{d} interpretation.
-The smallest effect size was set such that Likert style data could still
-be retained with the smallest possible effect size. Sample size was
-manipulated at 10, 30, 100, 500, and 1,000 data points. All combinations
-of the five sample sizes and four effect sizes were created, and each
-dataset was simulated 1,000 times, totaling 20,000 datasets.
+simulations can be found at
+\url{https://osf.io/u9hf4/?view_only=1caa9092868b4d7aadb9a83a31a979cd}.
+Interested readers can easily adapt the \emph{R} code to incorporate
+different research designs. Likert data, ranging from 1 to 7, was
+created by rounding \emph{mvtnorm} estimates to whole numbers and
+truncating any data points out side of the appropriate range (i.e.,
+values \textless{} 1 were rounded to 1, and values \textgreater{} 7 were
+rounded to 7). We specifically chose Likert-type data as this data type
+is one of the most common data types utilized by most social scientists.
+Additionally, we add to the literature as other simulations have chosen
+to use completely continuous data (i.e., simulated numbers are often
+precise to 10+ decimals, which is unlikely for traditional sampling).
+The simulated data did increase in skew with this procedure from
+approximately no skew (i.e., \textless{}0.01) to approximately 0.40 for
+the smallest and no effect conditions; however, these values closely
+resembled a normal distribution with the use of \emph{mvtnorm}. The
+population means for each level were set to 2.5, 3.0, and 3.5, and
+pairwise effect sizes (e.g., the comparison between time 1 v. time 2 and
+time 2 v. time 3) were manipulated by adjusting the standard deviation
+to create negligible effects (\emph{SD} = 3.39, \emph{d} = 0.10), small
+effects (\emph{SD} = 3.00, \emph{d} = 0.20), medium effects (\emph{SD} =
+0.50, \emph{d} = 0.50), and large effects (\emph{SD} = 0.10, \emph{d} =
+0.80) using Cohen (1992)'s traditional guidelines for \emph{d}
+interpretation. The smallest effect size was set such that Likert style
+data could still be retained with the smallest possible effect size.
+Sample size was manipulated at 10, 30, 100, 500, and 1,000 data points.
+All combinations of the five sample sizes and four effect sizes were
+created, and each dataset was simulated 1,000 times, totaling 20,000
+datasets.
 
 The advantage of using \emph{mvtnorm} and set \emph{SDs} for each group
 was the ability to approximate the assumptions of normality by randomly
@@ -706,13 +693,14 @@ especially for low \emph{N} simulations.
 
 Means, mean differences between levels, and the confidence intervals for
 each mean can be found in the complete dataset online,
-\url{https://osf.io/u9hf4/}. For each simulation, we also calculated
-\emph{d} values using the standard deviation of the difference score as
-the denominator (\(d_{z}\), Lakens, 2013). The \emph{MOTE} library was
-used to calculate the non-central confidence interval for each \emph{d}
-value as well (Buchanan, Valentine, \& Scofield, 2017; Cumming, 2014).
-This data was mainly used to determine if simulations were meeting
-expected values overall.
+\url{https://osf.io/u9hf4/?view_only=1caa9092868b4d7aadb9a83a31a979cd}.
+For each simulation, we also calculated \emph{d} values using the
+standard deviation of the difference score as the denominator
+(\(d_{z}\), Lakens, 2013). The \emph{MOTE} library was used to calculate
+the non-central confidence interval for each \emph{d} value as well
+(Buchanan, Valentine, \& Scofield, 2017; Cumming, 2014). This data was
+mainly used to determine if simulations were meeting expected values
+overall.
 
 \subsubsection{Parametric NHST - Repeated Measures
 ANOVA}\label{parametric-nhst---repeated-measures-anova}
@@ -774,9 +762,10 @@ that of a frequentist paradigm, these bins are used as a convenient
 comparison to the frequentist procedures using set criteria for
 interpretation (Morey, 2015). Should any reader become curious how a
 different set of binning values affect our analyses, all code and data
-are at their disposal at \url{https://osf.io/u9hf4/}, and this
-manuscript was written with the \emph{papaja} package allowing one to
-view the code inline with this text (Aust \& Barth, 2017).
+are at their disposal at
+\url{https://osf.io/u9hf4/?view_only=1caa9092868b4d7aadb9a83a31a979cd},
+and this manuscript was written with the \emph{papaja} package allowing
+one to view the code inline with this text (Aust \& Barth, 2017).
 
 \subsubsection{OOM: Ordinal Pattern
 Analysis}\label{oom-ordinal-pattern-analysis}
@@ -953,7 +942,7 @@ Again, the differences between \emph{p} \textless{} .05 and \emph{p}
 \textless{} .005 were minimal. Complete tables of percentages of binning
 across critical omnibus and \emph{post hoc} tests, along with agreement
 percentages broken down by bins can be found at
-\url{https://osf.io/u9hf4/}.
+\url{https://osf.io/u9hf4/?view_only=1caa9092868b4d7aadb9a83a31a979cd}.
 
 \begin{figure}
 \centering

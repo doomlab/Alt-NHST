@@ -3,11 +3,11 @@ title             : "Beyond *p*-values: Utilizing Multiple Methods to Evaluate E
 shorttitle        : "Multiple Methods"
 
 author: 
-  - name          : "Kathrene D. Valentine"
+  - name          : "K. D. Valentine"
     affiliation   : "1"
-    corresponding : yes    # Define only one corresponding author
+    corresponding : yes
     address       : "210 McAlester Ave, Columbia, MO 65211"
-    email         : "Katy.valentine3@gmail.com"
+    email         : "Katy.valentine3@gmail.com.  On behalf of all authors, the corresponding author states that there is no conflict of interest."
   - name          : "Erin M. Buchanan"
     affiliation   : "2"
   - name          : "John E. Scofield"
@@ -23,13 +23,10 @@ affiliation:
   - id            : "3"
     institution   : "University of Missouri - Kansas City"
 
-author_note: >
-  Kathrene D. Valentine and John E. Scofield are Ph.D. candidates at the University of Missouri. Marshall T. Beauchamp is a Ph.D. candidate at the University of Missouri - Kansas City. Erin M. Buchanan is an Associate Professor of Quantitative Psychology at Missouri State University. 
-  
-  KDV and EMB decided on the study design. MTB helped in initial data analysis. JES and EMB programmed the R code for simulation, analysis, and graphics. KDV wrote the first draft of the manuscript, which EMB put into R markdown. All authors critiqued and edited the manuscript, and all authors approved the submitted version of the manuscript. 
 
-abstract: >
-  Null hypothesis significance testing is frequently cited as a threat to the validity and reproducibility of the social sciences. While many individuals suggest we should focus on altering the *p*-value at which we deem an effect significant, we believe this suggestion is short-sighted. Alternative procedures (i.e., Bayesian analyses and Observation Oriented Modeling; OOM) can be more powerful and meaningful to our discipline. However, these methodologies are less frequently utilized and are rarely discussed in combination with NHST. Herein, we discuss the historical roots, procedures, and assumptions of three methodologies (NHST, Bayesian Model comparison, and OOM), then compare the possible interpretations of three analyses (ANOVA, Bayes Factor, and an Ordinal Pattern Analysis) in various data environments using a simulation study. Our frequentist simulation approach generated 20,000 unique datasets which varied sample size (*N*s of 10, 30, 100, 500, 1,000), and effect sizes (*d*s of 0.10, 0.20, 0.50, 0.80). Through this simulation, we find that changing the threshold at which *p*-values are considered significant has little to no effect on conclusions. Further, we find that evaluating multiple estimates as evidence of an effect can allow for a more robust and nuanced report of findings. These findings suggest the need to redefine evidentiary value and reporting practices.
+abstract: |
+ Null hypothesis significance testing (NSHT) is cited as a threat to validity and reproducibility. While many individuals suggest we focus on altering the *p*-value at which we deem an effect significant, we believe this suggestion is short-sighted. Alternative procedures (i.e., Bayesian analyses and Observation Oriented Modeling; OOM) can be more powerful and meaningful to our discipline. However, these methodologies are less frequently utilized and are rarely discussed in combination with NHST. Herein, we discuss three methodologies (NHST, Bayesian Model comparison, and OOM), then compare the possible interpretations of three analyses (ANOVA, Bayes Factor, and an Ordinal Pattern Analysis) in various data environments using a frequentist simulation study. We find that changing significance thresholds has little effect on conclusions. We find that evaluating multiple estimates as evidence of an effect allows for more robust and nuanced reports of findings. These findings suggest the need to redefine evidentiary value and reporting practices.
+
 
   
 keywords          : "null hypothesis testing, p-values, Bayes Factors, Observation Oriented Modeling, evidence"
@@ -41,6 +38,7 @@ figurelist        : no
 tablelist         : no
 footnotelist      : no
 lineno            : yes
+mask              : true
 
 lang              : "english"
 class             : "man"
