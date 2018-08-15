@@ -3009,7 +3009,7 @@ Figure \@ref(fig:effects-graph-nonsig) portrays the results for non-significant 
 
 Figure \@ref(fig:effects-pcc-d) depicts the relationship between the effect size of time 1 minus time 2 and the corresponding PCC values. These metrics appear to represent different concepts where effect size measures the magnitude of the difference between two data points while PCC disregards magnitude and represents the proportion of the sample following the given ordinal pattern across all three time points. Given these differences, it is interesting how well these two measures converge together. As sample size increases, estimates for both *d* and PCC become more precise (i.e., smaller range, closer to the simulated effect size). We believe that PCC offers researchers the ability not only to confirm that their effect size is reasonable, but also to better understand the pattern their data are following, especially if an observed effect size contradicts previous literature. For example, let us assume there is previous literature that states that a small positive effect exists, such that responses should increase from time 1 to time 2. Under conditions of a true small effect (*d*= - 0.20) and sample size of 30, our graph shows us that it is possible to obtain a positive medium effect size (*d* = 0.50; indicating the time 1 is more extreme than time 2). Upon finding these contradicting results, the researcher could further seek to understand the pattern their data are following by computing the PCC value for the experiment. The PCC value for this example would be above .50, indicating that, in over half of respondents the values for time 1 are less than time 2 (in turn less than time 3, as it measures the entire pattern), even though magnitude of change suggests that time 1 is larger than time 2. This gives the researcher a richer piece of information, which can help to describe their results in a more nuanced fashion.  
 
-```{r effects-graph-sig, echo=FALSE, fig.cap="For NHST analyses only, percent of significant estimates at $p$ < .05 (solid) and $p$ < .005 (dashed) for each analysis given effect size and sample size.", fig.height=8, fig.width=8}
+```{r effects-graph-sig, warning = FALSE, echo=FALSE, fig.cap="For NHST analyses only, percent of significant estimates at $p$ < .05 (solid) and $p$ < .005 (dashed) for each analysis given effect size and sample size.", fig.height=8, fig.width=8}
 
 library(reshape)
 library(ggplot2)
@@ -3160,7 +3160,7 @@ prow <- plot_grid( p4 + theme(legend.position="none"),
 prow
 ```
 
-```{r effects-graph-nonsig, echo=FALSE, fig.cap="Percent of non-significant effects for each analysis given effect size and sample size.", fig.height=8, fig.width=8}
+```{r effects-graph-nonsig, warning = FALSE, echo=FALSE, fig.cap="Percent of non-significant effects for each analysis given effect size and sample size.", fig.height=8, fig.width=8}
 ###################################################### percent non-significant findings graphs
 non_data = subset(long_graph, Significance=="Non")
 non_data_large = subset(non_data, Effect=="Large")
@@ -5569,7 +5569,7 @@ write.csv(PercentOfAgreementIsNonSig, file = "PercentIsNonSig.005.csv")
 
 ```
 
-```{r agree-graph-omnibus, echo=FALSE, fig.cap="Percent of agreement across all analyses given effect size and sample size for omnnibus tests.", fig.height=8, fig.width=8}
+```{r agree-graph-omnibus, warning = FALSE, echo=FALSE, fig.cap="Percent of agreement across all analyses given effect size and sample size for omnnibus tests.", fig.height=8, fig.width=8}
 
 agree = read.csv("Graph_data_agree.05.csv")
 agree2 = read.csv("Graph_data_agree.005.csv")
@@ -5714,7 +5714,7 @@ wrow <- plot_grid( w4 + theme(legend.position="none"),
 wrow
 ```
 
-```{r agree-graph-post, echo=FALSE, fig.cap="Percent of agreement across each analysis given effect size and sample size $post hoc$ tests with $p$ < .05 (solid) and $p$ < .005 (dashed). Note that this graph only compares the NHST and BF conclusions.", fig.height=8, fig.width=8}
+```{r agree-graph-post, warning = FALSE, echo=FALSE, fig.cap="Percent of agreement across each analysis given effect size and sample size $post hoc$ tests with $p$ < .05 (solid) and $p$ < .005 (dashed). Note that this graph only compares the NHST and BF conclusions.", fig.height=8, fig.width=8}
 
 agreelong = melt(agree_together,
                  id = c("effect", "N"))
