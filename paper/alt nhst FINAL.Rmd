@@ -40,7 +40,6 @@ footnotelist      : no
 lineno            : yes
 mask              : true
 
-lang              : "english"
 class             : "man"
 output            : papaja::apa6_pdf
 csl               : apa6.csl
