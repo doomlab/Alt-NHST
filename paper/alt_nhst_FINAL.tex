@@ -186,29 +186,26 @@ alternative paradigms compare to NHST in terms of their methodological
 design, statistical interpretations, and comparative robustness. Herein,
 we will discuss the following methodologies: NHST, Bayes Factor
 comparisons, and Observation Oriented Modeling. The three approaches
-will be compared via this simulated data using a three timepoint
-repeated measures design with a Likert-type scale as the outcome
-variable. One goal of this study is to introduce social scientists to
-Observation Oriented Modeling (OOM), as it is a relatively new paradigm
-that is readily interpretable and, as we will show, useful in these
-contexts. Additionally, we aim to discuss the conclusions these three
-methods would make given the same data, and to compare how often these
-methodologies agree within different data environments (i.e., given
-varying sample sizes and effect sizes). We hope that by discussing these
-methodologies in terms of a simple statistical analysis researchers will
-be able to easily compare and contrast methodologies. For this
-discussion, it is important to understand their historical background,
-procedural steps, and limitations, which are outlined below. After this
-discussion, we describe a simulation study comparing methodologies and
-\(\alpha\) criteria, and end with potential implications for
-researchers.
+will be compared via simulated data using a three timepoint repeated
+measures design with a Likert-type scale as the outcome variable. One
+goal of this study is to introduce social scientists to Observation
+Oriented Modeling (OOM), as it is a relatively new paradigm that is
+readily interpretable and, as we will show, useful in these contexts.
+Additionally, we aim to discuss the conclusions these three methods
+reach given the same data, and to compare how often these methodologies
+agree within different data environments (i.e., given varying sample
+sizes and effect sizes). We hope that by discussing these methodologies
+in terms of a simple statistical analysis researchers will be able to
+easily compare and contrast methodologies. For this discussion, it is
+important to understand their historical background, procedural steps,
+and limitations, which are outlined below. After this discussion, we
+describe a simulation study comparing methodologies and \(\alpha\)
+criteria, and end with potential implications for researchers.
 
-\hypertarget{null-hypothesis-significance-testing}{%
 \section{Null Hypothesis Significance
-Testing}\label{null-hypothesis-significance-testing}}
+Testing}\label{null-hypothesis-significance-testing}
 
-\hypertarget{history}{%
-\subsection{History}\label{history}}
+\subsection{History}\label{history}
 
 Many attribute the frequentist NHST procedure to Ronald A. Fisher
 (Fisher, 1932). However, Fisher's ideas are a far cry from the NHST
@@ -217,9 +214,9 @@ procedure implemented today. Fisher believed in creating one
 \enquote{nullified}, or shown incorrect, not as a zero-difference
 hypothesis (Lehmann, 2011). He also believed that the use of any omnibus
 level of significance showed a \enquote{lack of statistical thinking}
-(Gigerenzer et al., 2004). He instead believed we should report the
-exact significance value of a test and let others make their own
-decision about the claims, which is more in line with the typical
+(Gigerenzer, Krauss, \& Vitouch, 2004). He instead believed we should
+report the exact significance value of a test and let others make their
+own decision about the claims, which is more in line with the typical
 reporting recommendations provided by the American Psychological
 Association (American Psychological Association, 2010). Fisher spoke of
 this work to William Gosset, the man who created the Student's
@@ -255,8 +252,7 @@ context. Additionally, Neyman and Pearson emphasized that use of set
 researchers to adjust their analysis to the needs of the particular task
 at hand (Gigerenzer, 2004).
 
-\hypertarget{typical-nhst-procedure}{%
-\subsection{Typical NHST Procedure}\label{typical-nhst-procedure}}
+\subsection{Typical NHST Procedure}\label{typical-nhst-procedure}
 
 Neither Fisher's hypothesis testing, nor Neyman-Pearson decision theory
 quite match the NSHT procedure as it is taught and applied today.
@@ -337,11 +333,9 @@ reproducibility, showing support for the absence of an effect can be
 even more crucial than showing support for the presence of an effect
 (Bakker, van Dijk, \& Wicherts, 2012; Lakens, 2017).
 
-\hypertarget{bayes-factors}{%
-\section{Bayes Factors}\label{bayes-factors}}
+\section{Bayes Factors}\label{bayes-factors}
 
-\hypertarget{history-1}{%
-\subsection{History}\label{history-1}}
+\subsection{History}\label{history-1}
 
 Thomas Bayes was a statistician and Presbyterian minister whose works
 are still influential today (Bellhouse, 2004). Bayes' theorem solved the
@@ -399,8 +393,7 @@ effects model is favored 20 to 1 over the null model. Conversely, if the
 \(BF_{10}\) were 0.10, the null model is favored 10 to 1 over the
 effects model.
 
-\hypertarget{typical-procedure}{%
-\subsection{Typical Procedure}\label{typical-procedure}}
+\subsection{Typical Procedure}\label{typical-procedure}
 
 The procedure behind BF comparisons requires two steps.
 
@@ -474,12 +467,10 @@ intensive to complete. However, many simple programs, packages, and
 tutorials exist to help ease the transition from frequentist to Bayesian
 analysis (JASP Team, 2017; Kruschke, 2014; Morey \& Rouder, 2015).
 
-\hypertarget{observation-oriented-modeling}{%
 \section{Observation Oriented
-Modeling}\label{observation-oriented-modeling}}
+Modeling}\label{observation-oriented-modeling}
 
-\hypertarget{history-2}{%
-\subsection{History}\label{history-2}}
+\subsection{History}\label{history-2}
 
 James Grice argues that our problems as a science go beyond use of NHST
 and extend into the philosophical ideas underpinning our research.
@@ -492,11 +483,13 @@ to positivism (i.e., which is solely concerned with finding an effect,
 not with how the effect occurred), philosophical realism holds that the
 causal structure of nature can be understood through scientific
 investigation. The goal is then to understand the causal mechanisms that
-give rise to the patterns observed in a given set of observations, which
-in here would refer to data. Switching to this philosophy allows for
-techniques that match the daily activities of social scientists in their
-endeavors to unravel the story of how humans operate. Using OOM, a
-researcher does not focus on population parameters and the various
+give rise to the patterns observed in a given data set. Switching to
+this philosophy allows for techniques that match the daily activities of
+social scientists in their endeavors to unravel the story of how humans
+operate. OOM pushes the researcher to seek an inference to best
+explanation (Grice et al., 2017). This causal inference procedure
+differs from both NHST and Bayes yet are often conflated, which is
+concerned with inferences to population parameters and their various
 assumptions underlying statistical tests (e.g., random sampling,
 normality, homogeneity of population treatment differences, etc.).
 
@@ -504,33 +497,32 @@ Generally speaking, this approach can handle any type of data, including
 ordinal rankings and frequency counts, as all analyses are calculated in
 the same general fashion (see Valentine \& Buchanan, 2013 for an
 example). This simplicity occurs because OOM works on the deep structure
-of the data. Through observational definition, the program separates
-these units into binary code. Deep structures can be arranged to form a
-matrix, which can then be manipulated via matrix algebra, binary
-Procrustes rotation, and other operations to investigate the data. The
+of the data which is a binary coding technique similar to dummy and
+effect coding. Deep structures are matrices of zeros and ones which can
+be efficiently manipulated to investigate patterns within the data. The
 most important values from any OOM analysis are the PCC (percent correct
 classification) values. These values represent the summation of how well
 an individual's responses matched the stated or expected pattern or, in
-the case of causal modeling, how many of the individual's conformed to a
+the case of causal modeling, how many of the individuals conformed to a
 given cause. Complete matches are the proportion of observations that
 match the researcher-designated pattern on all dimensions. For example,
 in a three-level Ordinal Pattern Analysis (OPA), a person would be
 tallied as a \enquote{complete match} if the ordinal pattern of his/her
-data matched the expected ordinal pattern across all three levels.
-Imagine we have set a pattern that designates Time 1 \textless{} Time 2
-\textless{} Time 3. For example, imagine we have data for two
-hypothetical individuals. Person A has values of 3, 4, and 5 at
-timepoints 1, 2, and 3, respectively, while person B has values of 4, 5,
-and 2. We can see that Person A matched the pattern completely, and
-therefore would be counted in the PCC value. However, while person B
-matched the first part of our pattern (time 1 less than time 2), they
-did not match on the third point of our pattern (time 2 less than time
-3); thus, they would not be counted in the PCC value. As the PCC is
-simply the percentage of individuals in a sample whose responses match
-the expected ordinal pattern perfectly, its computation is therefore not
-based on means or variances, but on the basis of the observations
-themselves. The PCC value replaces all of the conventional values for
-effect size used in statistical analyses.
+data matched the expected ordinal pattern across all three levels. For
+example, imagine we have set a pattern that designates Time 1
+\textless{} Time 2 \textless{} Time 3. Person A has values of 3, 4, and
+5 at timepoints 1, 2, and 3, respectively, while person B has values of
+4, 5, and 2. Person A matches the pattern completely, and is therefore
+counted in the PCC value. Person B, however, matches only the first part
+of the pattern (time 1 less than time 2) and is not counted in the PCC
+value. However, while person B matched the first part of our pattern
+(time 1 less than time 2), they did not match on the third point of our
+pattern (time 2 less than time 3); thus, they would not be counted in
+the PCC value. As the PCC is simply the percentage of individuals in a
+sample whose responses match the expected ordinal pattern perfectly, its
+computation is therefore not based on means or variances, but on the
+basis of the observations themselves. The PCC value replaces all of the
+conventional values for effect size used in statistical analyses.
 
 The analysis we focus on here (OPA) does not form any type of linear or
 nonlinear equation or regression, but simply looks for those individuals
@@ -561,8 +553,7 @@ low \emph{c}-values, like low \emph{p}-values, are desirable,
 considered a secondary form of confirmation for the researcher that
 their results are distinct.
 
-\hypertarget{typical-procedure-1}{%
-\subsection{Typical Procedure}\label{typical-procedure-1}}
+\subsection{Typical Procedure}\label{typical-procedure-1}
 
 OPA is analogous to repeated measures ANOVA and contains two steps.
 
@@ -603,11 +594,9 @@ focus on the observed responses of the individual and how it may or may
 not behave as expected. Finally, similar to the Bayesian analysis,
 long-run error rates are not discussed in this methodology.
 
-\hypertarget{a-simulation-study}{%
-\section{A Simulation Study}\label{a-simulation-study}}
+\section{A Simulation Study}\label{a-simulation-study}
 
-\hypertarget{simulated-data}{%
-\subsection{Simulated Data}\label{simulated-data}}
+\subsection{Simulated Data}\label{simulated-data}
 
 In this study, we generated 20,000 datasets by manipulating sample size
 and effect size for a repeated measures design with three levels. A
@@ -656,11 +645,9 @@ During the data simulation, the standard deviation of the difference
 scores was examined to maintain differences greater than zero,
 especially for low \emph{N} simulations.
 
-\hypertarget{analyses-performed}{%
-\subsection{Analyses Performed}\label{analyses-performed}}
+\subsection{Analyses Performed}\label{analyses-performed}
 
-\hypertarget{descriptive-statistics}{%
-\subsubsection{Descriptive Statistics}\label{descriptive-statistics}}
+\subsubsection{Descriptive Statistics}\label{descriptive-statistics}
 
 Means, mean differences between levels, and the confidence intervals for
 each mean can be found in the complete dataset online,
@@ -673,9 +660,8 @@ the non-central confidence interval for each \emph{d} value as well
 mainly used to determine if simulations were meeting expected values
 overall.
 
-\hypertarget{parametric-nhst---repeated-measures-anova}{%
 \subsubsection{Parametric NHST - Repeated Measures
-ANOVA}\label{parametric-nhst---repeated-measures-anova}}
+ANOVA}\label{parametric-nhst---repeated-measures-anova}
 
 Repeated measures ANOVA using the \emph{ezANOVA()} function in the
 \emph{ez} library was utilized with type three sum of squares (Lawrence,
@@ -711,9 +697,8 @@ than .005 was binned as significant, while data ranging from .005 to .10
 was marginal or suggestive, and \emph{p} \textgreater{} .10 was
 non-significant.
 
-\hypertarget{bayesian-analysis-bayes-factor}{%
 \subsubsection{Bayesian Analysis: Bayes
-Factor}\label{bayesian-analysis-bayes-factor}}
+Factor}\label{bayesian-analysis-bayes-factor}
 
 We compared a null model with one grand mean for all three levels to an
 effects model wherein means were allowed to differ using the
@@ -740,9 +725,8 @@ are at their disposal at
 and this manuscript was written with the \emph{papaja} package allowing
 one to view the code inline with this text (Aust \& Barth, 2017).
 
-\hypertarget{oom-ordinal-pattern-analysis}{%
 \subsubsection{OOM: Ordinal Pattern
-Analysis}\label{oom-ordinal-pattern-analysis}}
+Analysis}\label{oom-ordinal-pattern-analysis}
 
 An \emph{R} script of the Ordinal Pattern Analysis from Grice et al.
 (2015)'s OOM program was provided from Sauer and Luebke (2016). We set
@@ -760,16 +744,14 @@ low PCC values (PCC \textless{} .50), regardless of their
 \emph{c}-values. Again, we must stress that this paradigm eschews
 binning estimates and that our use of bins was a) discussed and decided
 upon before data analysis, and b) created only for the purposes of
-comparing this new methodologies possible conclusions to that of a
+comparing this new methodology's possible conclusions to that of a
 frequentist framework. We welcome interested readers to explore the data
 more, defining their own bins and viewing the affects, by viewing and
 editing our code online.
 
-\hypertarget{results}{%
-\section{Results}\label{results}}
+\section{Results}\label{results}
 
-\hypertarget{percent-of-estimates}{%
-\subsection{Percent of Estimates}\label{percent-of-estimates}}
+\subsection{Percent of Estimates}\label{percent-of-estimates}
 
 For all simulations, we first binned the estimates into significant,
 marginal, and non-significant effect categories as described in the
@@ -884,8 +866,7 @@ larger samples are lighter colors. Please note that the key for the
 entire set of graphics is in the bottom right hand corner.}
 \end{figure}
 
-\hypertarget{percent-agreement}{%
-\subsection{Percent Agreement}\label{percent-agreement}}
+\subsection{Percent Agreement}\label{percent-agreement}
 
 A goal of this project was to expand the toolbox of options for
 researchers to determine what evidence supports their hypotheses by
@@ -937,8 +918,7 @@ analysis given effect size and sample size \(post hoc\) tests with \(p\)
 this graph only compares the NHST and BF conclusions.}
 \end{figure}
 
-\hypertarget{criterion-comparison}{%
-\subsection{Criterion Comparison}\label{criterion-comparison}}
+\subsection{Criterion Comparison}\label{criterion-comparison}
 
 As the relationship between BF and \emph{p}-values is already well
 documented, we will not discuss them here beyond stating that we found
@@ -1019,8 +999,7 @@ positives in the literature, the relationship between these values
 illustrated that multiple indices can provided a clearer picture of the
 evidentiary value available in a study.
 
-\hypertarget{limitations}{%
-\subsection{Limitations}\label{limitations}}
+\subsection{Limitations}\label{limitations}
 
 Within any study a number of limitations exist. The largest limitation
 of our study is that we chose to focus on a simple three level repeated
@@ -1040,8 +1019,7 @@ did not violate any statistical assumptions. It is possible that the
 violation of these assumptions may cause changes in the relationships we
 see here.
 
-\hypertarget{discussion}{%
-\section{Discussion}\label{discussion}}
+\section{Discussion}\label{discussion}
 
 This manuscript was designed to showcase two alternative paradigms to
 NHST researchers and to compare the conclusions these alternative
@@ -1060,7 +1038,7 @@ size. This finding is notable as the article by Benjamin et al. (2018)
 states that an increase in sample size is likely to decrease false
 positives \enquote{by factors greater than two} (p.~10), and work by
 Pericchi and Pereira (2016) state that an adaptive level of significance
-would be beneficial in these circumstances---neither of which are not
+would be beneficial in these circumstances, neither of which are
 supported by our simulations. Our science will not grow by moving the
 significance line in the sand, as this line has already been shown to
 have \enquote{no ontological basis} (Rosnow \& Rosenthal, 1989, p.
@@ -1083,15 +1061,14 @@ large sample size, we would expect BF values to be very large and
 model/hypothesis should not be supported. However, if we also have a PCC
 value of .30, we may decide that it is possible that this effect is very
 small and possibly negligible. This multifaceted approach can help to
-curb our enthusiasm over small or negligible \enquote{significant}
-effects that may not be practically meaningful and possibly may not
-replicate. Regardless if analyses agree or disagree on the presence of
-an effect, a researcher can investigate the direction and size of the
-effect, the proportion of data that agrees or disagrees with the
-direction of the effect, and discuss conclusions accordingly. Each
-methodology behaves slightly differently in given data environments,
-which might begin to highlight meaningful differences when discussed
-together.
+curb our enthusiasm over small or negligible effects that may not be
+practically meaningful and possibly may not replicate. Regardless if
+analyses agree or disagree on the presence of an effect, a researcher
+can investigate the direction and size of the effect, the proportion of
+data that agrees or disagrees with the direction of the effect, and
+discuss conclusions accordingly. Each methodology behaves slightly
+differently in given data environments, which might begin to highlight
+meaningful differences when discussed together.
 
 Some may contest that all of these analyses are capable of being hacked,
 like \emph{p}-values, through researcher degrees of freedom, choice of
@@ -1150,121 +1127,119 @@ science and to increase the strength of evidence in our discipline.
 
 \newpage
 
-\hypertarget{references}{%
-\section{References}\label{references}}
+\section{References}\label{references}
 
-\setlength{\parindent}{-0.5in}
-\setlength{\leftskip}{0.5in}
+\setlength{\parindent}{-0.5in} \setlength{\leftskip}{0.5in}
 
 \hypertarget{refs}{}
-\leavevmode\hypertarget{ref-AmericanPsychologicalAssociation2010}{}%
+\hypertarget{ref-AmericanPsychologicalAssociation2010}{}
 American Psychological Association. (2010). \emph{Publication manual of
 the American Psychological Association} (6th ed.). American
 Psychological Association.
 
-\leavevmode\hypertarget{ref-Aust2017}{}%
+\hypertarget{ref-Aust2017}{}
 Aust, F., \& Barth, M. (2017). papaja: Create APA manuscripts with R
 Markdown. Retrieved from \url{https://github.com/crsh/papaja}
 
-\leavevmode\hypertarget{ref-Bakker2016}{}%
+\hypertarget{ref-Bakker2016}{}
 Bakker, M., Hartgerink, C. H. J., Wicherts, J. M., \& van der Maas, H.
 L. J. (2016). Researchers' intuitions about power in psychological
 research. \emph{Psychological Science}, \emph{27}(8), 1069--1077.
 doi:\href{https://doi.org/10.1177/0956797616647519}{10.1177/0956797616647519}
 
-\leavevmode\hypertarget{ref-Bakker2012}{}%
+\hypertarget{ref-Bakker2012}{}
 Bakker, M., van Dijk, A., \& Wicherts, J. M. (2012). The rules of the
 game called psychological science. \emph{Perspectives on Psychological
 Science}, \emph{7}(6), 543--554.
 doi:\href{https://doi.org/10.1177/1745691612459060}{10.1177/1745691612459060}
 
-\leavevmode\hypertarget{ref-Bellhouse2004}{}%
+\hypertarget{ref-Bellhouse2004}{}
 Bellhouse, D. R. (2004). The Reverend Thomas Bayes, FRS: A Biography to
 celebrate the tercentenary of his birth. \emph{Statistical Science},
 \emph{19}(1), 3--43.
 doi:\href{https://doi.org/10.1214/088342304000000189}{10.1214/088342304000000189}
 
-\leavevmode\hypertarget{ref-Benjamin2017}{}%
+\hypertarget{ref-Benjamin2017}{}
 Benjamin, D. J., Berger, J. O., Johannesson, M., Nosek, B. A.,
 Wagenmakers, E.-J., Berk, R., \ldots{} Johnson, V. E. (2018). Redefine
 statistical significance. \emph{Nature Human Behaviour}, \emph{2}(1),
 6--10.
 doi:\href{https://doi.org/10.1038/s41562-017-0189-z}{10.1038/s41562-017-0189-z}
 
-\leavevmode\hypertarget{ref-Buchanan2017}{}%
+\hypertarget{ref-Buchanan2017}{}
 Buchanan, E. M., Valentine, K. D., \& Scofield, J. E. (2017). MOTE.
 Retrieved from \url{https://github.com/doomlab/MOTE}
 
-\leavevmode\hypertarget{ref-Cohen1992a}{}%
+\hypertarget{ref-Cohen1992a}{}
 Cohen, J. (1992). A power primer. \emph{Psychological Bulletin},
 \emph{112}(1), 155--159.
 doi:\href{https://doi.org/10.1037/0033-2909.112.1.155}{10.1037/0033-2909.112.1.155}
 
-\leavevmode\hypertarget{ref-Cumming2008}{}%
+\hypertarget{ref-Cumming2008}{}
 Cumming, G. (2008). Replication and p intervals. \emph{Perspectives on
 Psychological Science}, \emph{3}(4), 286--300.
 doi:\href{https://doi.org/10.1111/j.1745-6924.2008.00079.x}{10.1111/j.1745-6924.2008.00079.x}
 
-\leavevmode\hypertarget{ref-Cumming2014}{}%
+\hypertarget{ref-Cumming2014}{}
 Cumming, G. (2014). The new statistics: Why and how. \emph{Psychological
 Science}, \emph{25}(1), 7--29.
 doi:\href{https://doi.org/10.1177/0956797613504966}{10.1177/0956797613504966}
 
-\leavevmode\hypertarget{ref-Datta1996}{}%
+\hypertarget{ref-Datta1996}{}
 Datta, G., \& Ghosh, M. (1996). On the invariance of noninformative
 priors. \emph{The Annals of Statistics}, \emph{24}(1), 141--159.
 doi:\href{https://doi.org/10.1214/aos/1033066203}{10.1214/aos/1033066203}
 
-\leavevmode\hypertarget{ref-DeLaplace1774}{}%
+\hypertarget{ref-DeLaplace1774}{}
 De Laplace, P. S. (1774). Mémoire sur les suites récurro-récurrentes et
 sur leurs usages dans la théorie des hasards. \emph{Mém. Acad. R. Sci.
 Paris}, \emph{6}(8), 353--371. Retrieved from
 \href{http://cerebro.cs.xu.edu/math/Sources/Laplace/recurro\%7B/_\%7Drecurrentes.pdf}{http://cerebro.cs.xu.edu/math/Sources/Laplace/recurro\{\textbackslash{}\_\}recurrentes.pdf}
 
-\leavevmode\hypertarget{ref-Dienes2008}{}%
+\hypertarget{ref-Dienes2008}{}
 Dienes, Z. (2008). \emph{Understanding psychology as a science: an
 introduction to scientific and statistical inference}. Palgrave
 Macmillan.
 
-\leavevmode\hypertarget{ref-Dienes2014}{}%
+\hypertarget{ref-Dienes2014}{}
 Dienes, Z. (2014). Using Bayes to get the most out of non-significant
 results. \emph{Frontiers in Psychology}, \emph{5}(July), 1--17.
 doi:\href{https://doi.org/10.3389/fpsyg.2014.00781}{10.3389/fpsyg.2014.00781}
 
-\leavevmode\hypertarget{ref-Etz2016}{}%
+\hypertarget{ref-Etz2016}{}
 Etz, A., \& Vandekerckhove, J. (2016). A Bayesian perspective on the
 reproducibility project: Psychology. \emph{PLoS ONE}, \emph{11}(2),
 1--12.
 doi:\href{https://doi.org/10.1371/journal.pone.0149794}{10.1371/journal.pone.0149794}
 
-\leavevmode\hypertarget{ref-Finkel2015}{}%
+\hypertarget{ref-Finkel2015}{}
 Finkel, E. J., Eastwick, P. W., \& Reis, H. T. (2015). Best research
 practices in psychology: Illustrating epistemological and pragmatic
 considerations with the case of relationship science. \emph{Journal of
 Personality and Social Psychology}, \emph{108}(2), 275--297.
 doi:\href{https://doi.org/10.1037/pspi0000007}{10.1037/pspi0000007}
 
-\leavevmode\hypertarget{ref-Fisher1932}{}%
+\hypertarget{ref-Fisher1932}{}
 Fisher, R. A. (1932). Inverse probability and the use of Likelihood.
 \emph{Mathematical Proceedings of the Cambridge Philosophical Society},
 \emph{28}(3), 257--261.
 doi:\href{https://doi.org/10.1017/S0305004100010094}{10.1017/S0305004100010094}
 
-\leavevmode\hypertarget{ref-Gelman2004}{}%
+\hypertarget{ref-Gelman2004}{}
 Gelman, A., Carlin, J. B., Stern, H. S., \& Rubin, D. R. (2013).
 \emph{Bayesian data analysis}. Chapman \& Hall/CRC.
 
-\leavevmode\hypertarget{ref-Genz2017}{}%
+\hypertarget{ref-Genz2017}{}
 Genz, A., Bretz, F., Miwa, T., Mi, X., Leisch, F., Scheipl, F., \&
 Hothorn, T. (2017). mvtnorm: Multivariate normal and t distributions.
 Retrieved from \url{http://cran.r-project.org/package=mvtnorm}
 
-\leavevmode\hypertarget{ref-Gigerenzer2004}{}%
+\hypertarget{ref-Gigerenzer2004}{}
 Gigerenzer, G. (2004). Mindless statistics. \emph{The Journal of
 Socio-Economics}, \emph{33}(5), 587--606.
 doi:\href{https://doi.org/10.1016/j.socec.2004.09.033}{10.1016/j.socec.2004.09.033}
 
-\leavevmode\hypertarget{ref-Gigerenzer2004a}{}%
+\hypertarget{ref-Gigerenzer2004a}{}
 Gigerenzer, G., Krauss, S., \& Vitouch, O. (2004). The null ritual: What
 you always wanted to know about significance testing but were afraid to
 ask. In \emph{The sage handbook of quantitative methodology for the
@@ -1272,214 +1247,220 @@ social sciences} (pp. 392--409). Thousand Oaks, CA: SAGE Publications,
 Inc.
 doi:\href{https://doi.org/10.4135/9781412986311.n21}{10.4135/9781412986311.n21}
 
-\leavevmode\hypertarget{ref-Grice2011}{}%
+\hypertarget{ref-Grice2011}{}
 Grice, J. W. (2011). \emph{Observation Oriented Modeling: Analysis of
 cause in the behavioral sciences} (p. 242). Elsevier/Academic Press.
 
-\leavevmode\hypertarget{ref-Grice2014}{}%
+\hypertarget{ref-Grice2014}{}
 Grice, J. W. (2014). Observation Oriented Modeling: Preparing students
 for research in the 21st century. \emph{Comprehensive Psychology},
 \emph{3}, 05.08.IT.3.3.
 doi:\href{https://doi.org/10.2466/05.08.IT.3.3}{10.2466/05.08.IT.3.3}
 
-\leavevmode\hypertarget{ref-Grice2012}{}%
+\hypertarget{ref-Grice2012}{}
 Grice, J. W., Barrett, P. T., Schlimgen, L. A., \& Abramson, C. I.
 (2012). Toward a brighter future for psychology as an observation
 oriented science. \emph{Behavioral Sciences}, \emph{2}(4), 1--22.
 doi:\href{https://doi.org/10.3390/bs2010001}{10.3390/bs2010001}
 
-\leavevmode\hypertarget{ref-Grice2015}{}%
+\hypertarget{ref-Grice2017}{}
+Grice, J. W., Barrett, P., Cota, L., Felix, C., Taylor, Z., Garner, S.,
+\ldots{} Vest, A. (2017). Four bad habits of modern psychologists.
+\emph{Behavioral Sciences}, \emph{7}(4), 53.
+doi:\href{https://doi.org/10.3390/bs7030053}{10.3390/bs7030053}
+
+\hypertarget{ref-Grice2015}{}
 Grice, J. W., Craig, D. P. A., \& Abramson, C. I. (2015). A simple and
 transparent alternative to repeated measures ANOVA. \emph{SAGE Open},
 \emph{5}(3), 2158244015604192.
 doi:\href{https://doi.org/10.1177/2158244015604192}{10.1177/2158244015604192}
 
-\leavevmode\hypertarget{ref-Haaf2017}{}%
+\hypertarget{ref-Haaf2017}{}
 Haaf, J., \& Rouder, J. N. (2017). \emph{Developing constraint in
 bayesian mixed models}.
 doi:\href{https://doi.org/10.17605/OSF.IO/KTJNQ}{10.17605/OSF.IO/KTJNQ}
 
-\leavevmode\hypertarget{ref-Ioannidis2005}{}%
+\hypertarget{ref-Ioannidis2005}{}
 Ioannidis, J. P. A. (2005). Why most published research findings are
 false. \emph{PLoS Medicine}, \emph{2}(8), e124.
 doi:\href{https://doi.org/10.1371/journal.pmed.0020124}{10.1371/journal.pmed.0020124}
 
-\leavevmode\hypertarget{ref-JASPTeam2017}{}%
+\hypertarget{ref-JASPTeam2017}{}
 JASP Team. (2017). JASP. Retrieved from \url{https://jasp-stats.org/}
 
-\leavevmode\hypertarget{ref-Kass1995a}{}%
+\hypertarget{ref-Kass1995a}{}
 Kass, R. E., \& Raftery, A. E. (1995). Bayes Factors. \emph{Journal of
 the American Statistical Association}, \emph{90}(430), 773--795.
 doi:\href{https://doi.org/10.2307/2291091}{10.2307/2291091}
 
-\leavevmode\hypertarget{ref-Klugkist2007}{}%
+\hypertarget{ref-Klugkist2007}{}
 Klugkist, I., \& Hoijtink, H. (2007). The Bayes factor for inequality
 and about equality constrained models. \emph{Computational Statistics \&
 Data Analysis}, \emph{51}(12), 6367--6379.
 doi:\href{https://doi.org/10.1016/j.csda.2007.01.024}{10.1016/j.csda.2007.01.024}
 
-\leavevmode\hypertarget{ref-Kruschke2014}{}%
+\hypertarget{ref-Kruschke2014}{}
 Kruschke, J. K. (2014). \emph{Doing Bayesian data analysis: A tutorial
 with R, JAGS, and Stan} (2nd ed.). Academic Press.
 
-\leavevmode\hypertarget{ref-Lakens2013}{}%
+\hypertarget{ref-Lakens2013}{}
 Lakens, D. (2013). Calculating and reporting effect sizes to facilitate
 cumulative science: A practical primer for t-tests and ANOVAs.
 \emph{Frontiers in Psychology}, \emph{4}.
 doi:\href{https://doi.org/10.3389/fpsyg.2013.00863}{10.3389/fpsyg.2013.00863}
 
-\leavevmode\hypertarget{ref-Lakens2017a}{}%
+\hypertarget{ref-Lakens2017a}{}
 Lakens, D. (2017). Equivalence tests. \emph{Social Psychological and
 Personality Science}, \emph{8}(4), 355--362.
 doi:\href{https://doi.org/10.1177/1948550617697177}{10.1177/1948550617697177}
 
-\leavevmode\hypertarget{ref-Lakens2017}{}%
+\hypertarget{ref-Lakens2017}{}
 Lakens, D., Adolfi, F. G., Albers, C. J., Anvari, F., Apps, M. A. J.,
 Argamon, S. E., \ldots{} Zwaan, R. A. (2018). Justify your alpha.
 \emph{Nature Human Behaviour}, \emph{2}(3), 168--171.
 doi:\href{https://doi.org/10.1038/s41562-018-0311-x}{10.1038/s41562-018-0311-x}
 
-\leavevmode\hypertarget{ref-Lawrence2017}{}%
+\hypertarget{ref-Lawrence2017}{}
 Lawrence, M. A. (2017). ez: Easy analysis and visualization of factorial
 experiments. Retrieved from \url{http://cran.r-project.org/package=ez}
 
-\leavevmode\hypertarget{ref-Lehmann1993}{}%
+\hypertarget{ref-Lehmann1993}{}
 Lehmann, E. L. (1993). The Fisher, Neyman-Pearson theories of testing
 hypotheses: One theory or two? \emph{Journal of the American Statistical
 Association}, \emph{88}(424), 1242--1249.
 doi:\href{https://doi.org/10.1080/01621459.1993.10476404}{10.1080/01621459.1993.10476404}
 
-\leavevmode\hypertarget{ref-Lehmann2011}{}%
+\hypertarget{ref-Lehmann2011}{}
 Lehmann, E. L. (2011). \emph{Fisher, Neyman, and the creation of
 classical statistics}. New York, NY: Springer.
 
-\leavevmode\hypertarget{ref-Lindsay2015}{}%
+\hypertarget{ref-Lindsay2015}{}
 Lindsay, D. S. (2015). Replication in Psychological Science.
 \emph{Psychological Science}, \emph{26}(12), 1827--1832.
 doi:\href{https://doi.org/10.1177/0956797615616374}{10.1177/0956797615616374}
 
-\leavevmode\hypertarget{ref-Maxwell2004}{}%
+\hypertarget{ref-Maxwell2004}{}
 Maxwell, S. E., \& Delaney, H. D. (2004). \emph{Designing experiments
 and analyzing data: A model comparison perspective} (2nd ed.). Mahwah,
 NJ: Lawrence Erlbaum Associates.
 
-\leavevmode\hypertarget{ref-Maxwell2015}{}%
+\hypertarget{ref-Maxwell2015}{}
 Maxwell, S. E., Lau, M. Y., \& Howard, G. S. (2015). Is psychology
 suffering from a replication crisis? What does ``failure to replicate''
 really mean? \emph{American Psychologist}, \emph{70}(6), 487--498.
 doi:\href{https://doi.org/10.1037/a0039400}{10.1037/a0039400}
 
-\leavevmode\hypertarget{ref-Morey2015c}{}%
+\hypertarget{ref-Morey2015c}{}
 Morey, R. D. (2015). On verbal categories for the interpretation of
 Bayes factors. Retrieved from
 \url{http://bayesfactor.blogspot.com/2015/01/on-verbal-categories-for-interpretation.html}
 
-\leavevmode\hypertarget{ref-Morey2015b}{}%
+\hypertarget{ref-Morey2015b}{}
 Morey, R. D., \& Rouder, J. N. (2015). BayesFactor: Computation of Bayes
 Factors for common designs. Retrieved from
 \url{https://cran.r-project.org/package=BayesFactor}
 
-\leavevmode\hypertarget{ref-Nosek2014}{}%
+\hypertarget{ref-Nosek2014}{}
 Nosek, B. A., \& Lakens, D. (2014). Registered reports. \emph{Social
 Psychology}, \emph{45}(3), 137--141.
 doi:\href{https://doi.org/10.1027/1864-9335/a000192}{10.1027/1864-9335/a000192}
 
-\leavevmode\hypertarget{ref-Nosek2012}{}%
+\hypertarget{ref-Nosek2012}{}
 Nosek, B. A., Spies, J. R., \& Motyl, M. (2012). Scientific utopia.
 \emph{Perspectives on Psychological Science}, \emph{7}(6), 615--631.
 doi:\href{https://doi.org/10.1177/1745691612459058}{10.1177/1745691612459058}
 
-\leavevmode\hypertarget{ref-OpenScienceCollaboration2015}{}%
+\hypertarget{ref-OpenScienceCollaboration2015}{}
 Open Science Collaboration. (2015). Estimating the reproducibility of
 psychological science. \emph{Science}, \emph{349}(6251),
 aac4716--aac4716.
 doi:\href{https://doi.org/10.1126/science.aac4716}{10.1126/science.aac4716}
 
-\leavevmode\hypertarget{ref-Pericchi2016}{}%
+\hypertarget{ref-Pericchi2016}{}
 Pericchi, L., \& Pereira, C. (2016). Adaptative significance levels
 using optimal decision rules: Balancing by weighting the error
 probabilities. \emph{Brazilian Journal of Probability and Statistics},
 \emph{30}(1), 70--90.
 doi:\href{https://doi.org/10.1214/14-BJPS257}{10.1214/14-BJPS257}
 
-\leavevmode\hypertarget{ref-Press2002}{}%
+\hypertarget{ref-Press2002}{}
 Press, S. J. (2002). \emph{Subjective and objective Bayesian statistics}
 (2nd ed.). Hoboken, NJ, USA: John Wiley \& Sons, Inc.
 doi:\href{https://doi.org/10.1002/9780470317105}{10.1002/9780470317105}
 
-\leavevmode\hypertarget{ref-Rosnow1989}{}%
+\hypertarget{ref-Rosnow1989}{}
 Rosnow, R. L., \& Rosenthal, R. (1989). Statistical procedures and the
 justification of knowledge in psychological science. \emph{American
 Psychologist}, \emph{44}(10), 1276--1284.
 doi:\href{https://doi.org/10.1037/0003-066X.44.10.1276}{10.1037/0003-066X.44.10.1276}
 
-\leavevmode\hypertarget{ref-Rouder2012}{}%
+\hypertarget{ref-Rouder2012}{}
 Rouder, J. N., Morey, R. D., Speckman, P. L., \& Province, J. M. (2012).
 Default Bayes factors for ANOVA designs. \emph{Journal of Mathematical
 Psychology}, \emph{56}(5), 356--374.
 doi:\href{https://doi.org/10.1016/j.jmp.2012.08.001}{10.1016/j.jmp.2012.08.001}
 
-\leavevmode\hypertarget{ref-Rouder2009}{}%
+\hypertarget{ref-Rouder2009}{}
 Rouder, J. N., Speckman, P. L., Sun, D., Morey, R. D., \& Iverson, G.
 (2009). Bayesian t tests for accepting and rejecting the null
 hypothesis. \emph{Psychonomic Bulletin \& Review}, \emph{16}(2),
 225--237.
 doi:\href{https://doi.org/10.3758/PBR.16.2.225}{10.3758/PBR.16.2.225}
 
-\leavevmode\hypertarget{ref-Sauer2016}{}%
+\hypertarget{ref-Sauer2016}{}
 Sauer, S., \& Luebke, K. (2016, January). Observation Oriented Modeling
 revised from a statistical point of view.
 doi:\href{https://doi.org/10.17605/OSF.IO/3J4XR}{10.17605/OSF.IO/3J4XR}
 
-\leavevmode\hypertarget{ref-Sellke2001}{}%
+\hypertarget{ref-Sellke2001}{}
 Sellke, T., Bayarri, M. J., \& Berger, J. O. (2001). Calibration of p
 values for testing precise null hypotheses. \emph{American
 Statistician}, \emph{55}(1), 62--71.
 doi:\href{https://doi.org/10.1198/000313001300339950}{10.1198/000313001300339950}
 
-\leavevmode\hypertarget{ref-Simmons2011}{}%
+\hypertarget{ref-Simmons2011}{}
 Simmons, J. P., Nelson, L. D., \& Simonsohn, U. (2011). False-positive
 psychology: Undisclosed flexibility in data collection and analysis
 allows presenting anything as significant. \emph{Psychological Science},
 \emph{22}(11), 1359--1366.
 doi:\href{https://doi.org/10.1177/0956797611417632}{10.1177/0956797611417632}
 
-\leavevmode\hypertarget{ref-Tabachnick2012}{}%
+\hypertarget{ref-Tabachnick2012}{}
 Tabachnick, B. G., \& Fidell, L. S. (2012). \emph{Using multivariate
 statistics} (Sixth.). Boston, MA: Pearson.
 
-\leavevmode\hypertarget{ref-Valentine2013}{}%
+\hypertarget{ref-Valentine2013}{}
 Valentine, K. D., \& Buchanan, E. M. (2013). JAM-boree: An application
 of observation oriented modelling to judgements of associative memory.
 \emph{Journal of Cognitive Psychology}, \emph{25}(4), 400--422.
 doi:\href{https://doi.org/10.1080/20445911.2013.775120}{10.1080/20445911.2013.775120}
 
-\leavevmode\hypertarget{ref-VanElk2015}{}%
+\hypertarget{ref-VanElk2015}{}
 van Elk, M., Matzke, D., Gronau, Q. F., Guan, M., Vandekerckhove, J., \&
 Wagenmakers, E.-J. (2015). Meta-analyses are no substitute for
 registered replications: A skeptical perspective on religious priming.
 \emph{Frontiers in Psychology}, \emph{6}, 1365.
 doi:\href{https://doi.org/10.3389/fpsyg.2015.01365}{10.3389/fpsyg.2015.01365}
 
-\leavevmode\hypertarget{ref-VantVeer2016}{}%
+\hypertarget{ref-VantVeer2016}{}
 van't Veer, A. E., \& Giner-Sorolla, R. (2016). Pre-registration in
 social psychology---A discussion and suggested template. \emph{Journal
 of Experimental Social Psychology}, \emph{67}, 2--12.
 doi:\href{https://doi.org/10.1016/j.jesp.2016.03.004}{10.1016/j.jesp.2016.03.004}
 
-\leavevmode\hypertarget{ref-Wagenmakers2007}{}%
+\hypertarget{ref-Wagenmakers2007}{}
 Wagenmakers, E.-J. (2007). A practical solution to the pervasive
 problems of p values. \emph{Psychonomic Bulletin \& Review},
 \emph{14}(5), 779--804.
 doi:\href{https://doi.org/10.3758/BF03194105}{10.3758/BF03194105}
 
-\leavevmode\hypertarget{ref-Wasserstein2016}{}%
+\hypertarget{ref-Wasserstein2016}{}
 Wasserstein, R. L., \& Lazar, N. A. (2016). The ASA's statement on p
 -values: Context, process, and purpose. \emph{The American
 Statistician}, \emph{70}(2), 129--133.
 doi:\href{https://doi.org/10.1080/00031305.2016.1154108}{10.1080/00031305.2016.1154108}
 
-\leavevmode\hypertarget{ref-Wetzels2011}{}%
+\hypertarget{ref-Wetzels2011}{}
 Wetzels, R., Matzke, D., Lee, M. D., Rouder, J. N., Iverson, G. J., \&
 Wagenmakers, E.-J. (2011). Statistical evidence in experimental
 psychology. \emph{Perspectives on Psychological Science}, \emph{6}(3),
