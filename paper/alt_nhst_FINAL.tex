@@ -162,24 +162,28 @@ before us have voiced sound, generally accepted opinions on potential
 remedies, such as an increased focus on effect sizes (Cumming, 2008;
 Lakens, 2013; Maxwell, Lau, \& Howard, 2015; Nosek, Spies, \& Motyl,
 2012). However, other suggestions have been met with less enthusiasm,
-including a recent article by Benjamin et al. (2018) advocating that
+including an article by Benjamin et al. (2018) advocating that
 researchers should begin thinking only of \emph{p}-values less than .005
 as \enquote{statistically significant}, thus changing \(\alpha\) levels
-to control Type I error rates. Additionally, Pericchi and Pereira (2016)
-promote the use of fluctuating \(\alpha\) levels as a function of sample
-size to assist with these errors. We argue it is not the threshold, or
-critical \emph{p}, that needs to be rethought when seeking evidence, but
-rather if a \emph{p}-value should be utilized at all, and, if so, what
-that \emph{p}-value can tell you in relation to other indicators. While
-NHST and \emph{p}-values may have merit, researchers have a wealth of
-other statistical tools available to them. We believe that improvements
-may be made to the sciences as a whole when individuals become aware of
-the tools available to them and how these methods may be used, either
-alone or in combination, to strengthen understanding and conclusions.
-These sentiments have been shared by the American Statistical
-Association who recently held a conference focusing on going beyond
-NHST, expanding their previous stance \emph{p}-values (Wasserstein \&
-Lazar, 2016).
+to control Type I error rates. In another recent article, Trafimow et
+al. (2018) critiques this suggestion to broadly lower the \(\alpha\)
+level to .005, and alternatively suggest that findings should be
+weighted on the basis of evidence accumulation from multiple studies.
+Additionally, Pericchi and Pereira (2016) promote the use of fluctuating
+\(\alpha\) levels as a function of sample size to assist with these
+errors. Given this unsettled notion with significance testing, We argue
+it is not the threshold, or critical \emph{p}, that needs to be
+rethought when seeking evidence, but rather if a \emph{p}-value should
+be utilized at all, and, if so, what that \emph{p}-value can tell you in
+relation to other indicators. While NHST and \emph{p}-values may have
+merit, researchers have a wealth of other statistical tools available to
+them. We believe that improvements may be made to the sciences as a
+whole when individuals become aware of the tools available to them and
+how these methods may be used, either alone or in combination, to
+strengthen understanding and conclusions. These sentiments have been
+shared by the American Statistical Association who recently held a
+conference focusing on going beyond NHST, expanding their previous
+stance \emph{p}-values (Wasserstein \& Lazar, 2016).
 
 Therefore, we undertook this project to show researchers how two
 alternative paradigms compare to NHST in terms of their methodological
@@ -230,27 +234,27 @@ Neyman-Pearson decision theory. This theory consists of two hypotheses
 (i.e., null and alternative) and a binary decision criteria (i.e.,
 significant or not, Lehmann, 1993). However, this procedure created the
 possibility of researcher decision errors (Dienes, 2008). A researcher
-may falsely reject the null hypothesis (Type I error, \(\alpha\)) or
-falsely fail to reject the null (Type II error, \(\beta\)). \(\alpha\)
-levels set the binary decision criteria, which are used as the critical
-\emph{p}-value for hypothesis testing (i.e., \emph{p} \textless{} .05),
-and are thus seen as evidence to reject the null hypothesis. \(\beta\)
-and power are inherently linked (Power = 1-\(\beta\)), so as the
-likelihood of finding a true effect increases beta decreases (Maxwell \&
-Delaney, 2004). Although \(\alpha\) values can be chosen to be quite
-small, and methods (such as decreasing error variance or using a
-one-tailed test in contrast to a two-tailed test) can decrease \(\beta\)
-values as well, a researcher can never know if they have made the
-correct decision, or a decision error. Thus, Neyman and Pearson clearly
-state that a hypothesis should not be blindly supported based solely on
-the estimates of one statistical test, and that replication and
-reproduction of results are imperative. The recent work of the Open
-Science Collaboration (2015) has also highlighted the need for
-replication studies and interpretation of results in an appropriate
-context. Additionally, Neyman and Pearson emphasized that use of set
-\(\alpha\)s and \(\beta\)s is illogical and sought instead for
-researchers to adjust their analysis to the needs of the particular task
-at hand (Gigerenzer, 2004).
+may falsely reject the null hypothesis (Probability of Type I error,
+\(\alpha\)) or falsely fail to reject the null (Probability of Type II
+error, \(\beta\)). \(\alpha\) levels set the binary decision criteria,
+which are used as the critical \emph{p}-value for hypothesis testing
+(i.e., \emph{p} \textless{} .05), and are thus seen as evidence to
+reject the null hypothesis. \(\beta\) and power are inherently linked
+(Power = 1-\(\beta\)), so as the likelihood of finding a true effect
+increases beta decreases (Maxwell \& Delaney, 2004). Although \(\alpha\)
+values can be chosen to be quite small, and methods (such as decreasing
+error variance or using a one-tailed test in contrast to a two-tailed
+test) can decrease \(\beta\) values as well, a researcher can never know
+if they have made the correct decision, or a decision error. Thus,
+Neyman and Pearson clearly state that a hypothesis should not be blindly
+supported based solely on the estimates of one statistical test, and
+that replication and reproduction of results are imperative. The recent
+work of the Open Science Collaboration (2015) has also highlighted the
+need for replication studies and interpretation of results in an
+appropriate context. Additionally, Neyman and Pearson emphasized that
+use of set \(\alpha\)s and \(\beta\)s is illogical and sought instead
+for researchers to adjust their analysis to the needs of the particular
+task at hand (Gigerenzer, 2004).
 
 \subsection{Typical NHST Procedure}\label{typical-nhst-procedure}
 
@@ -321,17 +325,17 @@ missing values.
 While this approach is widely used, there are many limitations
 associated with it. First, this method can be sensitive to violations of
 the stated assumptions, and especially, if the sample size is not large
-enough to create a normal sampling distribution (Tabachnick \& Fidell,
-2012). Even if assumptions are met, or nonparametric tests are
-implemented (e.g., for situations where a normal distribution assumption
-cannot be met), this methodology does not allow a researcher to state
-anything about the absence of an effect (i.e., no true differences).
-Through traditional NHST, one can only discuss evidence regarding the
-alternative hypothesis; one can never support the null hypothesis
-through this procedure. Given the recent findings regarding
-reproducibility, showing support for the absence of an effect can be
-even more crucial than showing support for the presence of an effect
-(Bakker, van Dijk, \& Wicherts, 2012; Lakens, 2017).
+enough for the sampling distribution to approximate a normal
+distribution (Tabachnick \& Fidell, 2012). Even if assumptions are met,
+or nonparametric tests are implemented (e.g., for situations where a
+normal distribution assumption cannot be met), this methodology does not
+allow a researcher to state anything about the absence of an effect
+(i.e., no true differences). Through traditional NHST, one can only
+discuss evidence regarding the alternative hypothesis; one can never
+support the null hypothesis through this procedure. Given the recent
+findings regarding reproducibility, showing support for the absence of
+an effect can be even more crucial than showing support for the presence
+of an effect (Bakker, van Dijk, \& Wicherts, 2012; Lakens, 2017).
 
 \section{Bayes Factors}\label{bayes-factors}
 
@@ -1377,10 +1381,10 @@ aac4716--aac4716.
 doi:\href{https://doi.org/10.1126/science.aac4716}{10.1126/science.aac4716}
 
 \hypertarget{ref-Pericchi2016}{}
-Pericchi, L., \& Pereira, C. (2016). Adaptative significance levels
-using optimal decision rules: Balancing by weighting the error
-probabilities. \emph{Brazilian Journal of Probability and Statistics},
-\emph{30}(1), 70--90.
+Pericchi, L., \& Pereira, C. (2016). Adaptive significance levels using
+optimal decision rules: Balancing by weighting the error probabilities.
+\emph{Brazilian Journal of Probability and Statistics}, \emph{30}(1),
+70--90.
 doi:\href{https://doi.org/10.1214/14-BJPS257}{10.1214/14-BJPS257}
 
 \hypertarget{ref-Press2002}{}
@@ -1428,6 +1432,13 @@ doi:\href{https://doi.org/10.1177/0956797611417632}{10.1177/0956797611417632}
 \hypertarget{ref-Tabachnick2012}{}
 Tabachnick, B. G., \& Fidell, L. S. (2012). \emph{Using multivariate
 statistics} (Sixth.). Boston, MA: Pearson.
+
+\hypertarget{ref-Trafimow2018}{}
+Trafimow, D., Amrhein, V., Areshenkoff, C. N., Barrera-Causil, C. J.,
+Beh, E. J., Bilgiç, Y. K., \ldots{} Marmolejo-Ramos, F. (2018).
+Manipulating the alpha level cannot cure significance testing.
+\emph{Frontiers in Psychology}, \emph{9}.
+doi:\href{https://doi.org/10.3389/fpsyg.2018.00699}{10.3389/fpsyg.2018.00699}
 
 \hypertarget{ref-Valentine2013}{}
 Valentine, K. D., \& Buchanan, E. M. (2013). JAM-boree: An application
