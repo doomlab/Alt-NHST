@@ -8,6 +8,8 @@ significant estimates at \(p\) \textless{} .05 (solid) and \(p\)
 \textless{} .005 (dashed) for each analysis given effect size and sample
 size.}
 \end{figure*}
+\efloatseparator
+ 
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
 
@@ -16,6 +18,8 @@ size.}
 \caption{\label{fig:effects-graph-nonsig}Percent of non-significant effects
 for each analysis given effect size and sample size.}
 \end{figure*}
+\efloatseparator
+ 
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
 
@@ -29,6 +33,8 @@ values over .50. Point size and color indicates sample size wherein
 larger samples are lighter colors. Please note that the key for the
 entire set of graphics is in the bottom right hand corner.}
 \end{figure*}
+\efloatseparator
+ 
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
 
@@ -37,6 +43,8 @@ entire set of graphics is in the bottom right hand corner.}
 \caption{\label{fig:agree-graph-omnibus}Percent of agreement across all
 analyses given effect size and sample size for omnnibus tests.}
 \end{figure*}
+\efloatseparator
+ 
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
 
@@ -47,6 +55,8 @@ analysis given effect size and sample size \(post hoc\) tests with \(p\)
 \textless{} .05 (solid) and \(p\) \textless{} .005 (dashed). Note that
 this graph only compares the NHST and BF conclusions.}
 \end{figure*}
+\efloatseparator
+ 
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
 
@@ -60,3 +70,5 @@ Point size and color indicates sample size wherein larger samples are
 lighter colors. Please note that the key for the entire set of graphics
 is in the bottom right hand corner.}
 \end{figure*}
+\efloatseparator
+ 

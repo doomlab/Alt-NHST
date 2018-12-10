@@ -152,7 +152,7 @@ suggest the need to redefine evidentiary value and reporting practices.
 Recent events in psychological science have prompted concerns within the
 discipline regarding research practices and ultimately the validity and
 reproducibility of published reports (Etz \& Vandekerckhove, 2016;
-Lindsay, 2015; Open Science Collaboration, 2015; Van Elk et al., 2015).
+Lindsay, 2015; Open Science Collaboration, 2015; van Elk et al., 2015).
 One often discussed matter is over-reliance, abuse, and potential
 hacking of \emph{p}-values produced by frequentist null hypothesis
 significance testing (NHST), as well as misinterpretations of NHST
@@ -165,10 +165,10 @@ Lakens, 2013; Maxwell, Lau, \& Howard, 2015; Nosek, Spies, \& Motyl,
 including an article by Benjamin et al. (2018) advocating that
 researchers should begin thinking only of \emph{p}-values less than .005
 as \enquote{statistically significant}, thus changing \(\alpha\) levels
-to control Type I error rates. In another recent article,
-({\textbf{???}}) critiques this suggestion to broadly lower the
-\(\alpha\) level to .005, and alternatively suggest that findings should
-be weighted on the basis of evidence accumulation from multiple studies.
+to control Type I error rates. In another recent article, Trafimow et
+al. (2018) critiques this suggestion to broadly lower the \(\alpha\)
+level to .005, and alternatively suggest that findings should be
+weighted on the basis of evidence accumulation from multiple studies.
 Additionally, Pericchi and Pereira (2016) promote the use of fluctuating
 \(\alpha\) levels as a function of sample size to assist with these
 errors. Given this unsettled notion with significance testing, We argue
@@ -202,7 +202,7 @@ different data environments (i.e., given varying sample sizes and effect
 sizes). Beyond simply comparing methodologies, we also sought to
 identify how chaning the \(\alpha\) criteria within the NHST framework
 may alter conclusions. Although previous work has already compared
-Frequentist NHST to Baysian approached (Goodman, 1999; Rouder, Morey,
+Frequentist NHST to Baysian approached ({\textbf{???}}; Rouder, Morey,
 Speckman, \& Province, 2012; Wetzels et al., 2011), this manuscript adds
 a novel contribution--Obseration Oritnted Modeling. By introducing
 social scientists to Observation Oriented Modeling (OOM), a relatively
@@ -356,7 +356,7 @@ rejected. Given the recent findings regarding reproducibility, showing
 support for the absence of an effect (e.g.~accepting the null
 hypothesis) can be even more crucial than showing support for the
 presence of an effect (e.g.~accepting the alternative hypthesis; Bakker,
-Van Dijk, \& Wicherts, 2012; Lakens, 2017).
+van Dijk, \& Wicherts, 2012; Lakens, 2017).
 
 \section{Bayes Factors}\label{bayes-factors}
 
@@ -406,7 +406,7 @@ utilize completely uniformed (objective) priors, as we can adjust for
 basic knowledge of the constraints of our data type. It is wortwhile to
 note that we have discussed objective and subjective views of
 Bayesianism through the traditional lense (e.g.~how ininformed the prior
-is). However, Berger (2006) has instead suggested that objective
+is). However, ({\textbf{???}}) has instead suggested that objective
 Bayesian approaches allow the priors to be driven by the data, while
 subjective Bayesian approaches allow the priors to be driven by the
 resaercher. Given the usual lack of information about underlying
@@ -445,8 +445,8 @@ The procedure behind BF comparisons requires two steps.
   same variance). Within the Bayesian framework, the observed data
   \(X_{i}\) are considered to be given, and the parameter \(\mu\) is
   considered to be a random variable fixed--but unknown.considers the
-  parameter μ as a random variable, and data X to be given. These can be
-  operationalized as follows:
+  parameter \(\mu\) as a random variable, and data X to be given. These
+  can be operationalized as follows:
 \end{enumerate}
 
 \[
@@ -528,11 +528,11 @@ give rise to the patterns observed in a given data set. Switching to
 this philosophy allows for techniques that match the daily activities of
 social scientists in their endeavors to unravel the story of how humans
 operate. OOM pushes the researcher to seek an inference to best
-explanation ({\textbf{???}}). This causal inference procedure differs
-from both NHST and Bayes yet are often conflated, which is concerned
-with inferences to population parameters and their various assumptions
-underlying statistical tests (e.g., random sampling, normality,
-homogeneity of population treatment differences, etc.).
+explanation (Grice et al., 2017). This causal inference procedure
+differs from both NHST and Bayes yet are often conflated, which is
+concerned with inferences to population parameters and their various
+assumptions underlying statistical tests (e.g., random sampling,
+normality, homogeneity of population treatment differences, etc.).
 
 Generally speaking, this approach can handle any type of data, including
 ordinal rankings and frequency counts, as all analyses are calculated in
@@ -754,20 +754,21 @@ comparisons as in the previous models using default priors from the
 \emph{BayesFactor} package (e.g., Jeffreys prior for population
 variance, Cauchy prior for standardized effect size). To compare
 Bayesian results to other statistical methods, we used recommendations
-from ({\textbf{???}}) to bin results into weak evidence (BFs \textless{}
-3), positive evidence (e.g., akin to marginal \emph{p}-values, BFs =
-3-20), and strong evidence (BFs \textgreater{} 20). We must stress here
-that BF interpretation should focus on understanding the odds of model
-ratios, not necessarily the presence or absence of an effect. However,
-given that we wanted to compare the conclusions one would reach given
-this data in a Bayesian paradigm to that of a frequentist paradigm,
-these bins are used as a convenient comparison to the frequentist
-procedures using set criteria for interpretation (Morey, 2015). Should
-any reader become curious how a different set of binning values affect
-our analyses, all code and data are at their disposal at
+from Kass and Raftery (1995) to bin results into weak evidence (BFs
+\textless{} 3), positive evidence (e.g., akin to marginal
+\emph{p}-values, BFs = 3-20), and strong evidence (BFs \textgreater{}
+20). We must stress here that BF interpretation should focus on
+understanding the odds of model ratios, not necessarily the presence or
+absence of an effect. However, given that we wanted to compare the
+conclusions one would reach given this data in a Bayesian paradigm to
+that of a frequentist paradigm, these bins are used as a convenient
+comparison to the frequentist procedures using set criteria for
+interpretation (Morey, 2015). Should any reader become curious how a
+different set of binning values affect our analyses, all code and data
+are at their disposal at
 \url{https://osf.io/u9hf4/?view_only=1caa9092868b4d7aadb9a83a31a979cd},
 and this manuscript was written with the \emph{papaja} package allowing
-one to view the code inline with this text ({\textbf{???}}).
+one to view the code inline with this text (Aust \& Barth, 2017).
 
 \subsubsection{OOM: Ordinal Pattern
 Analysis}\label{oom-ordinal-pattern-analysis}
@@ -1148,11 +1149,10 @@ researchers to focus on experimental design and hypotheses
 should describe multiple indicators of evidence, such as effect sizes,
 confidence intervals, power analyses, Bayes Factors, and other
 descriptive statistics (Finkel, Eastwick, \& Reis, 2015; Nosek \&
-Lakens, 2014; van 't Veer, Giner-Sorolla, Van't Veer, \& Giner-Sorolla,
-2016).
+Lakens, 2014; van't Veer \& Giner-Sorolla, 2016).
 
 A misunderstanding of statistical power still plagues psychological
-sciences (Bakker, Hartgerink, Wicherts, \& Van Der Maas, 2016), and the
+sciences (Bakker, Hartgerink, Wicherts, \& van der Maas, 2016), and the
 effect of sample size, especially small ones, was shown here by
 comparing the criterion available in these analyses. Often, individual
 research labs may not have the means to adequately power a proposed
@@ -1181,18 +1181,21 @@ science and to increase the strength of evidence in our discipline.
 \hypertarget{refs}{}
 \hypertarget{ref-AmericanPsychologicalAssociation2010}{}
 American Psychological Association. (2010). \emph{Publication manual of
-the American Psychological Association} (6th ed., p. 272). American
-Psychological Association. Retrieved from
-\url{http://www.apastyle.org/products/4200067.aspx}
+the American Psychological Association} (6th ed.). American
+Psychological Association.
+
+\hypertarget{ref-Aust2017}{}
+Aust, F., \& Barth, M. (2017). papaja: Create APA manuscripts with R
+Markdown. Retrieved from \url{https://github.com/crsh/papaja}
 
 \hypertarget{ref-Bakker2016}{}
-Bakker, M., Hartgerink, C. H. J., Wicherts, J. M., \& Van Der Maas, H.
+Bakker, M., Hartgerink, C. H. J., Wicherts, J. M., \& van der Maas, H.
 L. J. (2016). Researchers' intuitions about power in psychological
 research. \emph{Psychological Science}, \emph{27}(8), 1069--1077.
 doi:\href{https://doi.org/10.1177/0956797616647519}{10.1177/0956797616647519}
 
 \hypertarget{ref-Bakker2012}{}
-Bakker, M., Van Dijk, A., \& Wicherts, J. M. (2012). The rules of the
+Bakker, M., van Dijk, A., \& Wicherts, J. M. (2012). The rules of the
 game called psychological science. \emph{Perspectives on Psychological
 Science}, \emph{7}(6), 543--554.
 doi:\href{https://doi.org/10.1177/1745691612459060}{10.1177/1745691612459060}
@@ -1209,11 +1212,6 @@ Wagenmakers, E.-J., Berk, R., \ldots{} Johnson, V. E. (2018). Redefine
 statistical significance. \emph{Nature Human Behaviour}, \emph{2}(1),
 6--10.
 doi:\href{https://doi.org/10.1038/s41562-017-0189-z}{10.1038/s41562-017-0189-z}
-
-\hypertarget{ref-Berger2006}{}
-Berger, J. (2006). The case for objective Bayesian analysis.
-\emph{Bayesian Analysis}, \emph{1}(3), 385--402.
-doi:\href{https://doi.org/10.1214/06-BA115}{10.1214/06-BA115}
 
 \hypertarget{ref-Buchanan2017}{}
 Buchanan, E. M., Valentine, K. D., \& Scofield, J. E. (2017). MOTE.
@@ -1235,8 +1233,8 @@ Science}, \emph{25}(1), 7--29.
 doi:\href{https://doi.org/10.1177/0956797613504966}{10.1177/0956797613504966}
 
 \hypertarget{ref-Datta1996}{}
-Datta, G., \& Ghosh, M. (1996). On the Invariance of Noninformative
-Priors. \emph{The Annals of Statistics}, \emph{24}(1), 141--159.
+Datta, G., \& Ghosh, M. (1996). On the invariance of noninformative
+priors. \emph{The Annals of Statistics}, \emph{24}(1), 141--159.
 doi:\href{https://doi.org/10.1214/aos/1033066203}{10.1214/aos/1033066203}
 
 \hypertarget{ref-DeLaplace1774}{}
@@ -1296,12 +1294,8 @@ social sciences} (pp. 392--409). Thousand Oaks, CA: SAGE Publications,
 Inc.
 doi:\href{https://doi.org/10.4135/9781412986311.n21}{10.4135/9781412986311.n21}
 
-\hypertarget{ref-Goodman1999}{}
-Goodman, S. N. (1999). Toward Evidence-Based Medical Statistics. 1: The,
-995--1004.
-
 \hypertarget{ref-Grice2011}{}
-Grice, J. W. (2011). \emph{Observation Oriented Modeling : analysis of
+Grice, J. W. (2011). \emph{Observation Oriented Modeling: Analysis of
 cause in the behavioral sciences} (p. 242). Elsevier/Academic Press.
 
 \hypertarget{ref-Grice2014}{}
@@ -1315,6 +1309,12 @@ Grice, J. W., Barrett, P. T., Schlimgen, L. A., \& Abramson, C. I.
 (2012). Toward a brighter future for psychology as an observation
 oriented science. \emph{Behavioral Sciences}, \emph{2}(4), 1--22.
 doi:\href{https://doi.org/10.3390/bs2010001}{10.3390/bs2010001}
+
+\hypertarget{ref-Grice2017}{}
+Grice, J. W., Barrett, P., Cota, L., Felix, C., Taylor, Z., Garner, S.,
+\ldots{} Vest, A. (2017). Four Bad Habits of Modern Psychologists.
+\emph{Behavioral Sciences}, \emph{7}(4), 53.
+doi:\href{https://doi.org/10.3390/bs7030053}{10.3390/bs7030053}
 
 \hypertarget{ref-Grice2015}{}
 Grice, J. W., Craig, D. P. A., \& Abramson, C. I. (2015). A simple and
@@ -1334,6 +1334,11 @@ doi:\href{https://doi.org/10.1371/journal.pmed.0020124}{10.1371/journal.pmed.002
 
 \hypertarget{ref-JASPTeam2017}{}
 JASP Team. (2017). JASP. Retrieved from \url{https://jasp-stats.org/}
+
+\hypertarget{ref-Kass1995a}{}
+Kass, R. E., \& Raftery, A. E. (1995). Bayes Factors. \emph{Journal of
+the American Statistical Association}, \emph{90}(430), 773--795.
+doi:\href{https://doi.org/10.2307/2291091}{10.2307/2291091}
 
 \hypertarget{ref-Klugkist2007}{}
 Klugkist, I., \& Hoijtink, H. (2007). The Bayes factor for inequality
@@ -1419,10 +1424,10 @@ aac4716--aac4716.
 doi:\href{https://doi.org/10.1126/science.aac4716}{10.1126/science.aac4716}
 
 \hypertarget{ref-Pericchi2016}{}
-Pericchi, L., \& Pereira, C. (2016). Adaptative significance levels
-using optimal decision rules: Balancing by weighting the error
-probabilities. \emph{Brazilian Journal of Probability and Statistics},
-\emph{30}(1), 70--90.
+Pericchi, L., \& Pereira, C. (2016). Adaptive significance levels using
+optimal decision rules: Balancing by weighting the error probabilities.
+\emph{Brazilian Journal of Probability and Statistics}, \emph{30}(1),
+70--90.
 doi:\href{https://doi.org/10.1214/14-BJPS257}{10.1214/14-BJPS257}
 
 \hypertarget{ref-Press2002}{}
@@ -1471,6 +1476,13 @@ doi:\href{https://doi.org/10.1177/0956797611417632}{10.1177/0956797611417632}
 Tabachnick, B. G., \& Fidell, L. S. (2012). \emph{Using multivariate
 statistics} (Sixth.). Boston, MA: Pearson.
 
+\hypertarget{ref-Trafimow2018}{}
+Trafimow, D., Amrhein, V., Areshenkoff, C. N., Barrera-Causil, C. J.,
+Beh, E. J., Bilgiç, Y. K., \ldots{} Marmolejo-Ramos, F. (2018).
+Manipulating the Alpha Level Cannot Cure Significance Testing.
+\emph{Frontiers in Psychology}, \emph{9}.
+doi:\href{https://doi.org/10.3389/fpsyg.2018.00699}{10.3389/fpsyg.2018.00699}
+
 \hypertarget{ref-Valentine2013}{}
 Valentine, K. D., \& Buchanan, E. M. (2013). JAM-boree: An application
 of observation oriented modelling to judgements of associative memory.
@@ -1478,17 +1490,16 @@ of observation oriented modelling to judgements of associative memory.
 doi:\href{https://doi.org/10.1080/20445911.2013.775120}{10.1080/20445911.2013.775120}
 
 \hypertarget{ref-VanElk2015}{}
-Van Elk, M., Matzke, D., Gronau, Q. F., Guan, M., Vandekerckhove, J., \&
+van Elk, M., Matzke, D., Gronau, Q. F., Guan, M., Vandekerckhove, J., \&
 Wagenmakers, E.-J. (2015). Meta-analyses are no substitute for
 registered replications: A skeptical perspective on religious priming.
 \emph{Frontiers in Psychology}, \emph{6}, 1365.
 doi:\href{https://doi.org/10.3389/fpsyg.2015.01365}{10.3389/fpsyg.2015.01365}
 
 \hypertarget{ref-VantVeer2016}{}
-van 't Veer, A. E., Giner-Sorolla, R., Van't Veer, A. E., \&
-Giner-Sorolla, R. (2016). Pre-registration in social psychology---A
-discussion and suggested template. \emph{Journal of Experimental Social
-Psychology}, \emph{67}, 2--12.
+van't Veer, A. E., \& Giner-Sorolla, R. (2016). Pre-registration in
+social psychology---A discussion and suggested template. \emph{Journal
+of Experimental Social Psychology}, \emph{67}, 2--12.
 doi:\href{https://doi.org/10.1016/j.jesp.2016.03.004}{10.1016/j.jesp.2016.03.004}
 
 \hypertarget{ref-Wagenmakers2007}{}
