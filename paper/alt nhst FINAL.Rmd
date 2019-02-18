@@ -19,7 +19,7 @@ affiliation:
   - id            : "1"
     institution   : "University of Missouri"
   - id            : "2"
-    institution   : "Missouri State University"
+    institution   : "Harrisburg University of Science and Technology" 
   - id            : "3"
     institution   : "University of Missouri - Kansas City"
 
