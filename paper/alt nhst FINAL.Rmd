@@ -39,8 +39,8 @@ tablelist         : no
 footnotelist      : no
 lineno            : yes
 
-#class             : "man"
-class             : "man, mask"
+class             : "man"
+#class             : "man, mask"
 output            : papaja::apa6_pdf
 csl               : apa6.csl
 replace_ampersands: yes
